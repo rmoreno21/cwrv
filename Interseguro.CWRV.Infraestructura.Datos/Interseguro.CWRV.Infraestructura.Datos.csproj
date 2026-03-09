@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4766681C-E86D-4647-8841-28609DB905B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interseguro.CWRV.Infraestructura.Datos</RootNamespace>
+    <AssemblyName>Interseguro.CWRV.Infraestructura.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntLibContrib.Data.OdpNet">
+      <HintPath>..\packages\EntLibContrib.Data.OdpNet.5.0.505.0\lib\NET35\EntLibContrib.Data.OdpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\RepositorioActividad.cs" />
+    <Compile Include="Repositorios\RepositorioAdelantoComision.cs" />
+    <Compile Include="Repositorios\RepositorioAfiliado.cs" />
+    <Compile Include="Repositorios\RepositorioAgente.cs" />
+    <Compile Include="Repositorios\RepositorioAnticipo.cs" />
+    <Compile Include="Repositorios\RepositorioAporteAdicional.cs" />
+    <Compile Include="Repositorios\RepositorioCargaControlCdA.cs" />
+    <Compile Include="Repositorios\RepositorioCargaControlVCTP.cs" />
+    <Compile Include="Repositorios\RepositorioCargaLocalidadVCTP.cs" />
+    <Compile Include="Repositorios\RepositorioCarta.cs" />
+    <Compile Include="Repositorios\RepositorioCausalPoliza.cs" />
+    <Compile Include="Repositorios\RepositorioCita.cs" />
+    <Compile Include="Repositorios\RepositorioCiudad.cs" />
+    <Compile Include="Repositorios\RepositorioComuna.cs" />
+    <Compile Include="Repositorios\RepositorioConfiguracionMontoCIC.cs" />
+    <Compile Include="Repositorios\RepositorioDescuentoComision.cs" />
+    <Compile Include="Repositorios\RepositorioDireccion.cs" />
+    <Compile Include="Repositorios\RepositorioEmisionPoliza.cs" />
+    <Compile Include="Repositorios\RepositorioEscenario.cs" />
+    <Compile Include="Repositorios\RepositorioEstadoCivil.cs" />
+    <Compile Include="Repositorios\RepositorioFlujoMovimiento.cs" />
+    <Compile Include="Repositorios\RepositorioGestionVentas.cs" />
+    <Compile Include="Repositorios\RepositorioGrupoFamiliar.cs" />
+    <Compile Include="Repositorios\RepositorioIPPermitida.cs" />
+    <Compile Include="Repositorios\RepositorioLogBD.cs" />
+    <Compile Include="Repositorios\RepositorioLote.cs" />
+    <Compile Include="Repositorios\RepositorioMotorCalculo.cs" />
+    <Compile Include="Repositorios\RepositorioNacionalidad.cs" />
+    <Compile Include="Repositorios\RepositorioParametro.cs" />
+    <Compile Include="Repositorios\RepositorioParametroGeneral.cs" />
+    <Compile Include="Repositorios\RepositorioProducto.cs" />
+    <Compile Include="Repositorios\RepositorioProfesion.cs" />
+    <Compile Include="Repositorios\RepositorioReporteCotizacion.cs" />
+    <Compile Include="Repositorios\RepositorioReporteIndicadores.cs" />
+    <Compile Include="Repositorios\RepositorioReportes.cs" />
+    <Compile Include="Repositorios\RepositorioRolAcom.cs" />
+    <Compile Include="Repositorios\RepositorioCuotasTra.cs" />
+    <Compile Include="Repositorios\RepositorioRolDcom.cs" />
+    <Compile Include="Repositorios\RepositorioRolDtra.cs" />
+    <Compile Include="Repositorios\RepositorioSeguimiento.cs" />
+    <Compile Include="Repositorios\RepositorioSolicitud.cs" />
+    <Compile Include="Repositorios\RepositorioSolicitudAcceso.cs" />
+    <Compile Include="Repositorios\RepositorioSolicitudEscenario.cs" />
+    <Compile Include="Repositorios\RepositorioSolicitudIFP.cs" />
+    <Compile Include="Repositorios\RepositorioSolicitudRP.cs" />
+    <Compile Include="Repositorios\RepositorioSolicitudRPPlus.cs" />
+    <Compile Include="Repositorios\RepositorioSupervision.cs" />
+    <Compile Include="Repositorios\RepositorioTelefono.cs" />
+    <Compile Include="Repositorios\RepositorioTemporal.cs" />
+    <Compile Include="Repositorios\RepositorioTipoMovimiento.cs" />
+    <Compile Include="Repositorios\RepositorioUsuario.cs" />
+    <Compile Include="Repositorios\RepositorioUsuarioContactado.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio.Entidades\Interseguro.CWRV.Dominio.Entidades.csproj">
+      <Project>{E957A78D-1F02-41DB-A31C-74ACB67513E1}</Project>
+      <Name>Interseguro.CWRV.Dominio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio\Interseguro.CWRV.Dominio.csproj">
+      <Project>{8FF7011D-3854-4D7F-B7D6-712372BE0879}</Project>
+      <Name>Interseguro.CWRV.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interseguro.CWRV.Infraestructura.General\Interseguro.CWRV.Infraestructura.General.csproj">
+      <Project>{32A0A4ED-B7F6-4819-B802-A71EDBBE10BE}</Project>
+      <Name>Interseguro.CWRV.Infraestructura.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

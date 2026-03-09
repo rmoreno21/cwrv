@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f4b4a2e9-9661-446b-8f0f-6990d26e533b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dean/wsSeguridad/ServiceAzman.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioAzman.wsdl" MetadataType="Wsdl" ID="5d599998-4f96-4e28-8496-8ff946178c9d" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?wsdl" />
+    <MetadataFile FileName="ServiceAzman.xsd" MetadataType="Schema" ID="680d4724-22ba-47f0-8ff8-3d0f1711665a" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceAzman1.xsd" MetadataType="Schema" ID="d944985a-5257-4345-a89a-d06f42dfb43f" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceAzman2.xsd" MetadataType="Schema" ID="02b6e2e2-83e4-4069-a18e-90f71024c29d" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceAzman3.xsd" MetadataType="Schema" ID="5b19ef8e-11de-4b26-a135-f645ae5a2585" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceAzman4.xsd" MetadataType="Schema" ID="b523859e-17aa-457a-b4fe-eb2810a4cba4" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceAzman.disco" MetadataType="Disco" ID="28276550-31d6-4f26-9ab7-37e74349f8a4" SourceId="1" SourceUrl="http://dean/wsSeguridad/ServiceAzman.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

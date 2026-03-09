@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{161EDFB7-7F75-47A7-8C45-7D1767C67EC9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interseguro.CWRV.Presentacion.AgenteServicios</RootNamespace>
+    <AssemblyName>Interseguro.CWRV.Presentacion.AgenteServicios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LocalizadorProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Proxies.ModuloPrincipal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Proxies.ModuloSeguridad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.AbonoPoliza.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Actividad.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Afiliado.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Agente.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Anticipo.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.AporteAdicional.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Beneficiario.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CapitalRequerido.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CausalPoliza.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Cita.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Ciudad.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Comuna.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ConsentimientosAgrupadosAge.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Contrato.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Cotizacion.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CotizacionIFP.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CotizacionMotorIFP.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CotizacionMovimiento.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CotizacionRescate.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.CuotasTra.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.DatosSol.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Departamento.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Direccion.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Distrito.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.EmisionPoliza.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.EnvioSeguimiento.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.EstadoCivil.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Feriado.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.FirmaDigital.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.FirmaDigitalDashboard.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.FlujoMovimiento.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.FormatoSolicitud.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.FormatoSolicitudBeneficiario.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.FormatoSolicitudPersonaVinculada.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.GestionVentas.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.GrupoFamiliar.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.JsonCoincidencia.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.JsonCoincidenciaLN.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.JsonEmail.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.JsonPropuesta.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Lote.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.MontoCIC.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.MotorCalculo.JuegoParametros.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Nacionalidad.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.NotificacionSME.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Parametro.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ParametroCotizador2.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ParametroCotizadorWS.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ParametroEspecial.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ParametrosMotorIFP.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.PolizaRV.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.PolizasDashboard.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Producto.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Profesion.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Provincia.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ReporteIndicadoresRRVV.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ReporteTrazabilidad.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Respuesta.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RolAcom.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RolAcom1.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RolAzmanTipoMovimiento.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RolCuotasTra.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RolDcom.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RolDtra.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RviBdIni.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.RviCarta.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SDAReporte.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Seguimiento.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Solicitud.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SolicitudAcceso.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SolicitudAcceso1.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SolicitudEscenario.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SolicitudIFP.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SolicitudRP.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.SolicitudRPPlus.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Supervision.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Telefono.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Temporal.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.Usuario.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Dominio.Entidades.ValPar.datasource" />
+    <None Include="Properties\DataSources\Interseguro.CWRV.Servicios.DTO.UsuarioDto.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="Service References\Proxies.ModuloPrincipal\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\Arrays2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\Interseguro.CWRV.Dominio.Entidades.MotorCalculo1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\Interseguro.CWRV.Dominio.Entidades.MotorCalculo11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\Interseguro.CWRV.Dominio.Entidades.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\Interseguro.CWRV.Dominio.Entidades2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\service.wsdl" />
+    <None Include="Service References\Proxies.ModuloPrincipal\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\service2.wsdl" />
+    <None Include="Service References\Proxies.ModuloPrincipal\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloPrincipal\service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\Interseguro.CWRV.Presentacion.AgenteServicios.Proxies.ModuloSeguridad.BEOpcionMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\Interseguro.CWRV.Presentacion.AgenteServicios.Proxies.ModuloSeguridad.BEUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServiceAzman55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServiceAzman56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServiceAzman57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServiceAzman58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServiceAzman59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServicioAzman11.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Proxies.ModuloPrincipal\" />
+    <WCFMetadataStorage Include="Service References\Proxies.ModuloSeguridad\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloSeguridad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloSeguridad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloSeguridad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio.Entidades\Interseguro.CWRV.Dominio.Entidades.csproj">
+      <Project>{e957a78d-1f02-41db-a31c-74acb67513e1}</Project>
+      <Name>Interseguro.CWRV.Dominio.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloPrincipal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloPrincipal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloPrincipal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloSeguridad\ServiceAzman11.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

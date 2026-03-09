@@ -1,0 +1,256 @@
+﻿@media only screen and (max-width: 500px) {
+
+    /* Clearfix */
+.clear:before, .clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.clear {
+    *zoom: 1;
+}
+
+#Menu
+{
+    background-image: url() !important;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    
+    margin: 0;
+	padding: 0 0 0 20px;
+    height: 22px;
+	list-style: none;
+	font-size:14px;
+	position:relative;
+}
+
+#Menu li
+{
+    background-image: url() !important;
+    background-repeat: no-repeat;
+    background-position: right top;
+    
+    
+    padding-top: 3px;
+    padding-right: 15px;
+
+    width: 50% !important;
+    float: left !important;
+    position: relative !important;
+
+}
+
+ul a#pull {
+        display: block !important;
+        background-color: #666 !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+
+    ul a#pull:after {
+        content:"" !important;
+        background: url(../Imagenes/nav-icon.png) no-repeat !important;
+        width: 30px !important;
+        height: 30px !important;
+        display: inline-block !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 10px !important;
+    }
+
+nav {
+        border-bottom: 0 !important;
+        height: auto !important;
+    }
+
+
+/*ul {
+        display: none !important;
+        height: auto !important;
+        width: 100% !important;
+    }*/
+
+   
+
+/*#Menu li ul
+{   
+   
+    margin:0 0 0 -15px;
+    display: none;
+    text-align: left;
+    
+
+
+}*/
+
+
+
+/*#Menu li:hover
+{
+    cursor: pointer;
+    background-image: url(../Imagenes/menu_hover.png);
+}*/
+
+/*#Menu li ul li
+{
+ 
+    background-image: url(../Imagenes/submenu_fondo.png);
+    background-repeat: repeat;
+    position: absolute;
+    font-size: 12px;
+    
+    padding: 10px 6px 6px 6px;
+    margin-left: -36px;
+    top: 3px;
+    z-index: 200;
+
+    
+
+    
+}*/
+
+/*#Menu li ul li:hover
+{
+    background-image: url(../Imagenes/submenu_fondo_hover.png);
+}
+
+#Menu a
+{
+    color: #FFF;
+    text-decoration: none
+}*/
+
+/*-----------------------------*/
+
+
+
+    /*
+    ul {
+        display: none !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    ul li {
+        width: 50% !important;
+        float: left !important;
+        position: relative !important;
+    }
+
+    ul a {
+        text-align: left !important;
+        width: 100% !important;
+        text-indent: 25px !important;
+    }
+
+    /
+
+    /*------------------------------------*/
+
+    body {
+        /*background-color: red;*/
+
+    position: relative;
+	margin: 0px !important;
+	padding: 0px;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0060A9;
+	font-size: 11px;
+    }
+
+    #CabeceraSuperior {
+        width: auto !important;
+        height: auto !important;
+    }
+    #CabeceraIzq{
+        float: none !important;
+        
+    }
+
+    #CabeceraDer {
+        width: 100% !important;
+        float: none !important;
+        background: url(../Imagenes/cab_fondo.png) no-repeat top left;    
+        background-size: 100% 85% !important;
+        /*float: right;
+        width: 548px;
+        height: 100px;
+        background: url(../Imagenes/cab_fondo.png) no-repeat top right;*/
+
+    }
+    
+    #ItemUsuario {
+        height:26px !important;
+        padding-left:30px !important;
+        padding-top:8px !important;
+    }
+    
+    #ItemNombre {
+        height:26px !important;
+        padding-left:57px !important;
+    }
+    #ItemFecha {
+        height:26px !important;
+        padding-left:82px !important;
+    }
+    #CabeceraMenu{
+        float:left !important;
+        width:auto !important;
+        height:88px !important;
+    }
+
+    #CabeceraInicio{
+        padding:16px 0px 22px 3px !important;
+        width:auto !important;
+        height:50px !important;
+        float:right !important;
+
+    }
+    .cabeceraSeparador
+    {
+        width: 2px !important;
+        height: 84px !important;
+        float: right !important;
+        background: none no-repeat center !important;
+    }
+
+    #ContenedorMenu {
+        width: auto !important;
+        min-height: auto !important;
+
+        background: #000000 !important;
+        /* background-repeat: no-repeat; */
+        /* background-position: center center; */
+        
+        text-align: left !important;
+        color: #FFF !important;
+    }
+
+ 
+
+    #Menu li {
+        float: none !important;
+    }
+
+    .boton_inicio
+    {
+        cursor: pointer;
+        background: url(../Imagenes/inicio_32.png) no-repeat;
+        background-position: 50% 1px;
+        border-style: hidden;
+        border-width: 1px;
+        margin: 1px 1px 1px 1px;
+        font-size: 11px;
+        color: #303030;
+        padding-top:32px;
+        vertical-align: bottom;
+        font-family: Calibri, Arial, sans-serif;
+        width: 30px !important;
+        height: 50px;
+    }
+}

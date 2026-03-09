@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E957A78D-1F02-41DB-A31C-74ACB67513E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interseguro.CWRV.Dominio.Entidades</RootNamespace>
+    <AssemblyName>Interseguro.CWRV.Dominio.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbonoPoliza.cs" />
+    <Compile Include="Acceso.cs" />
+    <Compile Include="Actividad.cs" />
+    <Compile Include="AdelantoComision.cs" />
+    <Compile Include="Afiliado.cs" />
+    <Compile Include="AFP.cs" />
+    <Compile Include="Agente.cs" />
+    <Compile Include="AgenteConsentimiento.cs" />
+    <Compile Include="Anticipo.cs" />
+    <Compile Include="AporteAdicional.cs" />
+    <Compile Include="BaseAuditoria.cs" />
+    <Compile Include="Beneficiario.cs" />
+    <Compile Include="BeneficiarioDireccion.cs" />
+    <Compile Include="Capital.cs" />
+    <Compile Include="CargaControlCdA.cs" />
+    <Compile Include="CargaControlVCTP.cs" />
+    <Compile Include="CargaLocalidadVCTP.cs" />
+    <Compile Include="Carta.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="CausalPoliza.cs" />
+    <Compile Include="Cita.cs" />
+    <Compile Include="Ciudad.cs" />
+    <Compile Include="CoberturaAdicional.cs" />
+    <Compile Include="Compania.cs" />
+    <Compile Include="Comuna.cs" />
+    <Compile Include="ConfiguracionCorreo.cs" />
+    <Compile Include="ConsentimientoAsesoria.cs" />
+    <Compile Include="ConsentimientoAsesoriaApi.cs" />
+    <Compile Include="ConsentimientoCliente.cs" />
+    <Compile Include="ConsentimientoClienteLog.cs" />
+    <Compile Include="ConsentimientoClienteLogDetalle.cs" />
+    <Compile Include="ConsentimientoDireccion.cs" />
+    <Compile Include="ConsentimientosAgrupadosAge.cs" />
+    <Compile Include="Contrato.cs" />
+    <Compile Include="CorreoElectronico.cs" />
+    <Compile Include="Cotizacion.cs" />
+    <Compile Include="CotizacionIFP.cs" />
+    <Compile Include="CotizacionMovimiento.cs" />
+    <Compile Include="CotizacionRescate.cs" />
+    <Compile Include="CotizacionRP.cs" />
+    <Compile Include="CotizacionRPPlus.cs" />
+    <Compile Include="CuadroComparativo.cs" />
+    <Compile Include="DatosSol.cs" />
+    <Compile Include="Departamento.cs" />
+    <Compile Include="Direccion.cs" />
+    <Compile Include="Distrito.cs" />
+    <Compile Include="DocumentoSME.cs" />
+    <Compile Include="EmisionPoliza.cs" />
+    <Compile Include="EnvioSeguimiento.cs" />
+    <Compile Include="EnvioSMS.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="EstadoCita.cs" />
+    <Compile Include="EstadoCivil.cs" />
+    <Compile Include="EstructuraCntoCamposDinamicos.cs" />
+    <Compile Include="EstudioNecesidadAPI.cs" />
+    <Compile Include="EstudioNecesidadCWRV.cs" />
+    <Compile Include="Feriado.cs" />
+    <Compile Include="FirmaDigital.cs" />
+    <Compile Include="FirmaDigitalDashboard.cs" />
+    <Compile Include="FirmaDigitalLog.cs" />
+    <Compile Include="FlujoEvaluacion.cs" />
+    <Compile Include="FlujoMovimiento.cs" />
+    <Compile Include="FormatoSolicitud.cs" />
+    <Compile Include="FormatoSolicitudBeneficiario.cs" />
+    <Compile Include="FormatoSolicitudPersonaVinculada.cs" />
+    <Compile Include="GestionVentas.cs" />
+    <Compile Include="GraficoLineal.cs" />
+    <Compile Include="GrupoFamiliar.cs" />
+    <Compile Include="Identificacion.cs" />
+    <Compile Include="IPPermitida.cs" />
+    <Compile Include="JsonMotor.cs" />
+    <Compile Include="JsonPlaft.cs" />
+    <Compile Include="JsonPolizaElectronica.cs" />
+    <Compile Include="LogBD.cs" />
+    <Compile Include="Lote.cs" />
+    <Compile Include="Modalidad.cs" />
+    <Compile Include="Modulo.cs" />
+    <Compile Include="Moneda.cs" />
+    <Compile Include="MontoCIC.cs" />
+    <Compile Include="MotorCalculo\Beneficiario.cs" />
+    <Compile Include="MotorCalculo\Cotizacion.cs" />
+    <Compile Include="MotorCalculo\Documento.cs" />
+    <Compile Include="MotorCalculo\EstadoBeneficiario.cs" />
+    <Compile Include="MotorCalculo\EstadoCausalBeneficiario.cs" />
+    <Compile Include="MotorCalculo\FactorAntiSeleccion.cs" />
+    <Compile Include="MotorCalculo\FactorDocumento.cs" />
+    <Compile Include="MotorCalculo\FactorMejora.cs" />
+    <Compile Include="MotorCalculo\FactorPUMI.cs" />
+    <Compile Include="MotorCalculo\InformacionFactorMejora.cs" />
+    <Compile Include="MotorCalculo\InversionTemporal.cs" />
+    <Compile Include="MotorCalculo\InversionVitalicia.cs" />
+    <Compile Include="MotorCalculo\JuegoParametros.cs" />
+    <Compile Include="MotorCalculo\Moneda.cs" />
+    <Compile Include="MotorCalculo\ParametroAsh.cs" />
+    <Compile Include="MotorCalculo\Parametros.cs" />
+    <Compile Include="MotorCalculo\Plan.cs" />
+    <Compile Include="MotorCalculo\Poliza.cs" />
+    <Compile Include="MotorCalculo\RendimientosInversionTemporal.cs" />
+    <Compile Include="MotorCalculo\Rescate.cs" />
+    <Compile Include="MotorCalculo\Reserva.cs" />
+    <Compile Include="MotorCalculo\Respuesta.cs" />
+    <Compile Include="MotorCalculo\SpreadRescate.cs" />
+    <Compile Include="MotorCalculo\TablaIcob.cs" />
+    <Compile Include="MotorCalculo\TablaMortalidad.cs" />
+    <Compile Include="MotorCalculo\TablaVOLA.cs" />
+    <Compile Include="MotorCalculo\TablaVTD.cs" />
+    <Compile Include="MotorCalculo\TasaDuration.cs" />
+    <Compile Include="MotorCalculo\TipoPago.cs" />
+    <Compile Include="MotorCalculo\ValorParametro.cs" />
+    <Compile Include="Nacionalidad.cs" />
+    <Compile Include="Notificacion.cs" />
+    <Compile Include="NotificacionSME.cs" />
+    <Compile Include="OpcionSistema.cs" />
+    <Compile Include="OrigenFondo.cs" />
+    <Compile Include="Parametro.cs" />
+    <Compile Include="CapitalRequerido.cs" />
+    <Compile Include="ParametroCotizador.cs" />
+    <Compile Include="ParametroCotizadorWS.cs" />
+    <Compile Include="ParametroEspecial.cs" />
+    <Compile Include="ParametroGeneral.cs" />
+    <Compile Include="Parentesco.cs" />
+    <Compile Include="Parinv.cs" />
+    <Compile Include="PjeBen.cs" />
+    <Compile Include="Plan.cs" />
+    <Compile Include="Poliza.cs" />
+    <Compile Include="PolizaRV.cs" />
+    <Compile Include="PolizasDashboard.cs" />
+    <Compile Include="PorcentajeComision.cs" />
+    <Compile Include="Producto.cs" />
+    <Compile Include="Profesion.cs" />
+    <Compile Include="Pronostico.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provincia.cs" />
+    <Compile Include="RecaptchaResponse.cs" />
+    <Compile Include="ReporteCotizacion.cs" />
+    <Compile Include="ReporteCotizacionesGanadas.cs" />
+    <Compile Include="ReporteCotizacionesGanadasBeneficiarios.cs" />
+    <Compile Include="ReporteIndicadores.cs" />
+    <Compile Include="ReporteIndicadoresDetalle.cs" />
+    <Compile Include="ReporteIndicadoresRRVV.cs" />
+    <Compile Include="ReporteRecalculoCotizacion.cs" />
+    <Compile Include="ReporteRecalculoCotizacionBeneficiarios.cs" />
+    <Compile Include="ReporteRecalculoCotizacionDetalle.cs" />
+    <Compile Include="ReporteTrazabilidad.cs" />
+    <Compile Include="ResponseVTiger.cs" />
+    <Compile Include="Respuesta.cs" />
+    <Compile Include="RespuestaCotizacion.cs" />
+    <Compile Include="RespuestaPlaft.cs" />
+    <Compile Include="RolAcom.cs" />
+    <Compile Include="RolAzmanTipoMovimiento.cs" />
+    <Compile Include="CuotasTra.cs" />
+    <Compile Include="RolDcom.cs" />
+    <Compile Include="RolDtra.cs" />
+    <Compile Include="RviBdIni.cs" />
+    <Compile Include="RviCotiza.cs" />
+    <Compile Include="SDAReporte.cs" />
+    <Compile Include="Seguimiento.cs" />
+    <Compile Include="SeguimientoEnvioSMS.cs" />
+    <Compile Include="SMEEnvio.cs" />
+    <Compile Include="Solicitud.cs" />
+    <Compile Include="SolicitudAcceso.cs" />
+    <Compile Include="SolicitudEscenario.cs" />
+    <Compile Include="SolicitudesCerradas.cs" />
+    <Compile Include="SolicitudIFP.cs" />
+    <Compile Include="SolicitudRP.cs" />
+    <Compile Include="SolicitudRPPlus.cs" />
+    <Compile Include="Supervision.cs" />
+    <Compile Include="Telefono.cs" />
+    <Compile Include="Temporal.cs" />
+    <Compile Include="Temporalidad.cs" />
+    <Compile Include="TipoCalculo.cs" />
+    <Compile Include="TipoCotizacion.cs" />
+    <Compile Include="TipoFlujoMovimiento.cs" />
+    <Compile Include="TipoInvalidez.cs" />
+    <Compile Include="TipoMovimiento.cs" />
+    <Compile Include="TipoPension.cs" />
+    <Compile Include="TipoPlan.cs" />
+    <Compile Include="TipoRenta.cs" />
+    <Compile Include="TipoTelefono.cs" />
+    <Compile Include="UbigeoDireccion.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="ValPar.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

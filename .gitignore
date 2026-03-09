@@ -1,0 +1,48 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+bin/
+obj/Debug
+Logs/
+Publish/
+packages/
+
+# dotnet
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vs
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+/Interseguro.CWRV.Presentacion.ASPNET/ArchivosTemporales/RVI/Consentimiento/~$indicadores.xls
+/Interseguro.CWRV.ServiciosDistribuidos/ArchivoParametroIFP
+/Interseguro.CWRV.Presentacion.ASPNET/ArchivosTemporales/*
+
+# Referencias
+#Interseguro.CWRV.Presentacion.AgenteServicios/Service References/

@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57459/ServiceADMWR.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" />
+  <xs:import schemaLocation="http://localhost:57459/ServiceADMWR.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ValidarToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ValidarTokenResult" nillable="true" type="q1:SolicitudAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSolicitudAcceso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="solicitud" nillable="true" type="q2:SolicitudAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSolicitudAccesoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ActualizarSolicitudAccesoResult" nillable="true" type="q3:SolicitudAcceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarPoliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="poliza" nillable="true" type="q4:Poliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="RegistrarPolizaResult" nillable="true" type="q5:Poliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPoliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="poliza" nillable="true" type="q6:Poliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarPolizaResult" nillable="true" type="q7:ArrayOfPoliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPoliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="BuscarPolizaResult" nillable="true" type="q8:Poliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarBeneficiario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="beneficiario" nillable="true" type="q9:Beneficiario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarBeneficiarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarBeneficiarioResult" nillable="true" type="q10:ArrayOfBeneficiario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarBeneficiario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarBeneficiarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="BuscarBeneficiarioResult" nillable="true" type="q11:Beneficiario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="direccion" nillable="true" type="q12:Direccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDireccionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarDireccionResult" nillable="true" type="q13:ArrayOfDireccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDireccionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="BuscarDireccionResult" nillable="true" type="q14:Direccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="persona" nillable="true" type="q15:Persona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarPersonaResult" nillable="true" type="q16:ArrayOfPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="BuscarPersonaResult" nillable="true" type="q17:Persona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoIdentificacionPoliza">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoIdentificacionPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarTipoIdentificacionPolizaResult" nillable="true" type="q18:ArrayOfTipoIdentificacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPendientePrimerPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="periodo" type="xs:int" />
+        <xs:element minOccurs="0" name="mes" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPendientePrimerPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarPendientePrimerPagoResult" nillable="true" type="q19:ArrayOfBeneficiario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPolizaPagoIndividual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="periodo" type="xs:int" />
+        <xs:element minOccurs="0" name="mes" type="xs:int" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPolizaPagoIndividualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarPolizaPagoIndividualResult" nillable="true" type="q20:ArrayOfBeneficiario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCombobox">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerComboboxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ObtenerComboboxResult" nillable="true" type="q21:Parametro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAjusteIPCPolizaPrimerPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="lstAjusteIPC" nillable="true" type="q22:ArrayOfAjusteIPC" />
+        <xs:element minOccurs="0" name="fec_devengue" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fec_periodo" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAjusteIPCPolizaPrimerPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarAjusteIPCPolizaPrimerPagoResult" nillable="true" type="q23:ArrayOfAjusteIPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAjusteMoneda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fec_devengue" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fec_periodo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="val_pje_anual" type="xs:double" />
+        <xs:element minOccurs="0" name="num_mes_aju" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAjusteMonedaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarAjusteMonedaResult" nillable="true" type="q24:ArrayOfAjusteMoneda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearPrimerPago">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="lstBeneficiario" nillable="true" type="q25:ArrayOfBeneficiario" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q26:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearPrimerPagoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CrearPrimerPagoResult" nillable="true" type="q27:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearPagoMasivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="lstBeneficiario" nillable="true" type="q28:ArrayOfBeneficiario" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q29:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_banco" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda_prima" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearPagoMasivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CrearPagoMasivoResult" nillable="true" type="q30:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDefinicionHabDes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="definicionHabDes" nillable="true" type="q31:DefinicionHabDes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDefinicionHabDesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarDefinicionHabDesResult" nillable="true" type="q32:ArrayOfDefinicionHabDes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CierrePeriodo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q33:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CierrePeriodoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CierrePeriodoResult" nillable="true" type="q34:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportePlanillaExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipo_fecha" type="xs:int" />
+        <xs:element minOccurs="0" name="fec_inicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fec_final" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cod_tipo_planilla" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_banco" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="num_lote" type="xs:long" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportePlanillaExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportePlanillaExcelResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarArchivoBancosTXT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num_lote" type="xs:long" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstNombresArchivos" nillable="true" type="q35:ArrayOfstring" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarArchivoBancosTXTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GenerarArchivoBancosTXTResult" nillable="true" type="q36:ArrayOfbase64Binary" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstNombresArchivos" nillable="true" type="q37:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLotesPendientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ind_trama" type="xs:int" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fec_ini_pago" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fec_fin_pago" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLotesPendientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarLotesPendientesResult" nillable="true" type="q38:ArrayOfLote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteComparativoPlanillaPagos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fec_per_pago" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cod_tipo_planilla" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_origen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_producto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteComparativoPlanillaPagosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReporteComparativoPlanillaPagosResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearCtrProcesos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ctrProcesos" nillable="true" type="q39:CtrProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearCtrProcesosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CrearCtrProcesosResult" nillable="true" type="q40:CtrProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCtrProcesos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ctrProcesos" nillable="true" type="q41:CtrProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCtrProcesosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ActualizarCtrProcesosResult" nillable="true" type="q42:CtrProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCtrProcesos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ctrProcesos" nillable="true" type="q43:CtrProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarCtrProcesosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarCtrProcesosResult" nillable="true" type="q44:ArrayOfCtrProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CierrePeriodoReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodoReserva" nillable="true" type="q45:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CierrePeriodoReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CierrePeriodoReservaResult" nillable="true" type="q46:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturaPolizasReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q47:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturaPolizasReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CapturaPolizasReservaResult" nillable="true" type="q48:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculosFlujos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q49:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculosFlujosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CalculosFlujosResult" nillable="true" type="q50:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculosFlujosExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q51:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="archivoExcel" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculosFlujosExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CalculosFlujosExcelResult" nillable="true" type="q52:Respuesta" />
+        <xs:element minOccurs="0" name="archivoExcel" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculosReserva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="periodo" nillable="true" type="q53:Periodo" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculosReservaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="CalculosReservaResult" nillable="true" type="q54:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteTotalDetalle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteTotalDetalleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReporteTotalDetalleResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteDetalleFlujo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fec_periodo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ind_sepelio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteDetalleFlujoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReporteDetalleFlujoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteCuadroOperaciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fec_periodo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="temporalidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteCuadroOperacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReporteCuadroOperacionesResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteFlujoPoliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReporteFlujoPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReporteFlujoPolizaResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLotesContabilidad">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLotesContabilidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarLotesContabilidadResult" nillable="true" type="q55:ArrayOfLote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarArchivoContabilidadTXT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num_lote" type="xs:long" />
+        <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstNombresArchivos" nillable="true" type="q56:ArrayOfstring" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarArchivoContabilidadTXTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GenerarArchivoContabilidadTXTResult" nillable="true" type="q57:ArrayOfbase64Binary" />
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstNombresArchivos" nillable="true" type="q58:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArmarMenuLateral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="poliza" nillable="true" type="q59:Poliza" />
+        <xs:element minOccurs="0" name="request" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArmarMenuLateralResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ArmarMenuLateralResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDepartamentos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDepartamentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarDepartamentosResult" nillable="true" type="q60:ArrayOfDepartamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarProvincia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarProvinciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarProvinciaResult" nillable="true" type="q61:ArrayOfProvincia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDistrito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="provincia" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDistritoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarDistritoResult" nillable="true" type="q62:ArrayOfDistrito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoVia">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoViaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ListarTipoViaResult" nillable="true" type="q63:ArrayOfTipoVia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="direccion" nillable="true" type="q64:Direccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDireccionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ActualizarDireccionResult" nillable="true" type="q65:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarBeneficiario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="beneficiario" nillable="true" type="q66:Beneficiario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarBeneficiarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="ActualizarBeneficiarioResult" nillable="true" type="q67:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarDireccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="direccion" nillable="true" type="q68:Direccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarDireccionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Interseguro.ADMWR.Dominio.Entidades" minOccurs="0" name="InsertarDireccionResult" nillable="true" type="q69:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

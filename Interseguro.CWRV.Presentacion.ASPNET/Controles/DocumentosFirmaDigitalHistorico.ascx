@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentosFirmaDigitalHistorico.ascx.cs" Inherits="Interseguro.CWRV.Presentacion.ASPNET.Controles.DocumentosFirmaDigitalHistorico" %>
+<asp:Literal ID="Pestanhas" runat="server"></asp:Literal>
