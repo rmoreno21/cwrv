@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <style>
+        .tipoLetra {
+            font-family: 'arial';
+            font-size: 9pt;
+        }
+
+        .margen {
+            margin-left: 2cm;
+            margin-right: 1.5cm;
+        }
+
+        td {
+            height: 16px;
+        }
+		
+		.tipoLetraTitulo {
+            font-family: 'arial';
+            font-size: 13pt;
+        }
+		
+		.tipoLetraSubTitulo {
+            font-family: 'arial';
+            font-size: 11pt;
+        }
+		
+		.tipoLetraCabecera {
+            font-family: 'arial';
+            font-size: 7pt;
+        }
+		
+		.tipoLetraCabeceraMedia {
+            font-family: 'arial';
+            font-size: 8pt;
+        }
+
+    </style>
+
+    <title></title>
+	
+</head>
+
+<body class='tipoLetra margen'>
+
+    <table class='tipoLetra' width='610'>
+        <tbody>
+            <tr>
+                <td width='305'>
+					<div style='width: 205px; height: 54px;'>
+						<img src='{ruta_logo}' />
+					</div>
+                    					
+                </td>
+                
+				<td width='305'>
+                    <p class='tipoLetraCabecera' style='text-align: right;'><span>Fecha: {fecha}</span></p>
+					<p class='tipoLetraCabecera' style='text-align: right;'><span>Hora: {hora}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	
+    <p class='tipoLetraTitulo' style='text-align: center;'><span style='color: #000000;'><strong>RESULTADO DE COTIZACIONES GANADAS - MELER</strong></span></p>
+    
+	<table class='tipoLetra' width='610'>
+        <tbody>
+            <tr>
+                <td width='305'>
+					<p class='tipoLetraCabeceraMedia' style='text-align: center;'><span>Nro operaci&oacute;n: {nroOperacion}</span></p>			
+                </td>
+                
+				<td width='305'>
+                    <p class='tipoLetraCabeceraMedia' style='text-align: center;'><span>AFP: {afp}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	
+	<p class='tipoLetraSubTitulo'><span><strong>Datos del Afiliado</strong></span></p>
+	
+    <table class='tipoLetra' width='610'>
+        <tbody>
+			<tr>
+                <td colspan='4' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <td width='135'>
+                    CUSPP:
+                </td>
+                <td colspan="3" width='400'>
+                    {cuspp}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='135'>
+                    Afiliado:
+                </td>
+                <td colspan="3" width='400'>
+                    {Afiliado}
+                </td>
+            </tr>
+			
+            <tr>
+                <td width='135'>
+                    Tipo de documento:
+                </td>
+                <td colspan="3" width='400'>
+                    {tipoDocumento}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='165'>
+                    N&uacute;mero de documento:
+                </td>
+                <td width='140'>
+                    {numeroDocumento}
+                </td>
+				
+				<td width='165'>
+                    Sexo:
+                </td>
+                <td width='140'>
+                    {sexo}
+                </td>				
+            </tr>
+			
+			<tr>
+                <td width='165'>
+                    Fecha de nacimiento:
+                </td>
+                <td width='140'>
+                    {fechaNacimiento}
+                </td>
+				
+				<td width='165'>
+                    Grado de invalidez:
+                </td>
+                <td width='140'>
+                    {gradoInvalidez}
+                </td>				
+            </tr>
+			
+			<tr>
+                <td width='135'>
+                    Estado de sobrevivencia:
+                </td>
+                <td colspan="3" width='400'>
+                    {estadoSobrevivencia}
+                </td>
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<p class='tipoLetraSubTitulo'><span><strong>Datos de la Solicitud</strong></span></p>
+		
+    <table class='tipoLetra' width='610'>
+        <tbody>
+            <tr>
+                <td colspan='4' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Tipo de pensi&oacute;n:
+                </td>
+                <td width='165'>
+                    {tipoPension}
+                </td>				
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    Cambio de modalidad:
+                </td>				
+                <td width='165'>
+                    {cambioModalidad}
+                </td>
+								
+                <td width='140'>
+                    Pensi&oacute;n preliminar:
+                </td>				
+                <td width='165'>
+                    {pensionPreliminar}
+                </td>
+            </tr>
+			
+			<tr>
+               <td width='140'>
+                    Tasa AFP:
+                </td>
+                <td width='165'>
+                    {tasaAFP}
+                </td>
+				<td width='140'>
+                    Tipo de cambio:
+                </td>
+                <td width='165'>
+                    {tipoCambio}
+                </td>
+            </tr>
+           
+			<tr>
+                <td width='140'>
+                    Fecha de env&iacute;o:
+                </td>
+                <td width='165'>
+                    {fechaEnvio}
+                </td>
+				<td width='140'>
+                    Ajuste moneda:
+                </td>
+                <td width='165'>
+                    {ajusteMoneda}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Fecha de devengue:
+                </td>
+                <td width='165'>
+                    {fechaDevengue}
+                </td>
+				<td width='140'>
+                    Fecha de cierre:
+                </td>
+                <td width='165'>
+                    {fechaCierre}
+                </td>
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<p class='tipoLetraSubTitulo'><span><strong>Datos del Fondo</strong></span></p>
+	
+    <table class='tipoLetra' width='610'>
+        <tbody>
+            <tr>
+                <td colspan='4' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    Capital de pensi&oacute;n:
+                </td>				
+                <td width='165'>
+                    {capitalPension}
+                </td>
+								
+                <td width='140'>
+                    Saldo CIC:
+                </td>				
+                <td width='165'>
+                    {saldoCIC}
+                </td>
+            </tr>
+			
+			<tr>
+               <td width='140'>
+                    Valor cuota:
+                </td>
+                <td width='165'>
+                    {valorCuota}
+                </td>
+				<td width='140'>
+                    Saldo cuotas:
+                </td>
+                <td width='165'>
+                    {saldoCuotas}
+                </td>
+            </tr>
+           
+			<tr>
+                <td width='140'>
+                    Bono actualizado:
+                </td>
+                <td width='165'>
+                    {bonoActualizado}
+                </td>
+				<td width='140'>
+                    Tiene cobertura:
+                </td>
+                <td width='165'>
+                    {tieneCobertura}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Aporte adicional:
+                </td>
+                <td width='165'>
+                    {aporteAdicional}
+                </td>
+				<td width='140'>
+                    Tipo de compra AA:
+                </td>
+                <td width='165'>
+                    {tipoCompraAA}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='135'>
+                    Compa&ntilde;ia:
+                </td>
+                <td colspan="3" width='400'>
+                    {compania}
+                </td>
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<p class='tipoLetraSubTitulo'><span><strong>Detalle del Producto</strong></span></p>
+	
+	<table class='tipoLetra' width='610'>
+        <tbody>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <th style="width:250px">Modalidad</th>
+				<th style="width:50px">Moneda</th>
+				<th style="width:40px">A&ntilde;os RT</th> 
+				<th style="width:40px">% RVD</th>
+				<th style="width:30px">PG</th>
+				<th style="width:30px">DC</th>
+				<th style="width:30px">GR</th> 
+				<th style="width:40px">% Cob. C&oacute;nyuge</th>
+				<th style="width:40px">% Capital US$</th> 
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <td width='250'>
+                    {modalidad}
+                </td>
+                <td width='50'>
+                    {moneda}
+                </td>
+				<td width='40'>
+                    {aniosRT}
+                </td>
+                <td width='40'>
+                    {pRVD}
+                </td>
+                <td width='30'>
+                    {PG}
+                </td>
+				<td width='30'>
+                    {DC}
+                </td>
+                <td width='30'>
+                    {GR}
+                </td>
+				<td width='40'>
+                    {pCobConyuge}
+                </td>
+                <td width='40'>
+                    {pCapital}
+                </td>
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<p class='tipoLetraSubTitulo'><span><strong>Detalle de los Beneficiarios</strong></span></p>
+
+	<table class='tipoLetra' width='610'>
+        <tbody>
+			
+			<tr>
+                <td colspan='8' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+				<th style="width:250px">Nombre del beneficiario</th>
+				<th style="width:60px">Parentesco</th>	
+				<th style="width:30px">Inv.</th>		
+				<th style="width:60px">F. Nacimie.</th>
+				<th style="width:60px">Sex.</th>
+            </tr>
+			
+			<tr>
+                <td colspan='8' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            {Beneficiarios}
+			
+			<tr>
+                <td colspan='8' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<br />
+	<br />
+	<br />
+
+<pre class='tipoLetraCabeceraMedia'>
+PG: Número de años de Periodo Garantizado
+DC: Cláusula de Derecho a Crecer
+GR: Cláusula de Gratificación
+% CAPITAL: Es el porcentaje de capital para el cálculo de la pensión en dólares, válido sólo para Renta Mixta y Renta Bimoneda
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FF7011D-3854-4D7F-B7D6-712372BE0879}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interseguro.CWRV.Dominio</RootNamespace>
+    <AssemblyName>Interseguro.CWRV.Dominio</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRepositorio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\IRepositorioCargaControlCdA.cs" />
+    <Compile Include="Repositorios\IRepositorioCargaControlVCTP.cs" />
+    <Compile Include="Repositorios\IRepositorioAporteAdicional.cs" />
+    <Compile Include="Repositorios\IRepositorioCargaLocalidadVCTP.cs" />
+    <Compile Include="Repositorios\IRepositorioCarta.cs" />
+    <Compile Include="Repositorios\IRepositorioCausalPoliza.cs" />
+    <Compile Include="Repositorios\IRepositorioActividad.cs" />
+    <Compile Include="Repositorios\IRepositorioAdelantoComision.cs" />
+    <Compile Include="Repositorios\IRepositorioAfiliado.cs" />
+    <Compile Include="Repositorios\IRepositorioAgente.cs" />
+    <Compile Include="Repositorios\IRepositorioAnticipo.cs" />
+    <Compile Include="Repositorios\IRepositorioCita.cs" />
+    <Compile Include="Repositorios\IRepositorioCiudad.cs" />
+    <Compile Include="Repositorios\IRepositorioComuna.cs" />
+    <Compile Include="Repositorios\IRepositorioConfiguracionMontoCIC.cs" />
+    <Compile Include="Repositorios\IRepositorioDescuentoComision.cs" />
+    <Compile Include="Repositorios\IRepositorioDireccion.cs" />
+    <Compile Include="Repositorios\IRepositorioEmisionPoliza.cs" />
+    <Compile Include="Repositorios\IRepositorioEscenario.cs" />
+    <Compile Include="Repositorios\IRepositorioEstadoCivil.cs" />
+    <Compile Include="Repositorios\IRepositorioFlujoMovimiento.cs" />
+    <Compile Include="Repositorios\IRepositorioGestionVentas.cs" />
+    <Compile Include="Repositorios\IRepositorioGrupoFamiliar.cs" />
+    <Compile Include="Repositorios\IRepositorioIPPermitida.cs" />
+    <Compile Include="Repositorios\IRepositorioLogBD.cs" />
+    <Compile Include="Repositorios\IRepositorioLote.cs" />
+    <Compile Include="Repositorios\IRepositorioMotorCalculo.cs" />
+    <Compile Include="Repositorios\IRepositorioParametro.cs" />
+    <Compile Include="Repositorios\IRepositorioParametroGeneral.cs" />
+    <Compile Include="Repositorios\IRepositorioProducto.cs" />
+    <Compile Include="Repositorios\IRepositorioProfesion.cs" />
+    <Compile Include="Repositorios\IRepositorioReporteCotizacion.cs" />
+    <Compile Include="Repositorios\IRepositorioReporteIndicadores.cs" />
+    <Compile Include="Repositorios\IRepositorioReportes.cs" />
+    <Compile Include="Repositorios\IRepositorioRolAcom.cs" />
+    <Compile Include="Repositorios\IRepositorioCuotasTra.cs" />
+    <Compile Include="Repositorios\IRepositorioRolDcom.cs" />
+    <Compile Include="Repositorios\IRepositorioRolDtra.cs" />
+    <Compile Include="Repositorios\IRepositorioSeguimiento.cs" />
+    <Compile Include="Repositorios\IRepositorioSolicitud.cs" />
+    <Compile Include="Repositorios\IRepositorioSolicitudAcceso.cs" />
+    <Compile Include="Repositorios\IRepositorioSolicitudEscenario.cs" />
+    <Compile Include="Repositorios\IRepositorioSolicitudIFP.cs" />
+    <Compile Include="Repositorios\IRepositorioSolicitudRP.cs" />
+    <Compile Include="Repositorios\IRepositorioSolicitudRPPlus.cs" />
+    <Compile Include="Repositorios\IRepositorioSupervision.cs" />
+    <Compile Include="Repositorios\IRepositorioTelefono.cs" />
+    <Compile Include="Repositorios\IRepositorioTemporal.cs" />
+    <Compile Include="Repositorios\IRepositorioTipoMovimiento.cs" />
+    <Compile Include="Repositorios\IRepositorioUsuario.cs" />
+    <Compile Include="Repositorios\IRepositorioNacionalidad.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio.Entidades\Interseguro.CWRV.Dominio.Entidades.csproj">
+      <Project>{E957A78D-1F02-41DB-A31C-74ACB67513E1}</Project>
+      <Name>Interseguro.CWRV.Dominio.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

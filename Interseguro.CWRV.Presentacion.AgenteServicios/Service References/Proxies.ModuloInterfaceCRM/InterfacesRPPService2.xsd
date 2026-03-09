@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfParametroGeneral">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParametroGeneral" nillable="true" type="tns:ParametroGeneral" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParametroGeneral" nillable="true" type="tns:ArrayOfParametroGeneral" />
+  <xs:complexType name="ParametroGeneral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametroGeneral" nillable="true" type="tns:ParametroGeneral" />
+  <xs:complexType name="ArrayOfContratante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contratante" nillable="true" type="tns:Contratante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContratante" nillable="true" type="tns:ArrayOfContratante" />
+  <xs:complexType name="Contratante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DireccionDomicilio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DireccionTrabajo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="annualincome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailaddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_actividadeconomicaname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_centrolaboral" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_departamentoparticular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_departamentoparticularname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_distritoparticularname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_estadocivil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_estadocivilname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_nacionalidadname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_profesioncotizador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_provinciaparticularname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_ram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="inter_telefonofijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="jobtitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobilephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contratante" nillable="true" type="tns:Contratante" />
+  <xs:complexType name="ArrayOfUbigeo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ubigeo" nillable="true" type="tns:Ubigeo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUbigeo" nillable="true" type="tns:ArrayOfUbigeo" />
+  <xs:complexType name="Ubigeo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ubigeo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ubigeo" nillable="true" type="tns:Ubigeo" />
+</xs:schema>

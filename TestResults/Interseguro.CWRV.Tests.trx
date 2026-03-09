@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="1bc352fc-3ef2-446e-86d7-2ef5050ff67e" name="rmorenol@IS00694 2026-03-05 11:15:13" runUser="DINTERSEGURO\rmorenol" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-03-05T11:15:13.1281550-05:00" queuing="2026-03-05T11:15:13.1281575-05:00" start="2026-03-05T11:15:09.2110648-05:00" finish="2026-03-05T11:15:13.1961420-05:00" />
+  <TestSettings name="default" id="dc2b3dee-84f8-442c-bc07-98c5d9c45115">
+    <Deployment runDeploymentRoot="rmorenol_IS00694_2026-03-05_11_15_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="5b2ae101-12ae-4c19-a463-788b1c2a2735" testId="d706b160-6295-1529-e474-a69cca8851dc" testName="SolicitarAcceso_CuandoIpPermitida_DebeRetornarAccesoExitosoYRegistrarSolicitud" computerName="IS00694" duration="00:00:00.0374160" startTime="2026-03-05T11:15:11.9470832-05:00" endTime="2026-03-05T11:15:12.0687403-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b2ae101-12ae-4c19-a463-788b1c2a2735" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SolicitarAcceso_CuandoIpPermitida_DebeRetornarAccesoExitosoYRegistrarSolicitud" storage="d:\rentas\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="d706b160-6295-1529-e474-a69cca8851dc">
+      <Execution id="5b2ae101-12ae-4c19-a463-788b1c2a2735" />
+      <TestMethod codeBase="D:\Rentas\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SmokeTests" name="SolicitarAcceso_CuandoIpPermitida_DebeRetornarAccesoExitosoYRegistrarSolicitud" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d706b160-6295-1529-e474-a69cca8851dc" executionId="5b2ae101-12ae-4c19-a463-788b1c2a2735" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados sin formato de lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

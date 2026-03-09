@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.interseguro.com.pe/InterfacesRPPCrmServices/" elementFormDefault="qualified" targetNamespace="http://www.interseguro.com.pe/InterfacesRPPCrmServices/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dean.interseguro.com.pe/wsINTCRM/InterfacesRPPService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" />
+  <xs:element name="ListarProfesion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarProfesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="ListarProfesionResult" nillable="true" type="q1:ArrayOfParametroGeneral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarEstadoCivil">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarEstadoCivilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="ListarEstadoCivilResult" nillable="true" type="q2:ArrayOfParametroGeneral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarNacionalidad">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarNacionalidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="ListarNacionalidadResult" nillable="true" type="q3:ArrayOfParametroGeneral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDepartamento">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="ListarDepartamentoResult" nillable="true" type="q4:ArrayOfParametroGeneral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAfiliado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numCusp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAfiliadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="ListarAfiliadoResult" nillable="true" type="q5:ArrayOfContratante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormListarDepartamento">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormListarDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="FormListarDepartamentoResult" nillable="true" type="q6:ArrayOfUbigeo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormListarDistrito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormListarDistritoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="FormListarDistritoResult" nillable="true" type="q7:ArrayOfUbigeo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormListarProvincia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FormListarProvinciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" minOccurs="0" name="FormListarProvinciaResult" nillable="true" type="q8:ArrayOfUbigeo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

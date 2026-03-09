@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.interseguro.com.pe/InterfacesRPPCrmServices/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InterfacesRPPService" targetNamespace="http://www.interseguro.com.pe/InterfacesRPPCrmServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.interseguro.com.pe/InterfacesRPPCrmServices/Imports">
+      <xsd:import schemaLocation="http://kuja:8088/Crm/InterfacesRPPService.svc?xsd=xsd0" namespace="http://www.interseguro.com.pe/InterfacesRPPCrmServices/" />
+      <xsd:import schemaLocation="http://kuja:8088/Crm/InterfacesRPPService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://kuja:8088/Crm/InterfacesRPPService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Interseguro.Crm.Domain.Modelo" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInterfacesRPPService_ListarProfesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProfesion" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarProfesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProfesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarEstadoCivil_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEstadoCivil" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarEstadoCivil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEstadoCivilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarNacionalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarNacionalidad" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarNacionalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarNacionalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarAfiliado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAfiliado" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_ListarAfiliado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAfiliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_FormListarDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormListarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_FormListarDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormListarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_FormListarDistrito_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormListarDistrito" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_FormListarDistrito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormListarDistritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_FormListarProvincia_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormListarProvincia" />
+  </wsdl:message>
+  <wsdl:message name="IInterfacesRPPService_FormListarProvincia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormListarProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInterfacesRPPService">
+    <wsdl:operation name="ListarProfesion">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarProfesion" message="tns:IInterfacesRPPService_ListarProfesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarProfesionResponse" message="tns:IInterfacesRPPService_ListarProfesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstadoCivil">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarEstadoCivil" message="tns:IInterfacesRPPService_ListarEstadoCivil_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarEstadoCivilResponse" message="tns:IInterfacesRPPService_ListarEstadoCivil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarNacionalidad">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarNacionalidad" message="tns:IInterfacesRPPService_ListarNacionalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarNacionalidadResponse" message="tns:IInterfacesRPPService_ListarNacionalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDepartamento">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarDepartamento" message="tns:IInterfacesRPPService_ListarDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarDepartamentoResponse" message="tns:IInterfacesRPPService_ListarDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAfiliado">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarAfiliado" message="tns:IInterfacesRPPService_ListarAfiliado_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarAfiliadoResponse" message="tns:IInterfacesRPPService_ListarAfiliado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FormListarDepartamento">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarDepartamento" message="tns:IInterfacesRPPService_FormListarDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarDepartamentoResponse" message="tns:IInterfacesRPPService_FormListarDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FormListarDistrito">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarDistrito" message="tns:IInterfacesRPPService_FormListarDistrito_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarDistritoResponse" message="tns:IInterfacesRPPService_FormListarDistrito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FormListarProvincia">
+      <wsdl:input wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarProvincia" message="tns:IInterfacesRPPService_FormListarProvincia_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarProvinciaResponse" message="tns:IInterfacesRPPService_FormListarProvincia_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInterfacesRPPService" type="tns:IInterfacesRPPService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarProfesion">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarProfesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstadoCivil">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarEstadoCivil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarNacionalidad">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarNacionalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDepartamento">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAfiliado">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/ListarAfiliado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormListarDepartamento">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormListarDistrito">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarDistrito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormListarProvincia">
+      <soap:operation soapAction="http://www.interseguro.com.pe/InterfacesRPPCrmServices/IInterfacesRPPService/FormListarProvincia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InterfacesRPPService">
+    <wsdl:port name="BasicHttpBinding_IInterfacesRPPService" binding="tns:BasicHttpBinding_IInterfacesRPPService">
+      <soap:address location="http://kuja:8088/Crm/InterfacesRPPService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

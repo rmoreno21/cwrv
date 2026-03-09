@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f54b4675-d219-4d4b-8cf2-bc20fa8afdd5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6060/ServicioMotorIFP.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioMotorIFP.xsd" MetadataType="Schema" ID="3902c7c3-c590-4d9d-a307-6f3ec2720d76" SourceId="1" SourceUrl="http://localhost:6060/ServicioMotorIFP.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioMotorIFP.disco" MetadataType="Disco" ID="1766cc17-d4b4-4335-9232-3ca328f9b014" SourceId="1" SourceUrl="http://localhost:6060/ServicioMotorIFP.svc?disco" />
+    <MetadataFile FileName="ServicioMotorIFP1.xsd" MetadataType="Schema" ID="248c4d71-3a4c-4c08-8a37-6c73ad8e5963" SourceId="1" SourceUrl="http://localhost:6060/ServicioMotorIFP.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioMotorIFP.wsdl" MetadataType="Wsdl" ID="a5b0f2e9-2a12-4e9d-9659-20765128978c" SourceId="1" SourceUrl="http://localhost:6060/ServicioMotorIFP.svc?wsdl" />
+    <MetadataFile FileName="ServicioMotorIFP2.xsd" MetadataType="Schema" ID="d2ba6f5d-b8e1-4895-a02d-b8bc07758a78" SourceId="1" SourceUrl="http://localhost:6060/ServicioMotorIFP.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Interseguro.CWRV.ServiciosAcceso.ServicioAccesoCWRV" Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory" %>

@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Interseguro.MotorIFP.Dominio.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Interseguro.MotorIFP.Dominio.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Parametros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_monedaIFP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_tipo_temporalidadIFP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cotizacion" nillable="true" type="tns:Cotizacion" />
+      <xs:element minOccurs="0" name="factores_anti_seleccion" nillable="true" type="tns:ArrayOfFactorAntiSeleccion" />
+      <xs:element minOccurs="0" name="factores_mejoras" nillable="true" type="tns:ArrayOfFactorMejora" />
+      <xs:element minOccurs="0" name="factores_pumi" nillable="true" type="tns:ArrayOfFactorPUMI" />
+      <xs:element minOccurs="0" name="fec_cotizacionIFP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_per_sistema" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="icob_ajustados" nillable="true" type="tns:ArrayOfTablaIcob" />
+      <xs:element minOccurs="0" name="icob_nominales" nillable="true" type="tns:ArrayOfTablaIcob" />
+      <xs:element minOccurs="0" name="informacion_factores_mejoras" nillable="true" type="tns:ArrayOfInformacionFactorMejora" />
+      <xs:element minOccurs="0" name="inversiones_temporales" nillable="true" type="tns:ArrayOfInversionTemporal" />
+      <xs:element minOccurs="0" name="inversiones_vitalicias" nillable="true" type="tns:ArrayOfInversionVitalicia" />
+      <xs:element minOccurs="0" name="poliza" nillable="true" type="tns:Poliza" />
+      <xs:element minOccurs="0" name="rendimientos_inversiones_temporales" nillable="true" type="tns:ArrayOfRendimientosInversionTemporal" />
+      <xs:element minOccurs="0" name="spread_rescate" nillable="true" type="tns:ArrayOfSpreadRescate" />
+      <xs:element minOccurs="0" name="tablas_mortalidad" nillable="true" type="tns:ArrayOfTablaMortalidad" />
+      <xs:element minOccurs="0" name="tasa_duration" nillable="true" type="tns:ArrayOfTasaDuration" />
+      <xs:element minOccurs="0" name="tipo_calculo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo_producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Parametros" nillable="true" type="tns:Parametros" />
+  <xs:complexType name="Cotizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Plan" nillable="true" type="tns:Plan" />
+      <xs:element minOccurs="0" name="beneficiarios" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element minOccurs="0" name="cob_adic_cap_fallec" type="xs:int" />
+      <xs:element minOccurs="0" name="cob_adic_dev" type="xs:int" />
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_tipo_temporalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="factores_documento" nillable="true" type="tns:ArrayOfFactorDocumento" />
+      <xs:element minOccurs="0" name="fec_cotizacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_devengue" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_documento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_fin_vigencia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_inicio_vigencia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ind_cotiza" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ind_gratificacion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ind_sepelio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lstRescate" nillable="true" type="tns:ArrayOfRescate" />
+      <xs:element minOccurs="0" name="num_correlativo" type="xs:long" />
+      <xs:element minOccurs="0" name="num_error_cot" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_diferidos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_garantizados" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_pagos_doble" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_temporalidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_solicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parametro_ash" nillable="true" type="tns:ParametroAsh" />
+      <xs:element minOccurs="0" name="reserva" nillable="true" type="tns:Reserva" />
+      <xs:element minOccurs="0" name="respuesta" nillable="true" type="tns:Respuesta" />
+      <xs:element minOccurs="0" name="val_1era_prima_is" type="xs:double" />
+      <xs:element minOccurs="0" name="val_acom" type="xs:double" />
+      <xs:element minOccurs="0" name="val_dcom" type="xs:double" />
+      <xs:element minOccurs="0" name="val_descuento_comision" type="xs:double" />
+      <xs:element minOccurs="0" name="val_fac_cia" type="xs:double" />
+      <xs:element minOccurs="0" name="val_fac_dev" type="xs:double" />
+      <xs:element minOccurs="0" name="val_monto_sepelio" type="xs:double" />
+      <xs:element minOccurs="0" name="val_mto_cia" type="xs:double" />
+      <xs:element minOccurs="0" name="val_mto_cia_sin_comision" type="xs:double" />
+      <xs:element minOccurs="0" name="val_mto_dev" type="xs:double" />
+      <xs:element minOccurs="0" name="val_para_duration" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_dev" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_dev_fallec" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_fallec_ndeveng" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_moneda" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_segundo_periodo" type="xs:double" />
+      <xs:element minOccurs="0" name="val_prima_unica" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_mo" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_sin_diferimiento" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_cesion" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_costo_equiv" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_int_temp" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_int_vit" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_ret_accion" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_venta_ash" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tipo_cambio" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tope_sepelio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_total_cic" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_total_garantizado" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cotizacion" nillable="true" type="tns:Cotizacion" />
+  <xs:complexType name="Plan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plan" nillable="true" type="tns:Plan" />
+  <xs:complexType name="ArrayOfBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Beneficiario" nillable="true" type="tns:Beneficiario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBeneficiario" nillable="true" type="tns:ArrayOfBeneficiario" />
+  <xs:complexType name="Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="tns:Documento" />
+      <xs:element minOccurs="0" name="EstadoBeneficiario" nillable="true" type="tns:EstadoBeneficiario" />
+      <xs:element minOccurs="0" name="EstadoCausalBeneficiario" nillable="true" type="tns:EstadoCausalBeneficiario" />
+      <xs:element minOccurs="0" name="cod_beneficiario" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="cod_parentesco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_sexo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fec_nacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ind_invalido" type="xs:boolean" />
+      <xs:element minOccurs="0" name="item" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="val_pje_adicional" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_renta" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Beneficiario" nillable="true" type="tns:Beneficiario" />
+  <xs:complexType name="Documento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MonedaPago" nillable="true" type="tns:Moneda" />
+      <xs:element minOccurs="0" name="TipoPago" nillable="true" type="tns:TipoPago" />
+      <xs:element minOccurs="0" name="beneficiarios" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element minOccurs="0" name="cob_adic_cap_fallec" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cob_adic_dev" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_plan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_poliza" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="cod_tipo_temporalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="factores_documento" nillable="true" type="tns:ArrayOfFactorDocumento" />
+      <xs:element minOccurs="0" name="fec_cotizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_devengue" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_documento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_emision_poliza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_fin_vigencia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_inicio_vigencia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gls_corta_producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_dig_poliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ind_cotiza" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ind_gratificacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ind_sepelio" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="num_correlativo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="num_error_cot" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_diferidos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_garantizados" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_pagos_doble" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_primer_tramo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_temporalidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_solicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parametro_ash" nillable="true" type="tns:ParametroAsh" />
+      <xs:element minOccurs="0" name="reserva" nillable="true" type="tns:Reserva" />
+      <xs:element minOccurs="0" name="respuesta" nillable="true" type="tns:Respuesta" />
+      <xs:element minOccurs="0" name="val_1era_prima_is" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_acom" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_dcom" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_descuento_comision" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_fac_cia" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_fac_dev" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_monto_sepelio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_mto_cia" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_mto_cia_sin_comision" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_mto_dev" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_dev" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_dev_fallec" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_fallec_ndeveng" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_moneda" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_segundo_periodo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_prima_unica" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_base" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_mo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_original" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_cesion" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_costo_equiv" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_int_temp" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_int_vit" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_ret_accion" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_venta_ash" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tipo_cambio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tope_sepelio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_total_cic" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_total_garantizado" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documento" nillable="true" type="tns:Documento" />
+  <xs:complexType name="Moneda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_moneda_banco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_adicional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_corta_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_moneda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Moneda" nillable="true" type="tns:Moneda" />
+  <xs:complexType name="TipoPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_tipo_pago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_corta_tipo_pago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_tipo_pago" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoPago" nillable="true" type="tns:TipoPago" />
+  <xs:complexType name="ArrayOfFactorDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorDocumento" nillable="true" type="tns:FactorDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorDocumento" nillable="true" type="tns:ArrayOfFactorDocumento" />
+  <xs:complexType name="FactorDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="val_factor" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorDocumento" nillable="true" type="tns:FactorDocumento" />
+  <xs:complexType name="ParametroAsh">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="flg_iajm" type="xs:int" />
+      <xs:element minOccurs="0" name="flg_ibtp" type="xs:int" />
+      <xs:element minOccurs="0" name="flg_icmo" type="xs:int" />
+      <xs:element minOccurs="0" name="flg_ideb" type="xs:int" />
+      <xs:element minOccurs="0" name="flg_ivnt" type="xs:int" />
+      <xs:element minOccurs="0" name="ini_tra2" type="xs:double" />
+      <xs:element minOccurs="0" name="num_nins" type="xs:double" />
+      <xs:element minOccurs="0" name="num_nper" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_htra" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_htva" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_ltra" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_ltva" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_tgpd" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_timp" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_tsbs" type="xs:double" />
+      <xs:element minOccurs="0" name="tas_ttec" type="xs:double" />
+      <xs:element minOccurs="0" name="val_cmor" type="xs:double" />
+      <xs:element minOccurs="0" name="val_coba" type="xs:double" />
+      <xs:element minOccurs="0" name="val_comi" type="xs:double" />
+      <xs:element minOccurs="0" name="val_fcon" type="xs:double" />
+      <xs:element minOccurs="0" name="val_gfi1" type="xs:double" />
+      <xs:element minOccurs="0" name="val_gfi2" type="xs:double" />
+      <xs:element minOccurs="0" name="val_htit" type="xs:double" />
+      <xs:element minOccurs="0" name="val_ltit" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pumi" type="xs:double" />
+      <xs:element minOccurs="0" name="val_rend" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_inv" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametroAsh" nillable="true" type="tns:ParametroAsh" />
+  <xs:complexType name="Reserva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cotizacion" nillable="true" type="tns:Cotizacion" />
+      <xs:element minOccurs="0" name="val_para_duration" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_cru_devolucion" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_cru_fallecimiento" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_cru_pension" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_cru_sepelio" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_devolucion" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_fallecimiento" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_pension" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_pension_cpg" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_pension_spg" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_sepelio" type="xs:double" />
+      <xs:element minOccurs="0" name="val_res_total" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reserva" nillable="true" type="tns:Reserva" />
+  <xs:complexType name="Respuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha_hora" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="titulo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
+  <xs:complexType name="EstadoBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_estado_beneficiario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_corta_estado_ben" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_estado_beneficiario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoBeneficiario" nillable="true" type="tns:EstadoBeneficiario" />
+  <xs:complexType name="EstadoCausalBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_estado_causal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_causal_estado_ben" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_corta_causal_est_ben" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoCausalBeneficiario" nillable="true" type="tns:EstadoCausalBeneficiario" />
+  <xs:complexType name="ArrayOfRescate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rescate" nillable="true" type="tns:Rescate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRescate" nillable="true" type="tns:ArrayOfRescate" />
+  <xs:complexType name="Rescate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mes_rescate" type="xs:int" />
+      <xs:element minOccurs="0" name="spread" type="xs:double" />
+      <xs:element minOccurs="0" name="tasa_rescate_anual" type="xs:double" />
+      <xs:element minOccurs="0" name="tasa_rescate_mensual" type="xs:double" />
+      <xs:element minOccurs="0" name="tasa_venta" type="xs:double" />
+      <xs:element minOccurs="0" name="valor_rescate" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rescate" nillable="true" type="tns:Rescate" />
+  <xs:complexType name="ArrayOfFactorAntiSeleccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorAntiSeleccion" nillable="true" type="tns:FactorAntiSeleccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorAntiSeleccion" nillable="true" type="tns:ArrayOfFactorAntiSeleccion" />
+  <xs:complexType name="FactorAntiSeleccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_sexo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pje_ajuste" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tope" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorAntiSeleccion" nillable="true" type="tns:FactorAntiSeleccion" />
+  <xs:complexType name="ArrayOfFactorMejora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorMejora" nillable="true" type="tns:FactorMejora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorMejora" nillable="true" type="tns:ArrayOfFactorMejora" />
+  <xs:complexType name="FactorMejora">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="num_anio_factor" type="xs:int" />
+      <xs:element minOccurs="0" name="num_edad_mes" type="xs:int" />
+      <xs:element minOccurs="0" name="val_lx_mbh" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mbm" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mih" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mim" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mvh" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mvm" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tipo_beneficiario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorMejora" nillable="true" type="tns:FactorMejora" />
+  <xs:complexType name="ArrayOfFactorPUMI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorPUMI" nillable="true" type="tns:FactorPUMI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorPUMI" nillable="true" type="tns:ArrayOfFactorPUMI" />
+  <xs:complexType name="FactorPUMI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_sexo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pje_ajuste" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tope" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorPUMI" nillable="true" type="tns:FactorPUMI" />
+  <xs:complexType name="ArrayOfTablaIcob">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaIcob" nillable="true" type="tns:TablaIcob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaIcob" nillable="true" type="tns:ArrayOfTablaIcob" />
+  <xs:complexType name="TablaIcob">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_tipo_temporalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="num_imon" type="xs:double" />
+      <xs:element minOccurs="0" name="num_indi" type="xs:double" />
+      <xs:element minOccurs="0" name="val_icop" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lcop" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaIcob" nillable="true" type="tns:TablaIcob" />
+  <xs:complexType name="ArrayOfInformacionFactorMejora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InformacionFactorMejora" nillable="true" type="tns:InformacionFactorMejora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInformacionFactorMejora" nillable="true" type="tns:ArrayOfInformacionFactorMejora" />
+  <xs:complexType name="InformacionFactorMejora">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="num_anio_factor" type="xs:int" />
+      <xs:element minOccurs="0" name="val_tipo_beneficiario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformacionFactorMejora" nillable="true" type="tns:InformacionFactorMejora" />
+  <xs:complexType name="ArrayOfInversionTemporal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InversionTemporal" nillable="true" type="tns:InversionTemporal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInversionTemporal" nillable="true" type="tns:ArrayOfInversionTemporal" />
+  <xs:complexType name="InversionTemporal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_tipo_temporalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ind_devolucion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="num_instrumento" type="xs:int" />
+      <xs:element minOccurs="0" name="num_periodo" type="xs:int" />
+      <xs:element minOccurs="0" name="porc" type="xs:double" />
+      <xs:element minOccurs="0" name="tasa_inv" type="xs:double" />
+      <xs:element minOccurs="0" name="tirc" type="xs:double" />
+      <xs:element minOccurs="0" name="valc" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InversionTemporal" nillable="true" type="tns:InversionTemporal" />
+  <xs:complexType name="ArrayOfInversionVitalicia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InversionVitalicia" nillable="true" type="tns:InversionVitalicia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInversionVitalicia" nillable="true" type="tns:ArrayOfInversionVitalicia" />
+  <xs:complexType name="InversionVitalicia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_tipo_temporalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ind_devolucion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="num_nflu" type="xs:int" />
+      <xs:element minOccurs="0" name="num_nins" type="xs:int" />
+      <xs:element minOccurs="0" name="val_venc" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InversionVitalicia" nillable="true" type="tns:InversionVitalicia" />
+  <xs:complexType name="Poliza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MonedaPago" nillable="true" type="tns:Moneda" />
+      <xs:element minOccurs="0" name="TipoPago" nillable="true" type="tns:TipoPago" />
+      <xs:element minOccurs="0" name="beneficiarios" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element minOccurs="0" name="cod_plan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_poliza" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="cod_version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="factores_documento" nillable="true" type="tns:ArrayOfFactorDocumento" />
+      <xs:element minOccurs="0" name="fec_devengue" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_emision_poliza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_envio_poliza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_facturacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_fin_pago_doble" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_fin_vigencia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_ini_pago_doble" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_inicio_pago" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_inicio_vigencia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_recaudacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_solicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gls_corta_producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_dig_poliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_poliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gls_solicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ind_fallecimiento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ind_sepelio" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="num_cotizacion" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="num_meses_ajuste" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_diferidos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_garantizados" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_primer_tramo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_meses_temporalidad" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="val_dcom" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_factor_ultimo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_monto_sepelio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_ajuste_moneda" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_comision" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_conyuge" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_devolucion" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_devolucion_fallec" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_pje_renta_segundo_tramo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_prima_unica" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_base" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_base_anterior" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_renta_original" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_costo_equiv" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_tra" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_venta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tasa_venta_is" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tc" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_tipo_cambio" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="val_total_cic" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Poliza" nillable="true" type="tns:Poliza" />
+  <xs:complexType name="ArrayOfRendimientosInversionTemporal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RendimientosInversionTemporal" nillable="true" type="tns:RendimientosInversionTemporal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRendimientosInversionTemporal" nillable="true" type="tns:ArrayOfRendimientosInversionTemporal" />
+  <xs:complexType name="RendimientosInversionTemporal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="num_periodo" type="xs:int" />
+      <xs:element minOccurs="0" name="val_parametro" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RendimientosInversionTemporal" nillable="true" type="tns:RendimientosInversionTemporal" />
+  <xs:complexType name="ArrayOfSpreadRescate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpreadRescate" nillable="true" type="tns:SpreadRescate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpreadRescate" nillable="true" type="tns:ArrayOfSpreadRescate" />
+  <xs:complexType name="SpreadRescate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_tipo_temporalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fec_fin_vigencia" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fec_inicio_vigencia" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ind_origen" type="xs:int" />
+      <xs:element minOccurs="0" name="num_mes" type="xs:int" />
+      <xs:element minOccurs="0" name="val_spread" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpreadRescate" nillable="true" type="tns:SpreadRescate" />
+  <xs:complexType name="ArrayOfTablaMortalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaMortalidad" nillable="true" type="tns:TablaMortalidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaMortalidad" nillable="true" type="tns:ArrayOfTablaMortalidad" />
+  <xs:complexType name="TablaMortalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="num_edad_mes" type="xs:int" />
+      <xs:element minOccurs="0" name="val_lx_mbh" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mbm" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mih" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mim" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mvh" type="xs:double" />
+      <xs:element minOccurs="0" name="val_lx_mvm" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaMortalidad" nillable="true" type="tns:TablaMortalidad" />
+  <xs:complexType name="ArrayOfTasaDuration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TasaDuration" nillable="true" type="tns:TasaDuration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTasaDuration" nillable="true" type="tns:ArrayOfTasaDuration" />
+  <xs:complexType name="TasaDuration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cod_parametro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="val_parametro" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TasaDuration" nillable="true" type="tns:TasaDuration" />
+</xs:schema>

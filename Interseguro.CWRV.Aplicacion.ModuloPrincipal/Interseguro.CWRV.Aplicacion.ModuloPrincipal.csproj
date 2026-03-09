@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B30E5F80-BE1A-41BF-BF0F-E29A20DC3521}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interseguro.CWRV.Aplicacion.ModuloPrincipal</RootNamespace>
+    <AssemblyName>Interseguro.CWRV.Aplicacion.ModuloPrincipal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.2\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.30.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.30\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net40\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CotizadorServicio.cs" />
+    <Compile Include="GeneralesServicio.cs" />
+    <Compile Include="ICotizadorServicio.cs" />
+    <Compile Include="IGeneralesServicio.cs" />
+    <Compile Include="ISeguridadServicio.cs" />
+    <Compile Include="IUsuarioServicio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeguridadServicio.cs" />
+    <Compile Include="Service References\Proxies.ModuloADMWR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Proxies.MotorIFP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioServicio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio.Entidades\Interseguro.CWRV.Dominio.Entidades.csproj">
+      <Project>{E957A78D-1F02-41DB-A31C-74ACB67513E1}</Project>
+      <Name>Interseguro.CWRV.Dominio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio\Interseguro.CWRV.Dominio.csproj">
+      <Project>{8FF7011D-3854-4D7F-B7D6-712372BE0879}</Project>
+      <Name>Interseguro.CWRV.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interseguro.CWRV.Infraestructura.General\Interseguro.CWRV.Infraestructura.General.csproj">
+      <Project>{32A0A4ED-B7F6-4819-B802-A71EDBBE10BE}</Project>
+      <Name>Interseguro.CWRV.Infraestructura.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.AjusteIPC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.AjusteMoneda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Beneficiario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.CtrProcesos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.DefinicionHabDes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Departamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Direccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Distrito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Lote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Parametro1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Poliza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Prestamo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Provincia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.SolicitudAcceso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.TipoIdentificacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.ModuloADMWR.TipoVia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR1.wsdl" />
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.MotorIFP\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.MotorIFP.CalculoReserva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.MotorIFP\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.MotorIFP.Cotizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.MotorIFP\Interseguro.CWRV.Aplicacion.ModuloPrincipal.Proxies.MotorIFP.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Proxies.MotorIFP\ServicioMotorIFP.wsdl" />
+    <None Include="Service References\Proxies.MotorIFP\ServicioMotorIFP.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.MotorIFP\ServicioMotorIFP1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxies.MotorIFP\ServicioMotorIFP2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Proxies.ModuloADMWR\" />
+    <WCFMetadataStorage Include="Service References\Proxies.MotorIFP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloADMWR\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloADMWR\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloADMWR\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.MotorIFP\ServicioMotorIFP.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.MotorIFP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.MotorIFP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.MotorIFP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxies.ModuloADMWR\ServiceADMWR1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

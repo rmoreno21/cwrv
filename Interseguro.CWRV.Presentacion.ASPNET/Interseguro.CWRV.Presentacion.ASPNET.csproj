@@ -1,0 +1,3130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23018FE7-7655-4A85-A688-9EB0561D39FF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interseguro.CWRV.Presentacion.ASPNET</RootNamespace>
+    <AssemblyName>Interseguro.CWRV.Presentacion.ASPNET</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.9.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.9.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.10.0.25332, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.10.0\lib\net40\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.10.0.25333, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.10.0\lib\net40\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.10.0.25333, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.10.0\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.10.0.25331, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.10.0\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.25.0.862, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.25.0.862\lib\portable-net40+sl50+netcore45+wpa81+wp8\Google.Apis.Drive.v3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.10.0.25332, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.10.0\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jose-jwt.5.1.1\lib\net40\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net40\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenXmlPowerTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenXmlPowerTools.2.7.04.3\lib\OpenXmlPowerTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bandejas\BandejaFlujoCotizacion.aspx" />
+    <Content Include="Bandejas\BandejaFlujoCotizacionModificar.aspx" />
+    <Content Include="Bandejas\BandejaFlujoHistorial.aspx" />
+    <Content Include="Builder\Utilitarios\UploadFiles.aspx" />
+    <Content Include="Comun\BusquedaPersonas.aspx" />
+    <Content Include="Configuracion\ConfigurarMontoCIC.aspx" />
+    <Content Include="Configuracion\CuotaTra.aspx" />
+    <Content Include="Configuracion\CargaArchivosIndicadores.aspx" />
+    <Content Include="Controles\BeneficiarioCierreRVI.ascx" />
+    <Content Include="Configuracion\ParametrosRentas.aspx" />
+    <Content Include="Configuracion\ParametrosRentasInsertar.aspx" />
+    <Content Include="Controles\ComboboxAgentes.ascx" />
+    <Content Include="Controles\ComboboxAgentesOficial.ascx" />
+    <Content Include="Controles\ComboboxCiudadesAlterna.ascx" />
+    <Content Include="Controles\ComboboxCiudadesPrincipal.ascx" />
+    <Content Include="Controles\ComboboxCiudades.ascx" />
+    <Content Include="Controles\ComboboxComunasAlterna.ascx" />
+    <Content Include="Controles\ComboboxComunasPrincipal.ascx" />
+    <Content Include="Controles\ComboboxComunas.ascx" />
+    <Content Include="Controles\ComboboxSupervisores.ascx" />
+    <Content Include="Controles\ComboboxSupervisoresOficial.ascx" />
+    <Content Include="Controles\ConsentimientoMensaje.ascx" />
+    <Content Include="Controles\DireccionCierreRVI.ascx" />
+    <Content Include="Controles\DocumentosFirmaDigitalHistorico.ascx" />
+    <Content Include="Controles\MenuMaterialize.ascx" />
+    <Content Include="Controles\MenuMosaico.ascx" />
+    <Content Include="Controles\MenuPrincipal.ascx" />
+    <Content Include="Controles\SimuladorInmediataDiferida.ascx" />
+    <Content Include="Controles\SimuladorJubilarseHoyFuturo.ascx" />
+    <Content Include="Controles\SimuladorPlazoFijo.ascx" />
+    <Content Include="Controles\SimuladorQueMeConviene.ascx" />
+    <Content Include="Controles\SimuladorRentaVitaliciaRetiroProgramado.ascx" />
+    <Content Include="Controles\SimuladorTipoMoneda.ascx" />
+    <Content Include="Controles\TablaAcomMaximo.ascx" />
+    <Content Include="Controles\TablaActividades.ascx" />
+    <Content Include="Controles\TablaAfiliados.ascx" />
+    <Content Include="Controles\TablaBeneficiarioIFP_PG.ascx" />
+    <Content Include="Controles\TablaBeneficiarioIFP.ascx" />
+    <Content Include="Controles\TablaBeneficiarioIFP_CA.ascx" />
+    <Content Include="Controles\TablaBeneficiarioIFP_VIT.ascx" />
+    <Content Include="Controles\TablaBeneficiarios.ascx" />
+    <Content Include="Controles\TablaBeneficiariosPlan3IFP.ascx" />
+    <Content Include="Controles\TablaBeneficiariosRentaPrivada.ascx" />
+    <Content Include="Controles\TablaBeneficiariosRPP.ascx" />
+    <Content Include="Controles\TablaCapitalRequerido.ascx" />
+    <Content Include="Controles\TablaContratos.ascx" />
+    <Content Include="Controles\TablaCotizaciones.ascx" />
+    <Content Include="Controles\TablaCotizacionesCierreRVI.ascx" />
+    <Content Include="Controles\TablaCotizacionesMeler.ascx" />
+    <Content Include="Controles\TablaCotizacionesMovimiento.ascx" />
+    <Content Include="Controles\TablaCotizacionesOficiales.ascx" />
+    <Content Include="Controles\TablaCotizacionesPlan3IFP.ascx" />
+    <Content Include="Controles\TablaCotizacionesPlan1IFP.ascx" />
+    <Content Include="Controles\TablaCotizacionesPlan1IFPCierre.ascx" />
+    <Content Include="Controles\TablaCotizacionesPlan2IFP.ascx" />
+    <Content Include="Controles\TablaCotizacionesPlan2IFPCierre.ascx" />
+    <Content Include="Controles\TablaCotizacionesPlan3IFPCierre.ascx" />
+    <Content Include="Controles\TablaCotizacionesRentaPrivada.ascx" />
+    <Content Include="Controles\TablaCotizacionesRentaPrivadaPlus.ascx" />
+    <Content Include="Controles\TablaCotizacionesRentaPrivadaPlusCierre.ascx" />
+    <Content Include="Controles\TablaCotizacionesRPP.ascx" />
+    <Content Include="Controles\TablaCuotasTra.ascx" />
+    <Content Include="Controles\TablaGestionVentas.ascx" />
+    <Content Include="Controles\TablaLotesResultado.ascx" />
+    <Content Include="Controles\TablaParametrosRentas.ascx" />
+    <Content Include="Controles\TablaPersonas.ascx" />
+    <Content Include="Controles\TablaPersonasVinculadasPEP.ascx" />
+    <Content Include="Controles\TablaGrupoFamiliarCapitalRequerido.ascx" />
+    <Content Include="Controles\TablaLotes.ascx" />
+    <Content Include="Controles\TablaRviBenefi2.ascx" />
+    <Content Include="Controles\TablaRviBenefi2Mat.ascx" />
+    <Content Include="Controles\TablaRviBenefiRentaPrivada.ascx" />
+    <Content Include="Controles\TablaSolicitudesAnticipo.ascx" />
+    <Content Include="Controles\TablaSolicitudesBandejaOficiales.ascx" />
+    <Content Include="Controles\TablaSolicitudesConfirmacion.ascx" />
+    <Content Include="Controles\TablaSolicitudesEvaluacion.ascx" />
+    <Content Include="Controles\TablaSolicitudesIFP.ascx" />
+    <Content Include="Controles\TablaSolicitudesLote.ascx" />
+    <Content Include="Controles\TablaSolicitudesOficiales.ascx" />
+    <Content Include="Controles\TablaCotizacionesSimulador.ascx" />
+    <Content Include="Controles\TablaDirecciones.ascx" />
+    <Content Include="Controles\TablaGrupoFamiliar.ascx" />
+    <Content Include="Controles\TablaRviBenefi.ascx" />
+    <Content Include="Controles\TablaSeguimiento.ascx" />
+    <Content Include="Controles\TablaSeguimientoExcel.ascx" />
+    <Content Include="Controles\TablaSolicitudes.ascx" />
+    <Content Include="Controles\TablaSolicitudesRentaPrivada.ascx" />
+    <Content Include="Controles\TablaSolicitudesRentaPrivadaPlus.ascx" />
+    <Content Include="Controles\TablaSolicitudesRentaPrivadaPlusCierre.ascx" />
+    <Content Include="Controles\TablaSolicitudesReportePlus.ascx" />
+    <Content Include="Controles\TablaSolicitudesSimulador.ascx" />
+    <Content Include="Controles\TablaSupervision.ascx" />
+    <Content Include="Controles\TablaSupervisionExcel.ascx" />
+    <Content Include="Controles\TablaTasaMaximaTraMinimo.ascx" />
+    <Content Include="Controles\TablaTelefonos.ascx" />
+    <Content Include="Controles\TablaTraDefault.ascx" />
+    <Content Include="Cotizador\BeneficiarioCierre.aspx" />
+    <Content Include="Cotizador\CerrarSolicitud.aspx" />
+    <Content Include="Cotizador\ConsultaSolicitudesAnticipo.aspx" />
+    <Content Include="Cotizador\RecalculoCotizaciones.aspx" />
+    <Content Include="Cotizador\SeleccionarBeneficiarioCierre.aspx" />
+    <Content Include="Cotizador\SolicitudAnticipo.aspx" />
+    <Content Include="Cotizador\CondicionesAnticipo.aspx" />
+    <Content Include="Cotizador\Cotizador.aspx" />
+    <Content Include="Cotizador\CotizadorOficiales.aspx" />
+    <Content Include="Error\403.aspx" />
+    <Content Include="Error\Documento.aspx" />
+    <Content Include="Error\404.aspx" />
+    <Content Include="Error\500.aspx" />
+    <Content Include="Error\Permisos.aspx" />
+    <Content Include="Estilos\app-assets\css\pages\data-tables.min.css" />
+    <Content Include="Estilos\app-assets\fonts\material-design-icons\MaterialIcons-Regular.svg" />
+    <Content Include="Estilos\app-assets\js\scripts\data-tables.min.js" />
+    <Content Include="Estilos\app-assets\vendors\chartist-js\chartist.min.css" />
+    <Content Include="Estilos\app-assets\vendors\chartist-js\chartist.min.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\images\sort_asc.png" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\images\sort_asc_disabled.png" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\images\sort_both.png" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\images\sort_desc.png" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\images\sort_desc_disabled.png" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\jquery.dataTables.min.css" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\css\select.dataTables.min.css" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\extensions\responsive\css\responsive.dataTables.css" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\extensions\responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\extensions\responsive\js\dataTables.responsive.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\extensions\responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\js\dataTables.material.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\js\dataTables.material.min.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\js\dataTables.select.min.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\js\jquery.dataTables.js" />
+    <Content Include="Estilos\app-assets\vendors\data-tables\js\jquery.dataTables.min.js" />
+    <Content Include="Estilos\bootstrap.css" />
+    <Content Include="Estilos\bootstrap.min.css" />
+    <Content Include="Estilos\CotWebRVI.css" />
+    <Content Include="Estilos\CotWebRVIMobile.css" />
+    <Content Include="Estilos\date-range-picker\daterangepicker.min.css" />
+    <Content Include="Estilos\date-range-picker\jquery.daterangepicker.js" />
+    <Content Include="Estilos\date-range-picker\moment.min.js" />
+    <Content Include="Estilos\google-drive.css" />
+    <Content Include="Estilos\images\accent.png" />
+    <Content Include="Estilos\images\arrow_right.png" />
+    <Content Include="Estilos\images\bullet.png" />
+    <Content Include="Estilos\images\button_addfolder.png" />
+    <Content Include="Estilos\images\button_close.png" />
+    <Content Include="Estilos\images\button_delete.png" />
+    <Content Include="Estilos\images\button_download.png" />
+    <Content Include="Estilos\images\button_info.png" />
+    <Content Include="Estilos\images\button_reload.png" />
+    <Content Include="Estilos\images\button_share.png" />
+    <Content Include="Estilos\images\button_text.png" />
+    <Content Include="Estilos\images\button_upload.png" />
+    <Content Include="Estilos\images\close.png" />
+    <Content Include="Estilos\images\csv-icon.png" />
+    <Content Include="Estilos\images\doc-icon.png" />
+    <Content Include="Estilos\images\docx-icon.png" />
+    <Content Include="Estilos\images\folder.png" />
+    <Content Include="Estilos\images\heroAccent.png" />
+    <Content Include="Estilos\images\icon-doc.png" />
+    <Content Include="Estilos\images\icon-docx.png" />
+    <Content Include="Estilos\images\loading-bubble.gif" />
+    <Content Include="Estilos\images\loading.gif" />
+    <Content Include="Estilos\images\next.png" />
+    <Content Include="Estilos\images\orderedList0.png" />
+    <Content Include="Estilos\images\orderedList1.png" />
+    <Content Include="Estilos\images\orderedList2.png" />
+    <Content Include="Estilos\images\orderedList3.png" />
+    <Content Include="Estilos\images\orderedList4.png" />
+    <Content Include="Estilos\images\orderedList5.png" />
+    <Content Include="Estilos\images\orderedList6.png" />
+    <Content Include="Estilos\images\orderedList7.png" />
+    <Content Include="Estilos\images\orderedList8.png" />
+    <Content Include="Estilos\images\orderedList9.png" />
+    <Content Include="Estilos\images\pdf-icon.png" />
+    <Content Include="Estilos\images\pptx-icon.png" />
+    <Content Include="Estilos\images\prev.png" />
+    <Content Include="Estilos\images\txt-icon.png" />
+    <Content Include="Estilos\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Estilos\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Estilos\images\ui-bg_diagonals-thick_20_666666_40x40_.png" />
+    <Content Include="Estilos\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Estilos\images\ui-bg_glass_100_cedffd_1x400.png" />
+    <Content Include="Estilos\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Estilos\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Estilos\images\ui-bg_gloss-wave_35_00aeef_500x100.png" />
+    <Content Include="Estilos\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Estilos\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Estilos\images\ui-icons_02477e_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_222222_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_2581cb_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Estilos\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Estilos\images\undefined-icon.png" />
+    <Content Include="Estilos\images\xls-icon.png" />
+    <Content Include="Estilos\images\xlsx-icon.png" />
+    <Content Include="Estilos\jquery-ui-1.9.1.custom.min.css" />
+    <Content Include="Estilos\jquery.mobile\images\ajax-loader.gif" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\action-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\action-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\alert-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\alert-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-d-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-d-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-l-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-l-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-r-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-r-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-u-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\arrow-u-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\audio-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\audio-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\back-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\back-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\bars-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\bars-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\bullets-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\bullets-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\calendar-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\calendar-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\camera-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\camera-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-d-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-d-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-l-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-l-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-r-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-r-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-u-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\carat-u-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\check-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\check-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\clock-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\clock-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\cloud-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\cloud-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\comment-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\comment-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\delete-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\delete-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\edit-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\edit-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\eye-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\eye-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\forbidden-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\forbidden-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\forward-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\forward-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\gear-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\gear-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\grid-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\grid-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\heart-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\heart-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\home-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\home-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\info-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\info-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\location-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\location-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\lock-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\lock-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\mail-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\mail-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\minus-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\minus-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\navigation-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\navigation-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\phone-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\phone-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\plus-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\plus-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\power-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\power-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\recycle-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\recycle-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\refresh-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\refresh-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\search-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\search-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\shop-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\shop-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\star-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\star-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\tag-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\tag-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\user-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\user-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\video-black.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-png\video-white.png" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\action-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\action-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\alert-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\alert-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\audio-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\audio-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\back-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\back-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\bars-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\bars-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\bullets-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\bullets-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\calendar-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\calendar-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\camera-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\camera-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\check-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\check-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\clock-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\clock-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\cloud-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\cloud-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\comment-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\comment-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\delete-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\delete-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\edit-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\edit-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\eye-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\eye-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\forward-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\forward-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\gear-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\gear-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\grid-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\grid-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\heart-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\heart-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\home-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\home-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\info-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\info-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\location-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\location-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\lock-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\lock-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\mail-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\mail-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\minus-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\minus-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\navigation-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\navigation-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\phone-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\phone-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\plus-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\plus-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\power-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\power-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\recycle-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\recycle-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\refresh-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\refresh-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\search-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\search-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\shop-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\shop-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\star-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\star-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\tag-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\tag-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\user-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\user-white.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\video-black.svg" />
+    <Content Include="Estilos\jquery.mobile\images\icons-svg\video-white.svg" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile.external-png-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile.icons-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile.inline-png-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile.structure-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.mobile\jquery.mobile.theme-1.4.5.min.css" />
+    <Content Include="Estilos\jquery.steps.css" />
+    <Content Include="Estilos\lightbox.css" />
+    <Content Include="Estilos\loaders.min.css" />
+    <Content Include="Estilos\materialize.min.css" />
+    <Content Include="Estilos\stepper\mstepper.css" />
+    <Content Include="Estilos\stepper\mstepper.js" />
+    <Content Include="Iconos\android-icon-144x144.png" />
+    <Content Include="Iconos\android-icon-192x192.png" />
+    <Content Include="Iconos\android-icon-36x36.png" />
+    <Content Include="Iconos\android-icon-48x48.png" />
+    <Content Include="Iconos\android-icon-72x72.png" />
+    <Content Include="Iconos\android-icon-96x96.png" />
+    <Content Include="Iconos\apple-icon-114x114.png" />
+    <Content Include="Iconos\apple-icon-120x120.png" />
+    <Content Include="Iconos\apple-icon-144x144.png" />
+    <Content Include="Iconos\apple-icon-152x152.png" />
+    <Content Include="Iconos\apple-icon-180x180.png" />
+    <Content Include="Iconos\apple-icon-57x57.png" />
+    <Content Include="Iconos\apple-icon-60x60.png" />
+    <Content Include="Iconos\apple-icon-72x72.png" />
+    <Content Include="Iconos\apple-icon-76x76.png" />
+    <Content Include="Iconos\apple-icon-precomposed.png" />
+    <Content Include="Iconos\apple-icon.png" />
+    <Content Include="Iconos\browserconfig.xml" />
+    <Content Include="Iconos\favicon-16x16.png" />
+    <Content Include="Iconos\favicon-32x32.png" />
+    <Content Include="Iconos\favicon-96x96.png" />
+    <Content Include="Iconos\favicon.ico" />
+    <Content Include="Iconos\ms-icon-144x144.png" />
+    <Content Include="Iconos\ms-icon-150x150.png" />
+    <Content Include="Iconos\ms-icon-310x310.png" />
+    <Content Include="Iconos\ms-icon-70x70.png" />
+    <Content Include="IFP\Cotizador.aspx" />
+    <Content Include="IFP\GrupoFamiliarCierre.aspx" />
+    <Content Include="IFP\Principal.aspx" />
+    <Content Include="Imagenes\agrupador_mas.png" />
+    <Content Include="Imagenes\agrupador_menos.png" />
+    <Content Include="Imagenes\ajax-loader_1.gif" />
+    <Content Include="Imagenes\ajax-loader_2.gif" />
+    <Content Include="Imagenes\ajax-loader_3.gif" />
+    <Content Include="Imagenes\ajax-loader_4.gif" />
+    <Content Include="Imagenes\ajax-loader_5.gif" />
+    <Content Include="Imagenes\barra_progreso.gif" />
+    <Content Include="Imagenes\bg_footer.png" />
+    <Content Include="Imagenes\bg_submenu.png" />
+    <Content Include="Imagenes\bg_tabs.png" />
+    <Content Include="Imagenes\bk_login_gdh.svg" />
+    <Content Include="Imagenes\blank.gif" />
+    <Content Include="Imagenes\cab_fecha.png" />
+    <Content Include="Imagenes\cab_fondo.png" />
+    <Content Include="Imagenes\cab_fondo1.png" />
+    <Content Include="Imagenes\cab_fondo2.png" />
+    <Content Include="Imagenes\cab_fondo3.png" />
+    <Content Include="Imagenes\cab_fondo4.png" />
+    <Content Include="Imagenes\cab_nombre.png" />
+    <Content Include="Imagenes\cab_separador.png" />
+    <Content Include="Imagenes\cab_separador2.png" />
+    <Content Include="Imagenes\cab_usuario.png" />
+    <Content Include="Imagenes\calendar.png" />
+    <Content Include="Imagenes\cm_advertencia.png" />
+    <Content Include="Imagenes\cm_error.png" />
+    <Content Include="Imagenes\cm_exito.png" />
+    <Content Include="Imagenes\cm_info.png" />
+    <Content Include="Imagenes\cm_validacion.png" />
+    <Content Include="Imagenes\error-imagen.svg" />
+    <Content Include="Imagenes\fancybox_overlay.png" />
+    <Content Include="Imagenes\fancybox_sprite.png" />
+    <Content Include="Imagenes\favicon.ico" />
+    <Content Include="Imagenes\fecha_32.png" />
+    <Content Include="Imagenes\fondo.jpg" />
+    <Content Include="Imagenes\fondo_agrupador.gif" />
+    <Content Include="Imagenes\fondo_combobox.png" />
+    <Content Include="Imagenes\fondo_combobox_active.png" />
+    <Content Include="Imagenes\fondo_combobox_error.png" />
+    <Content Include="Imagenes\fondo_combobox_readonly.png" />
+    <Content Include="Imagenes\fondo_datetimepicker.gif" />
+    <Content Include="Imagenes\fondo_datetimepicker.png" />
+    <Content Include="Imagenes\fondo_datetimepicker_error.gif" />
+    <Content Include="Imagenes\fondo_datetimepicker_error.png" />
+    <Content Include="Imagenes\fondo_datetimepicker_readonly.png" />
+    <Content Include="Imagenes\fondo_label.gif" />
+    <Content Include="Imagenes\fondo_label_hover.gif" />
+    <Content Include="Imagenes\fondo_textbox.gif" />
+    <Content Include="Imagenes\fondo_textbox.png" />
+    <Content Include="Imagenes\fondo_textbox_error.gif" />
+    <Content Include="Imagenes\fondo_textbox_error.png" />
+    <Content Include="Imagenes\fondo_textbox_readonly.png" />
+    <Content Include="Imagenes\gradient.png" />
+    <Content Include="Imagenes\gradient_hover.png" />
+    <Content Include="Imagenes\grilla_active.gif" />
+    <Content Include="Imagenes\grilla_active_blue.gif" />
+    <Content Include="Imagenes\grilla_active_green.gif" />
+    <Content Include="Imagenes\grilla_active_pink.gif" />
+    <Content Include="Imagenes\grilla_active_purple.gif" />
+    <Content Include="Imagenes\grilla_active_red.gif" />
+    <Content Include="Imagenes\grilla_active_yellow.gif" />
+    <Content Include="Imagenes\grilla_advertencia.png" />
+    <Content Include="Imagenes\grilla_alt1.gif" />
+    <Content Include="Imagenes\grilla_alt2.gif" />
+    <Content Include="Imagenes\grilla_anticipo.png" />
+    <Content Include="Imagenes\grilla_anticipo_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_asc.gif" />
+    <Content Include="Imagenes\grilla_cabecera.gif" />
+    <Content Include="Imagenes\grilla_candado.png" />
+    <Content Include="Imagenes\grilla_candado_Naranja.png" />
+    <Content Include="Imagenes\grilla_consultar.png" />
+    <Content Include="Imagenes\grilla_consultar_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_copiar.png" />
+    <Content Include="Imagenes\grilla_copiar_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_desc.gif" />
+    <Content Include="Imagenes\grilla_editar.png" />
+    <Content Include="Imagenes\grilla_editar_2.png" />
+    <Content Include="Imagenes\grilla_editar_2_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_editar_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_editar_flujo.png" />
+    <Content Include="Imagenes\grilla_editar_flujo_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_eliminar.png" />
+    <Content Include="Imagenes\grilla_eliminar_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_email.png" />
+    <Content Include="Imagenes\grilla_email_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_error.png" />
+    <Content Include="Imagenes\grilla_exito.png" />
+    <Content Include="Imagenes\grilla_firma_digital.png" />
+    <Content Include="Imagenes\grilla_firma_digital_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_flujo.png" />
+    <Content Include="Imagenes\grilla_flujo_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_formato_estudio_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_formato_estudio_necesidades.png" />
+    <Content Include="Imagenes\grilla_graficar.png" />
+    <Content Include="Imagenes\grilla_grupo_familiar.png" />
+    <Content Include="Imagenes\grilla_info.png" />
+    <Content Include="Imagenes\grilla_info_rojo.png" />
+    <Content Include="Imagenes\grilla_info_verde.png" />
+    <Content Include="Imagenes\grilla_nuevo.png" />
+    <Content Include="Imagenes\grilla_nuevo_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_pdf.png" />
+    <Content Include="Imagenes\grilla_pdf_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_poliza.png" />
+    <Content Include="Imagenes\grilla_poliza_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_repescenario.png" />
+    <Content Include="Imagenes\grilla_repescenario_deshabilitado.png" />
+    <Content Include="Imagenes\grilla_switch_off.png" />
+    <Content Include="Imagenes\grilla_switch_on.png" />
+    <Content Include="Imagenes\error-icono.svg" />
+    <Content Include="Imagenes\hoja_blanco.png" />
+    <Content Include="Imagenes\hoja_membretada.png" />
+    <Content Include="Imagenes\iconoPDF.png" />
+    <Content Include="Imagenes\icono_menu_movil.png" />
+    <Content Include="Imagenes\inicio_32.png" />
+    <Content Include="Imagenes\linea_login.png" />
+    <Content Include="Imagenes\login1.png" />
+    <Content Include="Imagenes\login2.png" />
+    <Content Include="Imagenes\login3.png" />
+    <Content Include="Imagenes\login4.png" />
+    <Content Include="Imagenes\login5.png" />
+    <Content Include="Imagenes\login_edadlegal.png" />
+    <Content Include="Imagenes\login_invalidez.png" />
+    <Content Include="Imagenes\login_jao.png" />
+    <Content Include="Imagenes\login_password.png" />
+    <Content Include="Imagenes\login_reja.png" />
+    <Content Include="Imagenes\login_rentaparticular.png" />
+    <Content Include="Imagenes\login_rentaparticularplus.png" />
+    <Content Include="Imagenes\login_sobrevivencia.png" />
+    <Content Include="Imagenes\login_user.png" />
+    <Content Include="Imagenes\logo-interseguro.svg" />
+    <Content Include="Imagenes\logo.svg" />
+    <Content Include="Imagenes\logo1.png" />
+    <Content Include="Imagenes\logo2.png" />
+    <Content Include="Imagenes\logo_is.png" />
+    <Content Include="Imagenes\logo_is1.png" />
+    <Content Include="Imagenes\logo_is_celeste.png" />
+    <Content Include="Imagenes\logo_is_celeste_30.png" />
+    <Content Include="Imagenes\logo_is_celeste_30_1.png" />
+    <Content Include="Imagenes\logo_is_celeste_40.png" />
+    <Content Include="Imagenes\logo_is_celeste_50.png" />
+    <Content Include="Imagenes\manual_32.png" />
+    <Content Include="Imagenes\menu_configuracion.png" />
+    <Content Include="Imagenes\menu_configuracion_64.png" />
+    <Content Include="Imagenes\menu_configuracion_cic.png" />
+    <Content Include="Imagenes\menu_cotizador.png" />
+    <Content Include="Imagenes\menu_cotizador_64.png" />
+    <Content Include="Imagenes\menu_division.png" />
+    <Content Include="Imagenes\menu_division1.png" />
+    <Content Include="Imagenes\menu_fondo.png" />
+    <Content Include="Imagenes\menu_fondo_boton.png" />
+    <Content Include="Imagenes\menu_hover.png" />
+    <Content Include="Imagenes\menu_meler.png" />
+    <Content Include="Imagenes\menu_reportes.png" />
+    <Content Include="Imagenes\menu_reportes_64.png" />
+    <Content Include="Imagenes\menu_simuladores.png" />
+    <Content Include="Imagenes\menu_simuladores2.png" />
+    <Content Include="Imagenes\menu_simuladores_64.png" />
+    <Content Include="Imagenes\minus-icon.png" />
+    <Content Include="Imagenes\modal_cerrar.png" />
+    <Content Include="Imagenes\modal_fondo.gif" />
+    <Content Include="Imagenes\nav-icon.png" />
+    <Content Include="Imagenes\P1.PNG" />
+    <Content Include="Imagenes\P2.PNG" />
+    <Content Include="Imagenes\P3.PNG" />
+    <Content Include="Imagenes\P4.PNG" />
+    <Content Include="Imagenes\P5.PNG" />
+    <Content Include="Imagenes\plus-icon.png" />
+    <Content Include="Imagenes\precargando.gif" />
+    <Content Include="Imagenes\Prueba.png" />
+    <Content Include="Imagenes\reloj_arena.png" />
+    <Content Include="Imagenes\salir_32.png" />
+    <Content Include="Imagenes\simu_fondo_arrastrar0.png" />
+    <Content Include="Imagenes\simu_fondo_arrastrar1.png" />
+    <Content Include="Imagenes\simu_fondo_arrastrar2.png" />
+    <Content Include="Imagenes\simu_fondo_seleccionar.png" />
+    <Content Include="Imagenes\simu_fondo_seleccionar_multiple.png" />
+    <Content Include="Imagenes\simu_fondo_titulo.png" />
+    <Content Include="Imagenes\submenu_extraoficiales.png" />
+    <Content Include="Imagenes\submenu_fondo.png" />
+    <Content Include="Imagenes\submenu_fondo_hover.png" />
+    <Content Include="Imagenes\submenu_oficiales.png" />
+    <Content Include="Imagenes\submenu_regresar.png" />
+    <Content Include="Imagenes\submenu_sbs.png" />
+    <Content Include="Imagenes\video_32.png" />
+    <Content Include="Meler\CargaConfirmaciones.aspx" />
+    <Content Include="Meler\CargaCotizaciones.aspx" />
+    <Content Include="Meler\CotizarLote.aspx" />
+    <Content Include="Meler\DescargaResultados.aspx" />
+    <Content Include="Meler\DescargaSolicitudes.aspx" />
+    <Content Include="Plantilla\RP\Agente\Plantilla-CorreoNotificacionPoliza.html" />
+    <Content Include="Plantilla\RP\Consentimiento\Consentimiento.html" />
+    <Content Include="Plantilla\RP\SADP\SADP.html" />
+    <Content Include="Plantilla\RVI\Consentimiento\Consentimiento_RRVV.html" />
+    <Content Include="Plantilla\RVI\Consentimiento\NotificacionAgente.html" />
+    <Content Include="Plantilla\RVI\SADP\CorreoNotificacionVCTPautom.html" />
+    <Content Include="Plantilla\RVI\SADP\SADP.html" />
+    <Content Include="Principal.aspx" />
+    <Content Include="Recursos\Flujo_CWRV_Fase1.wmv" />
+    <Content Include="logs.aspx" />
+    <Content Include="RentaIFP\CantidadBeneficiarios.aspx" />
+    <Content Include="RentaIFP\CerrarSolicitud.aspx" />
+    <Content Include="RentaIFP\Cotizador.aspx" />
+    <Content Include="RentaIFP\DireccionAfiliado.aspx" />
+    <Content Include="RentaIFP\GrupoFamiliarAfiliado.aspx" />
+    <Content Include="RentaIFP\GrupoFamiliarAfiliadoCierre.aspx" />
+    <Content Include="RentaIFP\ProcesarTareas.aspx" />
+    <Content Include="RentaIFP\ResumenBeneficiariosPG.aspx" />
+    <Content Include="RentaIFP\ResumenBeneficiariosCA.aspx" />
+    <Content Include="RentaIFP\MantenerSolicitud.aspx" />
+    <Content Include="RentaIFP\PlanesIFP.aspx" />
+    <Content Include="RentaIFP\ResumenBeneficiarios.aspx" />
+    <Content Include="RentaIFP\SeleccionSolicitud.aspx" />
+    <Content Include="RentaIFP\TelefonoAfiliado.aspx" />
+    <Content Include="RentaParticular\SolicitudesEvaluacion.aspx" />
+    <Content Include="RentaParticular\SolicitudEvaluacion.aspx" />
+    <Content Include="RentaPrivadaPlus\GrupoFamiliarAfiliadoCierre.aspx" />
+    <Content Include="RentaPrivadaPlus\ListadoArchivoDrive.aspx" />
+    <Content Include="RentaPrivadaPlus\ListadoEvaluacion.aspx" />
+    <Content Include="RentaPrivadaPlus\SeleccionSolicitud.aspx" />
+    <Content Include="RentaPrivadaPlus\Cotizador.aspx" />
+    <Content Include="RentaPrivadaPlus\DireccionAfiliado.aspx" />
+    <Content Include="RentaPrivadaPlus\CerrarSolicitud.aspx" />
+    <Content Include="RentaPrivadaPlus\GrupoFamiliarAfiliado.aspx" />
+    <Content Include="RentaPrivadaPlus\ListadoCierrePlus.aspx" />
+    <Content Include="RentaPrivadaPlus\MantenerSolicitud.aspx" />
+    <Content Include="RentaPrivadaPlus\TelefonoAfiliado.aspx" />
+    <Content Include="RentaPrivadaPlus\UploadFiles.aspx" />
+    <Content Include="RentaPrivada\Cotizador.aspx" />
+    <Content Include="RentaPrivada\DireccionAfiliado.aspx" />
+    <Content Include="RentaPrivada\GrupoFamiliarAfiliado.aspx" />
+    <Content Include="RentaPrivada\MantenerSolicitud.aspx" />
+    <Content Include="RentaPrivada\NuevaSolicitud.aspx" />
+    <Content Include="RentaPrivada\TelefonoAfiliado.aspx" />
+    <Content Include="Reportes\CalculoCapital.aspx" />
+    <Content Include="Reportes\CartaAFP.aspx" />
+    <Content Include="Reportes\DashboardCntoFD.aspx" />
+    <Content Include="Reportes\ConsolidadoCumplimientoCdA.aspx" />
+    <Content Include="Reportes\IndicadoresRRVV.aspx" />
+    <Content Include="Reportes\CompararCotizacionPlus.aspx" />
+    <Content Include="Reportes\DescargaExcel.aspx" />
+    <Content Include="Reportes\DescargaSolicitudes.aspx" />
+    <Content Include="Reportes\DetalleAfiliado.aspx" />
+    <Content Include="Reportes\DetalleCotizacion.aspx" />
+    <Content Include="Reportes\DetalleCotizacionLote.aspx" />
+    <Content Include="Reportes\DetalleCotizacionLoteMovil.aspx" />
+    <Content Include="Reportes\DetalleCotizacionMembretado.aspx" />
+    <Content Include="Reportes\DetalleCotizacionMembretadoMovil.aspx" />
+    <Content Include="Reportes\DetalleCotizacionMovil.aspx" />
+    <Content Include="Reportes\DetallePropuesta.aspx" />
+    <Content Include="Reportes\DetallePropuestaIFP.aspx" />
+    <Content Include="Reportes\DetallePropuestaIFPMovil.aspx" />
+    <Content Include="Reportes\DetallePropuestaPlus.aspx" />
+    <Content Include="Reportes\DetallePropuestaPlusMovil.aspx" />
+    <Content Include="Reportes\Escenarios.aspx" />
+    <Content Include="Reportes\EscenariosMovil.aspx" />
+    <Content Include="Reportes\GestionVentas.aspx" />
+    <Content Include="Reportes\GestionVentasExcel.aspx" />
+    <Content Include="Reportes\LoteResultados.aspx" />
+    <Content Include="Reportes\RecalculoCotizaciones.aspx" />
+    <Content Include="Reportes\IndicadorCdA.aspx" />
+    <Content Include="Reportes\IndicadorVCTP.aspx" />
+    <Content Include="Reportes\ReporteIndicadorCDA.aspx" />
+    <Content Include="Reportes\ReportesCloudStorage.aspx" />
+    <Content Include="Reportes\ReportesRentaParticular.aspx" />
+    <Content Include="Reportes\ReportesRentasVitalicias.aspx" />
+    <Content Include="Reportes\Seguimiento.aspx" />
+    <Content Include="Reportes\SolicitudAnticipo.aspx" />
+    <Content Include="Reportes\Supervision.aspx" />
+    <Content Include="Reportes\XMLConfirmacionMELER.aspx" />
+    <Content Include="Reportes\XMLCotizacionesMELER.aspx" />
+    <Content Include="RPP\Cotizador.aspx" />
+    <Content Include="Scripts\ajaxfileupload.js" />
+    <Content Include="Scripts\autoNumeric-1.9.1.js" />
+    <Content Include="Scripts\autoNumeric-min.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\CWRV.controles.dashboard.js" />
+    <Content Include="Scripts\CWRV.controles.ingresoflexibleplus.js" />
+    <Content Include="Scripts\CWRV.controles.rentaprivada.js" />
+    <Content Include="Scripts\CWRV.controles.rentaprivadaplus.js" />
+    <Content Include="Scripts\CWRV.eventos.configuracion.js" />
+    <Content Include="Scripts\CWRV.eventos.dashboard.js" />
+    <Content Include="Scripts\CWRV.eventos.ingresoflexibleplus.js" />
+    <Content Include="Scripts\CWRV.eventos.js" />
+    <Content Include="Scripts\CWRV.eventos.meler.js" />
+    <Content Include="Scripts\CWRV.eventos.rentaprivada.js" />
+    <Content Include="Scripts\CWRV.eventos.rentaprivadaplus.js" />
+    <Content Include="Scripts\CWRV.eventos.rppevaluacion.js" />
+    <Content Include="Scripts\CWRV.generarPdf.js" />
+    <Content Include="Scripts\CWRV.global.js" />
+    <Content Include="Scripts\CWRV.tabs.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bootstrap.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bulma.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.bulma.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.dataTables.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.foundation.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.foundation.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.jqueryui.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.semanticui.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\css\autoFill.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bulma.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.bulma.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.dataTables.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\AutoFill-2.4.0\js\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bulma.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.bulma.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.dataTables.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.foundation.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.semanticui.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\buttons.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bulma.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.bulma.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.dataTables.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.print.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\js\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bootstrap.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bulma.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.bulma.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.dataTables.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.foundation.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.foundation.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.jqueryui.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.semanticui.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\css\colReorder.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bootstrap.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bulma.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.bulma.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.dataTables.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.foundation.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.foundation.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.jqueryui.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.semanticui.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\colReorder.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\ColReorder-1.5.6\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bulma.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.bulma.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.dataTables.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.foundation.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\jquery.dataTables.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\images\sort_asc.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\images\sort_both.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\images\sort_desc.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bulma.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.bulma.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.dataTables.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.12.1\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\datatables.css" />
+    <Content Include="Scripts\DataTables\datatables.js" />
+    <Content Include="Scripts\DataTables\datatables.materialize.js" />
+    <Content Include="Scripts\DataTables\datatables.min.js" />
+    <Content Include="Scripts\DataTables\DateTime-1.1.2\css\dataTables.dateTime.css" />
+    <Content Include="Scripts\DataTables\DateTime-1.1.2\css\dataTables.dateTime.min.css" />
+    <Content Include="Scripts\DataTables\DateTime-1.1.2\js\dataTables.dateTime.js" />
+    <Content Include="Scripts\DataTables\DateTime-1.1.2\js\dataTables.dateTime.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bootstrap.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bulma.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.bulma.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.dataTables.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.foundation.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.foundation.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.jqueryui.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.semanticui.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bootstrap.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bulma.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.bulma.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.dataTables.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.foundation.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.foundation.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.jqueryui.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.semanticui.js" />
+    <Content Include="Scripts\DataTables\FixedColumns-4.1.0\js\fixedColumns.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bootstrap.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bulma.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.bulma.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.dataTables.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.foundation.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.foundation.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.jqueryui.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.semanticui.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bootstrap.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bulma.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.bulma.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.dataTables.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.foundation.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.foundation.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.jqueryui.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.semanticui.js" />
+    <Content Include="Scripts\DataTables\FixedHeader-3.2.4\js\fixedHeader.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\JSZip-2.5.0\jszip.js" />
+    <Content Include="Scripts\DataTables\JSZip-2.5.0\jszip.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bootstrap.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bulma.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.bulma.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.dataTables.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.foundation.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.foundation.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.jqueryui.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.semanticui.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\css\keyTable.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bootstrap.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bulma.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.bulma.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.dataTables.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.foundation.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.foundation.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.jqueryui.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.semanticui.js" />
+    <Content Include="Scripts\DataTables\KeyTable-2.7.0\js\keyTable.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\pdfmake-0.1.36\pdfmake.js" />
+    <Content Include="Scripts\DataTables\pdfmake-0.1.36\pdfmake.min.js" />
+    <Content Include="Scripts\DataTables\pdfmake-0.1.36\vfs_fonts.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bulma.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.bulma.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.dataTables.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.foundation.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.semanticui.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\css\responsive.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bulma.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.bulma.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.dataTables.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\Responsive-2.3.0\js\responsive.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bootstrap.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bulma.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.bulma.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.dataTables.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.foundation.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.foundation.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.jqueryui.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.semanticui.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\css\rowGroup.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bootstrap.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bulma.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.bulma.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.dataTables.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.foundation.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.foundation.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.jqueryui.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.semanticui.js" />
+    <Content Include="Scripts\DataTables\RowGroup-1.2.0\js\rowGroup.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bootstrap.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bulma.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.bulma.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.dataTables.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.foundation.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.foundation.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.jqueryui.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.semanticui.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\css\rowReorder.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bootstrap.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bulma.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.bulma.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.dataTables.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.foundation.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.foundation.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.jqueryui.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.semanticui.js" />
+    <Content Include="Scripts\DataTables\RowReorder-1.2.8\js\rowReorder.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bulma.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.bulma.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.dataTables.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.foundation.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.semanticui.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\css\scroller.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bootstrap.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bulma.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.bulma.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.dataTables.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.foundation.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.foundation.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.jqueryui.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.semanticui.js" />
+    <Content Include="Scripts\DataTables\Scroller-2.0.7\js\scroller.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bootstrap.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bulma.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.bulma.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.dataTables.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.foundation.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.foundation.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.jqueryui.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.semanticui.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\css\searchBuilder.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\dataTables.searchBuilder.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\dataTables.searchBuilder.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bootstrap.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bulma.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.bulma.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.dataTables.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.foundation.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.foundation.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.jqueryui.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.semanticui.js" />
+    <Content Include="Scripts\DataTables\SearchBuilder-1.3.4\js\searchBuilder.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bootstrap.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bulma.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.bulma.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.dataTables.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.foundation.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.foundation.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.jqueryui.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.semanticui.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\css\searchPanes.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\dataTables.searchPanes.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\dataTables.searchPanes.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bootstrap.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bulma.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.bulma.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.dataTables.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.foundation.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.foundation.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.jqueryui.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.semanticui.js" />
+    <Content Include="Scripts\DataTables\SearchPanes-2.0.2\js\searchPanes.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bulma.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.bulma.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.dataTables.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.foundation.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.semanticui.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\css\select.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bootstrap.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bulma.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.bulma.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.dataTables.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.foundation.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.foundation.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.jqueryui.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.semanticui.js" />
+    <Content Include="Scripts\DataTables\Select-1.4.0\js\select.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bootstrap.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bootstrap5.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bootstrap5.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bulma.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.bulma.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.dataTables.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.foundation.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.foundation.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.jqueryui.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.semanticui.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\css\stateRestore.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\dataTables.stateRestore.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\dataTables.stateRestore.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bootstrap.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bootstrap5.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bulma.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.bulma.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.dataTables.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.foundation.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.foundation.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.jqueryui.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.semanticui.js" />
+    <Content Include="Scripts\DataTables\StateRestore-1.1.1\js\stateRestore.semanticui.min.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\CWRV.eventos.rpppoliza.js" />
+    <Content Include="Scripts\google-drive.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.6.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.1.custom.min.js" />
+    <Content Include="Scripts\jquery.alphanumeric.js" />
+    <Content Include="Scripts\jquery.countdown.min.js" />
+    <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Scripts\jquery.defaultvalue.js" />
+    <Content Include="Scripts\jquery.formatter.min.js" />
+    <Content Include="Scripts\jquery.formrestrict.js" />
+    <Content Include="Scripts\jquery.hoverIntent.minified.js" />
+    <Content Include="Scripts\jquery.json-2.4.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Scripts\jquery.numeric.js" />
+    <Content Include="Scripts\CWRV.controles.js" />
+    <Content Include="Scripts\jquery.timer.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker.js" />
+    <Content Include="Scripts\lightbox.min.js" />
+    <Content Include="Scripts\loaders.css.js" />
+    <Content Include="Scripts\materialize.min.js" />
+    <Content Include="Scripts\PIE.htc" />
+    <Content Include="Scripts\RentaIFP\CantidadBeneficiarios.js" />
+    <Content Include="Scripts\RentaIFP\CerrarSolicitud.controles.js" />
+    <Content Include="Scripts\RentaIFP\CerrarSolicitud.eventos.js" />
+    <Content Include="Scripts\RentaIFP\GrupoFamiliarAfiliadoCierre.js" />
+    <Content Include="Scripts\RentaIFP\jquery.steps.js" />
+    <Content Include="Scripts\RentaIFP\ResumenBeneficiariosPG.js" />
+    <Content Include="Scripts\RentaIFP\ResumenBeneficiariosCA.js" />
+    <Content Include="Scripts\RentaIFP\ResumenBeneficiarios.js" />
+    <Content Include="Scripts\RentaVitalicia\CierreSolicitud.js" />
+    <Content Include="Scripts\upload.js" />
+    <Content Include="Scripts\session.js" />
+    <Content Include="Scripts\apiCotizadorIFP.js" />
+    <Content Include="Scripts\RentaIFP\cerrarSolicitud.js" />
+    <Content Include="Scripts\RentaIFP\seleccionSolicitud.js" />
+    <Content Include="Scripts\apiCotizadorRV.js" />
+    <Content Include="Scripts\apiParametro.js" />
+    <Content Include="Scripts\apiAutenticacion.js" />
+    <Content Include="Scripts\utilitarios.js" />
+    <Content Include="Scripts\session.js" />
+    <Content Include="Seguridad\CerrarSesion.aspx" />
+    <Content Include="Seguridad\IniciarSesion.aspx" />
+    <Content Include="Seguridad\SesionExpirada.aspx" />
+    <Content Include="Simuladores\CapitalRequerido.aspx" />
+    <Content Include="Simuladores\CompararPlazoFijo.aspx" />
+    <Content Include="Simuladores\InmediataDiferida.aspx" />
+    <Content Include="Simuladores\JubilarseHoyFuturo.aspx" />
+    <Content Include="Simuladores\PensionProyectada.aspx" />
+    <Content Include="Simuladores\QueMeConviene.aspx" />
+    <Content Include="Simuladores\RentaVitaliciaRetiroProgramado.aspx" />
+    <Content Include="Simuladores\TipoMoneda.aspx" />
+    <Content Include="Comun\PlantillaCorreoElectronico.aspx" />
+    <Content Include="Scripts\apiSolicitudesCambio.js" />
+    <Content Include="Scripts\bandejaFlujoCotizacionModificar.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bandejas\BandejaFlujoCotizacion.aspx.cs">
+      <DependentUpon>BandejaFlujoCotizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bandejas\BandejaFlujoCotizacion.aspx.designer.cs">
+      <DependentUpon>BandejaFlujoCotizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bandejas\BandejaFlujoCotizacionModificar.aspx.cs">
+      <DependentUpon>BandejaFlujoCotizacionModificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bandejas\BandejaFlujoCotizacionModificar.aspx.designer.cs">
+      <DependentUpon>BandejaFlujoCotizacionModificar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bandejas\BandejaFlujoHistorial.aspx.cs">
+      <DependentUpon>BandejaFlujoHistorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bandejas\BandejaFlujoHistorial.aspx.designer.cs">
+      <DependentUpon>BandejaFlujoHistorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Builder\ConsultasXLS\ExportarNpoiXLS.cs" />
+    <Compile Include="Builder\Utilitarios\CwrvGoogleDrive.cs" />
+    <Compile Include="Builder\Utilitarios\UploadFiles.aspx.cs">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Builder\Utilitarios\UploadFiles.aspx.designer.cs">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Builder\Utilitarios\Utilitario.cs" />
+    <Compile Include="Comun\BusquedaPersonas.aspx.cs">
+      <DependentUpon>BusquedaPersonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comun\BusquedaPersonas.aspx.designer.cs">
+      <DependentUpon>BusquedaPersonas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\ConfigurarMontoCIC.aspx.cs">
+      <DependentUpon>ConfigurarMontoCIC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ConfigurarMontoCIC.aspx.designer.cs">
+      <DependentUpon>ConfigurarMontoCIC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\CuotaTra.aspx.cs">
+      <DependentUpon>CuotaTra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\CuotaTra.aspx.designer.cs">
+      <DependentUpon>CuotaTra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\CargaArchivosIndicadores.aspx.cs">
+      <DependentUpon>CargaArchivosIndicadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\CargaArchivosIndicadores.aspx.designer.cs">
+      <DependentUpon>CargaArchivosIndicadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\BeneficiarioCierreRVI.ascx.cs">
+      <DependentUpon>BeneficiarioCierreRVI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\BeneficiarioCierreRVI.ascx.designer.cs">
+      <DependentUpon>BeneficiarioCierreRVI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\ParametrosRentas.aspx.cs">
+      <DependentUpon>ParametrosRentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ParametrosRentas.aspx.designer.cs">
+      <DependentUpon>ParametrosRentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\ParametrosRentasInsertar.aspx.cs">
+      <DependentUpon>ParametrosRentasInsertar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ParametrosRentasInsertar.aspx.designer.cs">
+      <DependentUpon>ParametrosRentasInsertar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxAgentes.ascx.cs">
+      <DependentUpon>ComboboxAgentes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxAgentes.ascx.designer.cs">
+      <DependentUpon>ComboboxAgentes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxAgentesOficial.ascx.cs">
+      <DependentUpon>ComboboxAgentesOficial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxAgentesOficial.ascx.designer.cs">
+      <DependentUpon>ComboboxAgentesOficial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxCiudadesAlterna.ascx.cs">
+      <DependentUpon>ComboboxCiudadesAlterna.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxCiudadesAlterna.ascx.designer.cs">
+      <DependentUpon>ComboboxCiudadesAlterna.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxCiudadesPrincipal.ascx.cs">
+      <DependentUpon>ComboboxCiudadesPrincipal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxCiudadesPrincipal.ascx.designer.cs">
+      <DependentUpon>ComboboxCiudadesPrincipal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxCiudades.ascx.cs">
+      <DependentUpon>ComboboxCiudades.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxCiudades.ascx.designer.cs">
+      <DependentUpon>ComboboxCiudades.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxComunasAlterna.ascx.cs">
+      <DependentUpon>ComboboxComunasAlterna.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxComunasAlterna.ascx.designer.cs">
+      <DependentUpon>ComboboxComunasAlterna.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxComunasPrincipal.ascx.cs">
+      <DependentUpon>ComboboxComunasPrincipal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxComunasPrincipal.ascx.designer.cs">
+      <DependentUpon>ComboboxComunasPrincipal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxComunas.ascx.cs">
+      <DependentUpon>ComboboxComunas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxComunas.ascx.designer.cs">
+      <DependentUpon>ComboboxComunas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxSupervisores.ascx.cs">
+      <DependentUpon>ComboboxSupervisores.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxSupervisores.ascx.designer.cs">
+      <DependentUpon>ComboboxSupervisores.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboboxSupervisoresOficial.ascx.cs">
+      <DependentUpon>ComboboxSupervisoresOficial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboboxSupervisoresOficial.ascx.designer.cs">
+      <DependentUpon>ComboboxSupervisoresOficial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ConsentimientoMensaje.ascx.cs">
+      <DependentUpon>ConsentimientoMensaje.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ConsentimientoMensaje.ascx.designer.cs">
+      <DependentUpon>ConsentimientoMensaje.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\DireccionCierreRVI.ascx.cs">
+      <DependentUpon>DireccionCierreRVI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\DireccionCierreRVI.ascx.designer.cs">
+      <DependentUpon>DireccionCierreRVI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\DocumentosFirmaDigitalHistorico.ascx.cs">
+      <DependentUpon>DocumentosFirmaDigitalHistorico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\DocumentosFirmaDigitalHistorico.ascx.designer.cs">
+      <DependentUpon>DocumentosFirmaDigitalHistorico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MenuMaterialize.ascx.cs">
+      <DependentUpon>MenuMaterialize.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\MenuMaterialize.ascx.designer.cs">
+      <DependentUpon>MenuMaterialize.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MenuMosaico.ascx.cs">
+      <DependentUpon>MenuMosaico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\MenuMosaico.ascx.designer.cs">
+      <DependentUpon>MenuMosaico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MenuPrincipal.ascx.cs">
+      <DependentUpon>MenuPrincipal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\MenuPrincipal.ascx.designer.cs">
+      <DependentUpon>MenuPrincipal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SimuladorInmediataDiferida.ascx.cs">
+      <DependentUpon>SimuladorInmediataDiferida.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\SimuladorInmediataDiferida.ascx.designer.cs">
+      <DependentUpon>SimuladorInmediataDiferida.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SimuladorJubilarseHoyFuturo.ascx.cs">
+      <DependentUpon>SimuladorJubilarseHoyFuturo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\SimuladorJubilarseHoyFuturo.ascx.designer.cs">
+      <DependentUpon>SimuladorJubilarseHoyFuturo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SimuladorPlazoFijo.ascx.cs">
+      <DependentUpon>SimuladorPlazoFijo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\SimuladorPlazoFijo.ascx.designer.cs">
+      <DependentUpon>SimuladorPlazoFijo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SimuladorQueMeConviene.ascx.cs">
+      <DependentUpon>SimuladorQueMeConviene.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\SimuladorQueMeConviene.ascx.designer.cs">
+      <DependentUpon>SimuladorQueMeConviene.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SimuladorRentaVitaliciaRetiroProgramado.ascx.cs">
+      <DependentUpon>SimuladorRentaVitaliciaRetiroProgramado.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\SimuladorRentaVitaliciaRetiroProgramado.ascx.designer.cs">
+      <DependentUpon>SimuladorRentaVitaliciaRetiroProgramado.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SimuladorTipoMoneda.ascx.cs">
+      <DependentUpon>SimuladorTipoMoneda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\SimuladorTipoMoneda.ascx.designer.cs">
+      <DependentUpon>SimuladorTipoMoneda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaAcomMaximo.ascx.cs">
+      <DependentUpon>TablaAcomMaximo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaAcomMaximo.ascx.designer.cs">
+      <DependentUpon>TablaAcomMaximo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaActividades.ascx.cs">
+      <DependentUpon>TablaActividades.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaActividades.ascx.designer.cs">
+      <DependentUpon>TablaActividades.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaAfiliados.ascx.cs">
+      <DependentUpon>TablaAfiliados.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaAfiliados.ascx.designer.cs">
+      <DependentUpon>TablaAfiliados.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP_PG.ascx.cs">
+      <DependentUpon>TablaBeneficiarioIFP_PG.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP_PG.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiarioIFP_PG.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP.ascx.cs">
+      <DependentUpon>TablaBeneficiarioIFP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiarioIFP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP_CA.ascx.cs">
+      <DependentUpon>TablaBeneficiarioIFP_CA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP_CA.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiarioIFP_CA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP_VIT.ascx.cs">
+      <DependentUpon>TablaBeneficiarioIFP_VIT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarioIFP_VIT.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiarioIFP_VIT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarios.ascx.cs">
+      <DependentUpon>TablaBeneficiarios.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiarios.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiarios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiariosPlan3IFP.ascx.cs">
+      <DependentUpon>TablaBeneficiariosPlan3IFP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiariosPlan3IFP.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiariosPlan3IFP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiariosRentaPrivada.ascx.cs">
+      <DependentUpon>TablaBeneficiariosRentaPrivada.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiariosRentaPrivada.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiariosRentaPrivada.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiariosRPP.ascx.cs">
+      <DependentUpon>TablaBeneficiariosRPP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaBeneficiariosRPP.ascx.designer.cs">
+      <DependentUpon>TablaBeneficiariosRPP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCapitalRequerido.ascx.cs">
+      <DependentUpon>TablaCapitalRequerido.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCapitalRequerido.ascx.designer.cs">
+      <DependentUpon>TablaCapitalRequerido.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaContratos.ascx.cs">
+      <DependentUpon>TablaContratos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaContratos.ascx.designer.cs">
+      <DependentUpon>TablaContratos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizaciones.ascx.cs">
+      <DependentUpon>TablaCotizaciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizaciones.ascx.designer.cs">
+      <DependentUpon>TablaCotizaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesCierreRVI.ascx.cs">
+      <DependentUpon>TablaCotizacionesCierreRVI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesCierreRVI.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesCierreRVI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesMeler.ascx.cs">
+      <DependentUpon>TablaCotizacionesMeler.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesMeler.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesMeler.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesMovimiento.ascx.cs">
+      <DependentUpon>TablaCotizacionesMovimiento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesMovimiento.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesMovimiento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesOficiales.ascx.cs">
+      <DependentUpon>TablaCotizacionesOficiales.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesOficiales.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesOficiales.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan3IFP.ascx.cs">
+      <DependentUpon>TablaCotizacionesPlan3IFP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan3IFP.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesPlan3IFP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan1IFP.ascx.cs">
+      <DependentUpon>TablaCotizacionesPlan1IFP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan1IFP.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesPlan1IFP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan1IFPCierre.ascx.cs">
+      <DependentUpon>TablaCotizacionesPlan1IFPCierre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan1IFPCierre.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesPlan1IFPCierre.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan2IFP.ascx.cs">
+      <DependentUpon>TablaCotizacionesPlan2IFP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan2IFP.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesPlan2IFP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan2IFPCierre.ascx.cs">
+      <DependentUpon>TablaCotizacionesPlan2IFPCierre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan2IFPCierre.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesPlan2IFPCierre.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan3IFPCierre.ascx.cs">
+      <DependentUpon>TablaCotizacionesPlan3IFPCierre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesPlan3IFPCierre.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesPlan3IFPCierre.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRentaPrivada.ascx.cs">
+      <DependentUpon>TablaCotizacionesRentaPrivada.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRentaPrivada.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesRentaPrivada.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRentaPrivadaPlus.ascx.cs">
+      <DependentUpon>TablaCotizacionesRentaPrivadaPlus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRentaPrivadaPlus.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesRentaPrivadaPlus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRentaPrivadaPlusCierre.ascx.cs">
+      <DependentUpon>TablaCotizacionesRentaPrivadaPlusCierre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRentaPrivadaPlusCierre.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesRentaPrivadaPlusCierre.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRPP.ascx.cs">
+      <DependentUpon>TablaCotizacionesRPP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesRPP.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesRPP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCuotasTra.ascx.cs">
+      <DependentUpon>TablaCuotasTra.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCuotasTra.ascx.designer.cs">
+      <DependentUpon>TablaCuotasTra.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaGestionVentas.ascx.cs">
+      <DependentUpon>TablaGestionVentas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaGestionVentas.ascx.designer.cs">
+      <DependentUpon>TablaGestionVentas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaLotesResultado.ascx.cs">
+      <DependentUpon>TablaLotesResultado.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaLotesResultado.ascx.designer.cs">
+      <DependentUpon>TablaLotesResultado.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaParametrosRentas.ascx.cs">
+      <DependentUpon>TablaParametrosRentas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaParametrosRentas.ascx.designer.cs">
+      <DependentUpon>TablaParametrosRentas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaPersonas.ascx.cs">
+      <DependentUpon>TablaPersonas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaPersonas.ascx.designer.cs">
+      <DependentUpon>TablaPersonas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaPersonasVinculadasPEP.ascx.cs">
+      <DependentUpon>TablaPersonasVinculadasPEP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaPersonasVinculadasPEP.ascx.designer.cs">
+      <DependentUpon>TablaPersonasVinculadasPEP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaGrupoFamiliarCapitalRequerido.ascx.cs">
+      <DependentUpon>TablaGrupoFamiliarCapitalRequerido.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaGrupoFamiliarCapitalRequerido.ascx.designer.cs">
+      <DependentUpon>TablaGrupoFamiliarCapitalRequerido.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaLotes.ascx.cs">
+      <DependentUpon>TablaLotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaLotes.ascx.designer.cs">
+      <DependentUpon>TablaLotes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefi2.ascx.cs">
+      <DependentUpon>TablaRviBenefi2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefi2.ascx.designer.cs">
+      <DependentUpon>TablaRviBenefi2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefi2Mat.ascx.cs">
+      <DependentUpon>TablaRviBenefi2Mat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefi2Mat.ascx.designer.cs">
+      <DependentUpon>TablaRviBenefi2Mat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefiRentaPrivada.ascx.cs">
+      <DependentUpon>TablaRviBenefiRentaPrivada.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefiRentaPrivada.ascx.designer.cs">
+      <DependentUpon>TablaRviBenefiRentaPrivada.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesAnticipo.ascx.cs">
+      <DependentUpon>TablaSolicitudesAnticipo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesAnticipo.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesAnticipo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesBandejaOficiales.ascx.cs">
+      <DependentUpon>TablaSolicitudesBandejaOficiales.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesBandejaOficiales.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesBandejaOficiales.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesConfirmacion.ascx.cs">
+      <DependentUpon>TablaSolicitudesConfirmacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesConfirmacion.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesConfirmacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesEvaluacion.ascx.cs">
+      <DependentUpon>TablaSolicitudesEvaluacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesEvaluacion.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesEvaluacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesIFP.ascx.cs">
+      <DependentUpon>TablaSolicitudesIFP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesIFP.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesIFP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesLote.ascx.cs">
+      <DependentUpon>TablaSolicitudesLote.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesLote.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesLote.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesOficiales.ascx.cs">
+      <DependentUpon>TablaSolicitudesOficiales.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesOficiales.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesOficiales.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesSimulador.ascx.cs">
+      <DependentUpon>TablaCotizacionesSimulador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaCotizacionesSimulador.ascx.designer.cs">
+      <DependentUpon>TablaCotizacionesSimulador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaDirecciones.ascx.cs">
+      <DependentUpon>TablaDirecciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaDirecciones.ascx.designer.cs">
+      <DependentUpon>TablaDirecciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaGrupoFamiliar.ascx.cs">
+      <DependentUpon>TablaGrupoFamiliar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaGrupoFamiliar.ascx.designer.cs">
+      <DependentUpon>TablaGrupoFamiliar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefi.ascx.cs">
+      <DependentUpon>TablaRviBenefi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaRviBenefi.ascx.designer.cs">
+      <DependentUpon>TablaRviBenefi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSeguimiento.ascx.cs">
+      <DependentUpon>TablaSeguimiento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSeguimiento.ascx.designer.cs">
+      <DependentUpon>TablaSeguimiento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSeguimientoExcel.ascx.cs">
+      <DependentUpon>TablaSeguimientoExcel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSeguimientoExcel.ascx.designer.cs">
+      <DependentUpon>TablaSeguimientoExcel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudes.ascx.cs">
+      <DependentUpon>TablaSolicitudes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudes.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesRentaPrivada.ascx.cs">
+      <DependentUpon>TablaSolicitudesRentaPrivada.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesRentaPrivada.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesRentaPrivada.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesRentaPrivadaPlus.ascx.cs">
+      <DependentUpon>TablaSolicitudesRentaPrivadaPlus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesRentaPrivadaPlus.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesRentaPrivadaPlus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesRentaPrivadaPlusCierre.ascx.cs">
+      <DependentUpon>TablaSolicitudesRentaPrivadaPlusCierre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesRentaPrivadaPlusCierre.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesRentaPrivadaPlusCierre.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesReportePlus.ascx.cs">
+      <DependentUpon>TablaSolicitudesReportePlus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesReportePlus.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesReportePlus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesSimulador.ascx.cs">
+      <DependentUpon>TablaSolicitudesSimulador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSolicitudesSimulador.ascx.designer.cs">
+      <DependentUpon>TablaSolicitudesSimulador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSupervision.ascx.cs">
+      <DependentUpon>TablaSupervision.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSupervision.ascx.designer.cs">
+      <DependentUpon>TablaSupervision.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaSupervisionExcel.ascx.cs">
+      <DependentUpon>TablaSupervisionExcel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaSupervisionExcel.ascx.designer.cs">
+      <DependentUpon>TablaSupervisionExcel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaTasaMaximaTraMinimo.ascx.cs">
+      <DependentUpon>TablaTasaMaximaTraMinimo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaTasaMaximaTraMinimo.ascx.designer.cs">
+      <DependentUpon>TablaTasaMaximaTraMinimo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaTelefonos.ascx.cs">
+      <DependentUpon>TablaTelefonos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaTelefonos.ascx.designer.cs">
+      <DependentUpon>TablaTelefonos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TablaTraDefault.ascx.cs">
+      <DependentUpon>TablaTraDefault.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\TablaTraDefault.ascx.designer.cs">
+      <DependentUpon>TablaTraDefault.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\BeneficiarioCierre.aspx.cs">
+      <DependentUpon>BeneficiarioCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\BeneficiarioCierre.aspx.designer.cs">
+      <DependentUpon>BeneficiarioCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\CerrarSolicitud.aspx.cs">
+      <DependentUpon>CerrarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\CerrarSolicitud.aspx.designer.cs">
+      <DependentUpon>CerrarSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\ConsultaSolicitudesAnticipo.aspx.cs">
+      <DependentUpon>ConsultaSolicitudesAnticipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\ConsultaSolicitudesAnticipo.aspx.designer.cs">
+      <DependentUpon>ConsultaSolicitudesAnticipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\RecalculoCotizaciones.aspx.cs">
+      <DependentUpon>RecalculoCotizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\RecalculoCotizaciones.aspx.designer.cs">
+      <DependentUpon>RecalculoCotizaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\SeleccionarBeneficiarioCierre.aspx.cs">
+      <DependentUpon>SeleccionarBeneficiarioCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\SeleccionarBeneficiarioCierre.aspx.designer.cs">
+      <DependentUpon>SeleccionarBeneficiarioCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\SolicitudAnticipo.aspx.cs">
+      <DependentUpon>SolicitudAnticipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\SolicitudAnticipo.aspx.designer.cs">
+      <DependentUpon>SolicitudAnticipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\CondicionesAnticipo.aspx.cs">
+      <DependentUpon>CondicionesAnticipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\CondicionesAnticipo.aspx.designer.cs">
+      <DependentUpon>CondicionesAnticipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\Cotizador.aspx.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\Cotizador.aspx.designer.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizador\CotizadorOficiales.aspx.cs">
+      <DependentUpon>CotizadorOficiales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizador\CotizadorOficiales.aspx.designer.cs">
+      <DependentUpon>CotizadorOficiales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CotWebRVI.Master.cs">
+      <DependentUpon>CotWebRVI.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CotWebRVI.Master.designer.cs">
+      <DependentUpon>CotWebRVI.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CWRV.Master.cs">
+      <DependentUpon>CWRV.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CWRV.Master.designer.cs">
+      <DependentUpon>CWRV.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CWRV.Movil.Master.cs">
+      <DependentUpon>CWRV.Movil.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CWRV.Movil.Master.designer.cs">
+      <DependentUpon>CWRV.Movil.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Error\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\Documento.aspx.cs">
+      <DependentUpon>Documento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\Documento.aspx.designer.cs">
+      <DependentUpon>Documento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\Permisos.aspx.cs">
+      <DependentUpon>Permisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\Permisos.aspx.designer.cs">
+      <DependentUpon>Permisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IFP\Cotizador.aspx.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IFP\Cotizador.aspx.designer.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IFP\GrupoFamiliarCierre.aspx.cs">
+      <DependentUpon>GrupoFamiliarCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IFP\GrupoFamiliarCierre.aspx.designer.cs">
+      <DependentUpon>GrupoFamiliarCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IFP\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IFP\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Meler\CargaConfirmaciones.aspx.cs">
+      <DependentUpon>CargaConfirmaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Meler\CargaConfirmaciones.aspx.designer.cs">
+      <DependentUpon>CargaConfirmaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Meler\CargaCotizaciones.aspx.cs">
+      <DependentUpon>CargaCotizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Meler\CargaCotizaciones.aspx.designer.cs">
+      <DependentUpon>CargaCotizaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Meler\CotizarLote.aspx.cs">
+      <DependentUpon>CotizarLote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Meler\CotizarLote.aspx.designer.cs">
+      <DependentUpon>CotizarLote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Meler\DescargaResultados.aspx.cs">
+      <DependentUpon>DescargaResultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Meler\DescargaResultados.aspx.designer.cs">
+      <DependentUpon>DescargaResultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Meler\DescargaSolicitudes.aspx.cs">
+      <DependentUpon>DescargaSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Meler\DescargaSolicitudes.aspx.designer.cs">
+      <DependentUpon>DescargaSolicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="logs.aspx.cs">
+      <DependentUpon>logs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logs.aspx.designer.cs">
+      <DependentUpon>logs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\CantidadBeneficiarios.aspx.cs">
+      <DependentUpon>CantidadBeneficiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\CantidadBeneficiarios.aspx.designer.cs">
+      <DependentUpon>CantidadBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\CerrarSolicitud.aspx.cs">
+      <DependentUpon>CerrarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\CerrarSolicitud.aspx.designer.cs">
+      <DependentUpon>CerrarSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\Cotizador.aspx.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\Cotizador.aspx.designer.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\DireccionAfiliado.aspx.cs">
+      <DependentUpon>DireccionAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\DireccionAfiliado.aspx.designer.cs">
+      <DependentUpon>DireccionAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\GrupoFamiliarAfiliado.aspx.cs">
+      <DependentUpon>GrupoFamiliarAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\GrupoFamiliarAfiliado.aspx.designer.cs">
+      <DependentUpon>GrupoFamiliarAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\GrupoFamiliarAfiliadoCierre.aspx.cs">
+      <DependentUpon>GrupoFamiliarAfiliadoCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\GrupoFamiliarAfiliadoCierre.aspx.designer.cs">
+      <DependentUpon>GrupoFamiliarAfiliadoCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\ProcesarTareas.aspx.cs">
+      <DependentUpon>ProcesarTareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\ProcesarTareas.aspx.designer.cs">
+      <DependentUpon>ProcesarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\ResumenBeneficiariosPG.aspx.cs">
+      <DependentUpon>ResumenBeneficiariosPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\ResumenBeneficiariosPG.aspx.designer.cs">
+      <DependentUpon>ResumenBeneficiariosPG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\ResumenBeneficiariosCA.aspx.cs">
+      <DependentUpon>ResumenBeneficiariosCA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\ResumenBeneficiariosCA.aspx.designer.cs">
+      <DependentUpon>ResumenBeneficiariosCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\MantenerSolicitud.aspx.cs">
+      <DependentUpon>MantenerSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\MantenerSolicitud.aspx.designer.cs">
+      <DependentUpon>MantenerSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\PlanesIFP.aspx.cs">
+      <DependentUpon>PlanesIFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\PlanesIFP.aspx.designer.cs">
+      <DependentUpon>PlanesIFP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\ResumenBeneficiarios.aspx.cs">
+      <DependentUpon>ResumenBeneficiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\ResumenBeneficiarios.aspx.designer.cs">
+      <DependentUpon>ResumenBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\SeleccionSolicitud.aspx.cs">
+      <DependentUpon>SeleccionSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\SeleccionSolicitud.aspx.designer.cs">
+      <DependentUpon>SeleccionSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaIFP\TelefonoAfiliado.aspx.cs">
+      <DependentUpon>TelefonoAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaIFP\TelefonoAfiliado.aspx.designer.cs">
+      <DependentUpon>TelefonoAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaParticular\SolicitudesEvaluacion.aspx.cs">
+      <DependentUpon>SolicitudesEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaParticular\SolicitudesEvaluacion.aspx.designer.cs">
+      <DependentUpon>SolicitudesEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaParticular\SolicitudEvaluacion.aspx.cs">
+      <DependentUpon>SolicitudEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaParticular\SolicitudEvaluacion.aspx.designer.cs">
+      <DependentUpon>SolicitudEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\GrupoFamiliarAfiliadoCierre.aspx.cs">
+      <DependentUpon>GrupoFamiliarAfiliadoCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\GrupoFamiliarAfiliadoCierre.aspx.designer.cs">
+      <DependentUpon>GrupoFamiliarAfiliadoCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\ListadoArchivoDrive.aspx.cs">
+      <DependentUpon>ListadoArchivoDrive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\ListadoArchivoDrive.aspx.designer.cs">
+      <DependentUpon>ListadoArchivoDrive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\ListadoEvaluacion.aspx.cs">
+      <DependentUpon>ListadoEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\ListadoEvaluacion.aspx.designer.cs">
+      <DependentUpon>ListadoEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\SeleccionSolicitud.aspx.cs">
+      <DependentUpon>SeleccionSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\SeleccionSolicitud.aspx.designer.cs">
+      <DependentUpon>SeleccionSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\Cotizador.aspx.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\Cotizador.aspx.designer.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\DireccionAfiliado.aspx.cs">
+      <DependentUpon>DireccionAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\DireccionAfiliado.aspx.designer.cs">
+      <DependentUpon>DireccionAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\CerrarSolicitud.aspx.cs">
+      <DependentUpon>CerrarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\CerrarSolicitud.aspx.designer.cs">
+      <DependentUpon>CerrarSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\GrupoFamiliarAfiliado.aspx.cs">
+      <DependentUpon>GrupoFamiliarAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\GrupoFamiliarAfiliado.aspx.designer.cs">
+      <DependentUpon>GrupoFamiliarAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\ListadoCierrePlus.aspx.cs">
+      <DependentUpon>ListadoCierrePlus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\ListadoCierrePlus.aspx.designer.cs">
+      <DependentUpon>ListadoCierrePlus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\MantenerSolicitud.aspx.cs">
+      <DependentUpon>MantenerSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\MantenerSolicitud.aspx.designer.cs">
+      <DependentUpon>MantenerSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\TelefonoAfiliado.aspx.cs">
+      <DependentUpon>TelefonoAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\TelefonoAfiliado.aspx.designer.cs">
+      <DependentUpon>TelefonoAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\UploadFiles.aspx.cs">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivadaPlus\UploadFiles.aspx.designer.cs">
+      <DependentUpon>UploadFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivada\Cotizador.aspx.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivada\Cotizador.aspx.designer.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivada\DireccionAfiliado.aspx.cs">
+      <DependentUpon>DireccionAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivada\DireccionAfiliado.aspx.designer.cs">
+      <DependentUpon>DireccionAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivada\GrupoFamiliarAfiliado.aspx.cs">
+      <DependentUpon>GrupoFamiliarAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivada\GrupoFamiliarAfiliado.aspx.designer.cs">
+      <DependentUpon>GrupoFamiliarAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivada\MantenerSolicitud.aspx.cs">
+      <DependentUpon>MantenerSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivada\MantenerSolicitud.aspx.designer.cs">
+      <DependentUpon>MantenerSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivada\NuevaSolicitud.aspx.cs">
+      <DependentUpon>NuevaSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivada\NuevaSolicitud.aspx.designer.cs">
+      <DependentUpon>NuevaSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RentaPrivada\TelefonoAfiliado.aspx.cs">
+      <DependentUpon>TelefonoAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentaPrivada\TelefonoAfiliado.aspx.designer.cs">
+      <DependentUpon>TelefonoAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CalculoCapital.aspx.cs">
+      <DependentUpon>CalculoCapital.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CalculoCapital.aspx.designer.cs">
+      <DependentUpon>CalculoCapital.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CartaAFP.aspx.cs">
+      <DependentUpon>CartaAFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CartaAFP.aspx.designer.cs">
+      <DependentUpon>CartaAFP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DashboardCntoFD.aspx.cs">
+      <DependentUpon>DashboardCntoFD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DashboardCntoFD.aspx.designer.cs">
+      <DependentUpon>DashboardCntoFD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ConsolidadoCumplimientoCdA.aspx.cs">
+      <DependentUpon>ConsolidadoCumplimientoCdA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ConsolidadoCumplimientoCdA.aspx.designer.cs">
+      <DependentUpon>ConsolidadoCumplimientoCdA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\IndicadoresRRVV.aspx.cs">
+      <DependentUpon>IndicadoresRRVV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\IndicadoresRRVV.aspx.designer.cs">
+      <DependentUpon>IndicadoresRRVV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CompararCotizacionPlus.aspx.cs">
+      <DependentUpon>CompararCotizacionPlus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CompararCotizacionPlus.aspx.designer.cs">
+      <DependentUpon>CompararCotizacionPlus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DescargaExcel.aspx.cs">
+      <DependentUpon>DescargaExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DescargaExcel.aspx.designer.cs">
+      <DependentUpon>DescargaExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DescargaSolicitudes.aspx.cs">
+      <DependentUpon>DescargaSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DescargaSolicitudes.aspx.designer.cs">
+      <DependentUpon>DescargaSolicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleAfiliado.aspx.cs">
+      <DependentUpon>DetalleAfiliado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleAfiliado.aspx.designer.cs">
+      <DependentUpon>DetalleAfiliado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacion.aspx.cs">
+      <DependentUpon>DetalleCotizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacion.aspx.designer.cs">
+      <DependentUpon>DetalleCotizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionLote.aspx.cs">
+      <DependentUpon>DetalleCotizacionLote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionLote.aspx.designer.cs">
+      <DependentUpon>DetalleCotizacionLote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionLoteMovil.aspx.cs">
+      <DependentUpon>DetalleCotizacionLoteMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionLoteMovil.aspx.designer.cs">
+      <DependentUpon>DetalleCotizacionLoteMovil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionMembretado.aspx.cs">
+      <DependentUpon>DetalleCotizacionMembretado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionMembretado.aspx.designer.cs">
+      <DependentUpon>DetalleCotizacionMembretado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionMembretadoMovil.aspx.cs">
+      <DependentUpon>DetalleCotizacionMembretadoMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionMembretadoMovil.aspx.designer.cs">
+      <DependentUpon>DetalleCotizacionMembretadoMovil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionMovil.aspx.cs">
+      <DependentUpon>DetalleCotizacionMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleCotizacionMovil.aspx.designer.cs">
+      <DependentUpon>DetalleCotizacionMovil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuesta.aspx.cs">
+      <DependentUpon>DetallePropuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuesta.aspx.designer.cs">
+      <DependentUpon>DetallePropuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaIFP.aspx.cs">
+      <DependentUpon>DetallePropuestaIFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaIFP.aspx.designer.cs">
+      <DependentUpon>DetallePropuestaIFP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaIFPMovil.aspx.cs">
+      <DependentUpon>DetallePropuestaIFPMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaIFPMovil.aspx.designer.cs">
+      <DependentUpon>DetallePropuestaIFPMovil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaPlus.aspx.cs">
+      <DependentUpon>DetallePropuestaPlus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaPlus.aspx.designer.cs">
+      <DependentUpon>DetallePropuestaPlus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaPlusMovil.aspx.cs">
+      <DependentUpon>DetallePropuestaPlusMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetallePropuestaPlusMovil.aspx.designer.cs">
+      <DependentUpon>DetallePropuestaPlusMovil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Escenarios.aspx.cs">
+      <DependentUpon>Escenarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Escenarios.aspx.designer.cs">
+      <DependentUpon>Escenarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EscenariosMovil.aspx.cs">
+      <DependentUpon>EscenariosMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\EscenariosMovil.aspx.designer.cs">
+      <DependentUpon>EscenariosMovil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\GestionVentas.aspx.cs">
+      <DependentUpon>GestionVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\GestionVentas.aspx.designer.cs">
+      <DependentUpon>GestionVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\GestionVentasExcel.aspx.cs">
+      <DependentUpon>GestionVentasExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\GestionVentasExcel.aspx.designer.cs">
+      <DependentUpon>GestionVentasExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\LoteResultados.aspx.cs">
+      <DependentUpon>LoteResultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\LoteResultados.aspx.designer.cs">
+      <DependentUpon>LoteResultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RecalculoCotizaciones.aspx.cs">
+      <DependentUpon>RecalculoCotizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\RecalculoCotizaciones.aspx.designer.cs">
+      <DependentUpon>RecalculoCotizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\IndicadorCdA.aspx.cs">
+      <DependentUpon>IndicadorCdA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\IndicadorCdA.aspx.designer.cs">
+      <DependentUpon>IndicadorCdA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\IndicadorVCTP.aspx.cs">
+      <DependentUpon>IndicadorVCTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\IndicadorVCTP.aspx.designer.cs">
+      <DependentUpon>IndicadorVCTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteIndicadorCDA.aspx.cs">
+      <DependentUpon>ReporteIndicadorCDA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteIndicadorCDA.aspx.designer.cs">
+      <DependentUpon>ReporteIndicadorCDA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesCloudStorage.aspx.cs">
+      <DependentUpon>ReportesCloudStorage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesCloudStorage.aspx.designer.cs">
+      <DependentUpon>ReportesCloudStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesRentaParticular.aspx.cs">
+      <DependentUpon>ReportesRentaParticular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesRentaParticular.aspx.designer.cs">
+      <DependentUpon>ReportesRentaParticular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesRentasVitalicias.aspx.cs">
+      <DependentUpon>ReportesRentasVitalicias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesRentasVitalicias.aspx.designer.cs">
+      <DependentUpon>ReportesRentasVitalicias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Seguimiento.aspx.cs">
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Seguimiento.aspx.designer.cs">
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\SolicitudAnticipo.aspx.cs">
+      <DependentUpon>SolicitudAnticipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\SolicitudAnticipo.aspx.designer.cs">
+      <DependentUpon>SolicitudAnticipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Supervision.aspx.cs">
+      <DependentUpon>Supervision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Supervision.aspx.designer.cs">
+      <DependentUpon>Supervision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\XMLConfirmacionMELER.aspx.cs">
+      <DependentUpon>XMLConfirmacionMELER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\XMLConfirmacionMELER.aspx.designer.cs">
+      <DependentUpon>XMLConfirmacionMELER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\XMLCotizacionesMELER.aspx.cs">
+      <DependentUpon>XMLCotizacionesMELER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\XMLCotizacionesMELER.aspx.designer.cs">
+      <DependentUpon>XMLCotizacionesMELER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RPP\Cotizador.aspx.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPP\Cotizador.aspx.designer.cs">
+      <DependentUpon>Cotizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\IniciarSesion.aspx.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\IniciarSesion.aspx.designer.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\SesionExpirada.aspx.cs">
+      <DependentUpon>SesionExpirada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\SesionExpirada.aspx.designer.cs">
+      <DependentUpon>SesionExpirada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\CapitalRequerido.aspx.cs">
+      <DependentUpon>CapitalRequerido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\CapitalRequerido.aspx.designer.cs">
+      <DependentUpon>CapitalRequerido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\CompararPlazoFijo.aspx.cs">
+      <DependentUpon>CompararPlazoFijo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\CompararPlazoFijo.aspx.designer.cs">
+      <DependentUpon>CompararPlazoFijo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\InmediataDiferida.aspx.cs">
+      <DependentUpon>InmediataDiferida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\InmediataDiferida.aspx.designer.cs">
+      <DependentUpon>InmediataDiferida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\JubilarseHoyFuturo.aspx.cs">
+      <DependentUpon>JubilarseHoyFuturo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\JubilarseHoyFuturo.aspx.designer.cs">
+      <DependentUpon>JubilarseHoyFuturo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\PensionProyectada.aspx.cs">
+      <DependentUpon>PensionProyectada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\PensionProyectada.aspx.designer.cs">
+      <DependentUpon>PensionProyectada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\QueMeConviene.aspx.cs">
+      <DependentUpon>QueMeConviene.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\QueMeConviene.aspx.designer.cs">
+      <DependentUpon>QueMeConviene.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\RentaVitaliciaRetiroProgramado.aspx.cs">
+      <DependentUpon>RentaVitaliciaRetiroProgramado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\RentaVitaliciaRetiroProgramado.aspx.designer.cs">
+      <DependentUpon>RentaVitaliciaRetiroProgramado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simuladores\TipoMoneda.aspx.cs">
+      <DependentUpon>TipoMoneda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simuladores\TipoMoneda.aspx.designer.cs">
+      <DependentUpon>TipoMoneda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comun\PlantillaCorreoElectronico.aspx.cs">
+      <DependentUpon>PlantillaCorreoElectronico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comun\PlantillaCorreoElectronico.aspx.designer.cs">
+      <DependentUpon>PlantillaCorreoElectronico.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CotWebRVI.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interseguro.CWRV.Dominio.Entidades\Interseguro.CWRV.Dominio.Entidades.csproj">
+      <Project>{E957A78D-1F02-41DB-A31C-74ACB67513E1}</Project>
+      <Name>Interseguro.CWRV.Dominio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interseguro.CWRV.Infraestructura.General\Interseguro.CWRV.Infraestructura.General.csproj">
+      <Project>{32a0a4ed-b7f6-4819-b802-a71edbbe10be}</Project>
+      <Name>Interseguro.CWRV.Infraestructura.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interseguro.CWRV.Presentacion.AgenteServicios\Interseguro.CWRV.Presentacion.AgenteServicios.csproj">
+      <Project>{161EDFB7-7F75-47A7-8C45-7D1767C67EC9}</Project>
+      <Name>Interseguro.CWRV.Presentacion.AgenteServicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\CWRV.modal.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArchivosTemporales\IFP_253134\" />
+    <Folder Include="ArchivosTemporales\RVI\Consentimiento\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursos\GuiaUsuario.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CWRV.Movil.Master" />
+    <Content Include="App_Browsers\IE11.browser" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Plantilla\RPP\Plantilla - OF.docx" />
+    <Content Include="Plantilla\RPP\Plantilla - PEP.docx" />
+    <Content Include="Plantilla\RPP\Plantilla.docx" />
+    <Content Include="Plantilla\RPP\Plantilla2.pdf" />
+    <Content Include="Plantilla\RPP\PlantillaOF2.pdf" />
+    <Content Include="Plantilla\RPP\PlantillaPEP2.pdf" />
+    <Content Include="Plantilla\RVI\Reporte\reporte_CdA.xlsx" />
+    <Content Include="Estilos\app-assets\fonts\material-design-icons\MaterialIcons-Regular.eot" />
+    <Content Include="Estilos\app-assets\fonts\material-design-icons\MaterialIcons-Regular.ttf" />
+    <Content Include="Estilos\app-assets\fonts\material-design-icons\MaterialIcons-Regular.woff" />
+    <Content Include="Estilos\app-assets\fonts\material-design-icons\MaterialIcons-Regular.woff2" />
+    <Content Include="Plantilla\RPP\OrigenFondos.pdf" />
+    <Content Include="Plantilla\RPP\PersonaExpuestaPoliticamente.pdf" />
+    <Content Include="Plantilla\RPP\PlantillaWordPEP.docx" />
+    <Content Include="Plantilla\RPP\Solicitud.pdf" />
+    <Content Include="Plantilla\IFP\Anterior PlantillaWordPEP.docx" />
+    <Content Include="Plantilla\IFP\icomoon.ttf" />
+    <Content Include="Plantilla\IFP\IFP_FormatoOF.docx" />
+    <Content Include="Plantilla\IFP\IFP_FormatoPEP.docx" />
+    <Content Include="Plantilla\IFP\IFP_FormatoSolicitudRenta.docx" />
+    <Content Include="Plantilla\IFP\PlantillaWordPEP.docx" />
+    <Content Include="CWRV.Master" />
+    <Content Include="Iconos\manifest.json" />
+    <Content Include="Endpoints.config" />
+    <Content Include="keyConfiguration.UAT.config" />
+    <Content Include="keyConfiguration.config" />
+    <Content Include="keyConfiguration.DEV.config" />
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\CWRV.pubxml" />
+    <None Include="Properties\PublishProfiles\HLS.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Scripts\CWRV.eventos.simuladores.js" />
+    <Content Include="Scripts\CWRV.eventos.anticipos.js" />
+    <Content Include="Recursos\Plantilla.xls" />
+    <Content Include="Recursos\Plantilla.zip" />
+    <Content Include="Scripts\CWRV.controles.rpppoliza.js" />
+    <Content Include="Scripts\CWRV.controles.rppevaluacion.js" />
+    <Content Include="Scripts\CWRV.eventos.rpparchivosdrive.js" />
+    <Content Include="Scripts\CWRV.google.drive.js" />
+    <Content Include="Scripts\CWRV.controles.load.js" />
+    <None Include="Properties\PublishProfiles\Publish_CWRV.pubxml" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\common.scss" />
+    <Content Include="Scripts\DataTables\Buttons-2.2.3\css\mixins.scss" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55825</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,284 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CotWebRVI.master.cs" Inherits="Interseguro.CWRV.Presentacion.ASPNET.CotWebRVI" %>
+<%@ Register TagPrefix="uc" TagName="MenuPrincipal" Src="~/Controles/MenuPrincipal.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head runat="server">
+
+	<%--<INIGTI_4081> --%>
+	<%--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	 --%>
+
+   
+	<meta name="Content-Language" content="es" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+	<%--<FINGTI_4081> --%>
+
+	<title>Interseguro | Cotizador Web de Rentas </title>
+
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery-1.8.3.min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery-ui-1.9.1.custom.min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.hoverIntent.minified.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.json-2.4.min.js")%>"></script>
+	<%--<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/autoNumeric-1.9.1.js")%>"></script>--%>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/autoNumeric-min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.formrestrict.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.alphanumeric.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.countdown.min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.maskedinput.min.js")%>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/date.js")%>"></script>
+
+
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/CWRV.global.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+	<script type="text/javascript">
+		var rutaCargarTablaAfiliados = '<%=ResolveUrl("~/Cotizador/Cotizador.aspx/CargarTablaAfiliados")%>';
+		var rutaObtenerDatosAfiliado = '<%=ResolveUrl("~/Cotizador/Cotizador.aspx/ObtenerDatosAfiliado")%>';
+		var rutaCargarTablaSolicitudesSimulador = '<%=ResolveUrl("~/Cotizador/Cotizador.aspx/CargarTablaSolicitudesSimulador")%>';
+		var rutaObtenerDatosSolicitud = '<%=ResolveUrl("~/Cotizador/Cotizador.aspx/ObtenerDatosSolicitud")%>';
+		var rutaCargarTablaCotizacionesSimulador = '<%=ResolveUrl("~/Cotizador/Cotizador.aspx/CargarTablaCotizacionesSimulador")%>';
+		var rutaObtenerMontoACOM = '<%=ResolveUrl("~/Cotizador/CotizadorOficiales.aspx/ObtenerMontoACOM")%>';
+		var rutaGenerarReporteSolicitudAnticipo = '<%=ResolveUrl("~/Cotizador/CotizadorOficiales.aspx/GenerarReporteSolicitudAnticipo")%>';
+		var rutaPensionProyectada = '<%=ResolveUrl("~/Simuladores/PensionProyectada.aspx")%>';
+		var rutaXMLCotizacionesMELER = '<%=ResolveUrl("~/Reportes/XMLCotizacionesMELER.aspx")%>';
+		var rutaXMLConfirmacionMELER = '<%=ResolveUrl("~/Reportes/XMLConfirmacionMELER.aspx")%>';
+
+		var rutaGestionVentas = '<%=ResolveUrl("~/Reportes/GestionVentasExcel.aspx")%>';
+
+		var rutaDescargaExcel = '<%=ResolveUrl("~/Reportes/DescargaExcel.aspx")%>';
+
+		var rutafileUpload = '<%=ResolveUrl("~/Builder/Utilitarios/AjaxFileUploader.ashx")%>';
+		var API_SOLICITUDES_CAMBIO_URL = '<asp:Literal ID="lbApiSolicitudesCambioUrl" runat="server" />';
+
+		var API_COTIZADOR_IFP_URL = '<asp:Literal ID="lbApiCotizadorIfpUrl" runat="server" />';
+
+		var API_COTIZADOR_RV_URL = '<asp:Literal ID="lbApiCotizadorRvUrl" runat="server" />';
+
+        var API_PARAMETRO_URL = '<asp:Literal ID="lbApiParametroUrl" runat="server" />';
+
+		var API_AUTENTICACION_URL = '<asp:Literal ID="lbApiAutenticacionUrl" runat="server" />';
+
+        var API_REPORTES_URL = '<asp:Literal ID="lbApiReportesUrl" runat="server" />';
+		
+		console.log("Nuevas APIs", {
+            API_SOLICITUDES_CAMBIO_URL,
+			API_COTIZADOR_IFP_URL,
+			API_COTIZADOR_RV_URL,
+			API_PARAMETRO_URL,
+            API_AUTENTICACION_URL,
+            API_REPORTES_URL
+		})
+
+		var $clock;
+    </script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/CWRV.tabs.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/CWRV.modal.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/CWRV.eventos.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+	<script type="text/javascript" src="<%=ResolveUrl("~/Scripts/CWRV.controles.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+
+	<script type="text/javascript">
+		$.ajaxSetup({
+			type: 'POST',
+			headers: { "cache-control": "no-cache" }
+		});
+
+		$(document).ready(function () {
+
+			function desplagar() { $('ul', this).slideDown(200); }
+			function replegar() { $('ul', this).slideUp(200); }
+
+			$("#Menu li").hoverIntent({
+				over: desplagar,
+				timeout: 20,
+				out: replegar
+			});
+
+			$('input, select').keypress(function (event) { return event.keyCode != 13; });
+
+			$clock = $("#Sesion").on("update.countdown", function (event) {
+				var format = '%M:%S';
+				$(this).html(event.strftime(format));
+			}).on('finish.countdown', function (event) {
+				CerrarSesionExpirada();
+			});
+
+			selectedDate = new Date().valueOf() + parseFloat($("#Timeout").val());
+			$clock.countdown(selectedDate.toString());
+		});
+
+		function CerrarSesionExpirada() {
+			window.location.href = '<%=ResolveUrl("~/Seguridad/SesionExpirada.aspx")%>';
+		}
+
+		function base64ABytes(base64) {
+            var s = window.atob(base64);
+            var bytes = new Uint8Array(s.length);
+            for (var i = 0; i < s.length; i++) {
+                bytes[i] = s.charCodeAt(i);
+            }
+            return bytes;
+        }
+
+        function JSONstringifyConFechas(obj) {
+            return JSON.stringify(obj).replace(/\/Date/g, "\\\/Date").replace(/\)\//g, "\)\\\/")
+        }
+	</script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="image/x-icon" href="<%=ResolveUrl("~/Imagenes/favicon.ico")%>" rel="shortcut icon" />
+	<link type="image/x-icon" href="<%=ResolveUrl("~/Imagenes/favicon.ico")%>" rel="icon" />
+
+	<link rel="stylesheet" href="<%=ResolveUrl("~/Estilos/jquery-ui-1.9.1.custom.min.css")%>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=ResolveUrl("~/Estilos/CotWebRVI.css")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>" type="text/css" />
+	
+    <style type="text/css">
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;  /* Preferred icon size */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+
+            /* Support for IE. */
+            font-feature-settings: 'liga';
+        }
+
+        a {
+            cursor: pointer;
+        }
+    </style>
+
+	<asp:ContentPlaceHolder ID="Cabecera" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<div id="Contenedor">
+		<form id="form1" runat="server">
+		<div id="CabeceraPagina" align="center">
+			<asp:Panel ID="CabeceraSuperior" runat="server" ClientIDMode="Static" style="width:900px;height:100px">
+				<div id="CabeceraIzq" align="left" style="float:left;width:350px;height:100px">
+					<div id="LogoInterseguro"></div>
+					<div id="TituloSistema">Cotizador Web de Rentas </div>
+				</div>
+				<div id="CabeceraDer" align="right">
+					
+					<div id="CabeceraInicio" style="padding:16px 10px 22px 3px;width:218px;height:50px;float:right">
+					<%--<div style="padding:16px 20px 22px 3px;width:65px;height:50px;float:right">--%>
+						<asp:Button ID="MenuInicio" runat="server" Text="Inicio" 
+							CssClass="boton_inicio" onclick="MenuInicio_Click" />
+						<asp:Button ID="MenuTutorial" runat="server" Text="Tutorial" CssClass="boton_tutorial" 
+							ClientIDMode="Static" onclick="MenuTutorial_Click" />
+						<asp:Button ID="MenuManual" runat="server" Text="Manual" CssClass="boton_manual" 
+							ClientIDMode="Static" onclick="MenuManual_Click" />
+						<asp:Button ID="MenuSalir" runat="server" Text="Cerrar" CssClass="boton_salir" 
+							onclick="MenuSalir_Click" ClientIDMode="Static" />
+					</div>
+					<div class="cabeceraSeparador"></div>
+					<div id="CabeceraMenu" align="left" class="tit_usuario" style="width:265px;height:88px;float:right">
+						<div id="ItemUsuario" style="height:26px;padding-left:25px;padding-top:8px">
+							<asp:Image ID="IcoUsuario" ToolTip="Usuario" ImageUrl="~/Imagenes/cab_usuario.png" runat="server" />
+							<asp:Label ID="CabUsuario" runat="server" ClientIDMode="Static"></asp:Label>
+						</div>
+						<div id="ItemNombre" style="height:26px;padding-left:51px">
+							<asp:Image ID="IcoNombre" ToolTip="Nombre" ImageUrl="~/Imagenes/cab_nombre.png" runat="server" />
+							<asp:Label ID="CabNombre" runat="server" ClientIDMode="Static"></asp:Label>
+						</div>
+						<div id="ItemFecha" style="height:26px;padding-left:77px">
+							<asp:Image ID="IcoFecha" ToolTip="Fecha" ImageUrl="~/Imagenes/cab_fecha.png" runat="server" />
+							<asp:Label ID="CabFecha" runat="server" ClientIDMode="Static"></asp:Label>
+						</div>
+						<%--<div style="height:20px;padding-left:106px"><asp:Image ID="IcoAmbiente" ToolTip="Ambiente" ImageUrl="~/Imagenes/cab_ambiente.png" runat="server" /> PRD</div>--%>
+					</div>
+				</div>
+			</asp:Panel>
+			<asp:Panel ID="CabeceraSuperiorProtegida" runat="server" ClientIDMode="Static" Visible="False" style="width:900px;height:60px">
+				<div style="float:left;padding:14px 10px">
+					<asp:Image ID="FechaIconoProtegido" runat="server" ImageUrl="~/Imagenes/fecha_32.png" />
+					<asp:Label ID="FechaProtegido" runat="server" style="margin-left:10px;"></asp:Label>
+				</div>
+				<div style="padding:4px;width:109px;float:right">
+					<asp:Button ID="MenuInicioProtegido" runat="server" Text="Inicio" 
+							CssClass="boton_inicio" onclick="MenuInicio_Click" />
+					<asp:Button ID="MenuSalirProtegido" runat="server" Text="Cerrar" CssClass="boton_salir" 
+						onclick="MenuSalir_Click" ClientIDMode="Static" />
+				</div>
+				<div class="cabeceraSeparadorProtegido"></div>
+			</asp:Panel>
+
+			<uc:MenuPrincipal id="MenuPrincipal" AnchoSubmenu="260" runat="server" />
+
+		</div>
+
+		<asp:HiddenField ID="TokenUsuario" runat="server" ClientIDMode="Static" />
+
+		<div id="CuerpoPagina" align="center">
+			<asp:ContentPlaceHolder ID="Contenido" runat="server">
+		
+			</asp:ContentPlaceHolder>
+
+			<div style="display:none">
+
+				<%--Inicio Modal Cerrar Sesi�n--%>
+				<div id="ModalCerrarSesion">
+					<div>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="MCSIcono" style="width:40px;height:40px" class="advertencia"></td>
+								<td id="MCSContenedorMensaje" valign="middle" class="cuadroMensaje">
+									<asp:Panel ID="MCSContenedor" runat="server" ClientIDMode="Static" align="left" style="margin:10px 0">
+										<asp:HiddenField ID="MCSEstado" runat="server" ClientIDMode="Static" Value="0" />
+										<asp:HiddenField ID="MCSEstadoIcono" runat="server" ClientIDMode="Static" />
+										<asp:HiddenField ID="MCSEstadoTitulo" runat="server" ClientIDMode="Static" />
+										Tiene datos sin guardar que se perder�n si cierra la sesi�n. �Desea continuar?
+									</asp:Panel>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="MCSBotonera" align="center">
+						<asp:HyperLink ID="MCSAceptar" CssClass="boton darkblue sharp" Width="80" runat="server" ClientIDMode="Static" NavigateUrl="~/Seguridad/CerrarSesion.aspx">Aceptar</asp:HyperLink>
+						<a id="MCSCancelar" class="boton darkblue sharp" style="width:80px">Cancelar</a>
+					</div>
+				</div>
+				<%--Fin Modal Cerrar Sesi�n--%>
+
+			</div>
+		</div>
+		<div id="PiePaginaContenido"></div>
+		<div id="PiePagina" align="center">
+			<div id="Creditos">
+				Interseguro 2013 - <% Response.Write(DateTime.Now.Year.ToString()); %><br />
+				Tecnolog�a de la Informaci�n
+			</div>
+		</div>
+
+		<asp:HiddenField ID="Timeout" runat="server" ClientIDMode="Static"></asp:HiddenField>
+		<div id="Sesion">
+			99:99
+		</div>
+		<div id="Precargando">
+			Cargando par�metros...
+		</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <style>
+        .tipoLetra {
+            font-family: 'arial';
+            font-size: 9pt;
+        }
+
+        .margen {
+            margin-left: 2cm;
+            margin-right: 1.5cm;
+        }
+
+        td {
+            height: 16px;
+        }
+		
+		.tipoLetraTitulo {
+            font-family: 'arial';
+            font-size: 13pt;
+        }
+		
+		.tipoLetraSubTitulo {
+            font-family: 'arial';
+            font-size: 11pt;
+        }
+		
+		.tipoLetraCabecera {
+            font-family: 'arial';
+            font-size: 7pt;
+        }
+		
+		.tipoLetraCabeceraMedia {
+            font-family: 'arial';
+            font-size: 8pt;
+        }
+
+    </style>
+
+    <title></title>
+	
+</head>
+
+<body class='tipoLetra margen'>
+
+    <table class='tipoLetra' width='610'>
+        <tbody>
+            <tr>
+                <td width='305'>
+					<div style='width: 205px; height: 54px;'>
+						<img src='{ruta_logo}' />
+					</div>
+                    					
+                </td>
+                
+				<td width='305'>
+                    <p class='tipoLetraCabecera' style='text-align: right;'><span>Fecha: {fecha}</span></p>
+					<p class='tipoLetraCabecera' style='text-align: right;'><span>Hora: {hora}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	
+    <p class='tipoLetraTitulo' style='text-align: center;'><span style='color: #000000;'><strong>RESUMEN DE COTIZACI&Oacute;N DE PENSI&Oacute;N</strong></span></p>
+    
+	<p class='tipoLetraCabeceraMedia' style='text-align: center;'><span>Fecha de cotizaci&oacute;n: {fechaCotizacion}</span></p>
+    <p class='tipoLetraCabeceraMedia' style='text-align: center;'><span>Fecha de devengue: {fechaDevengue}</span></p>
+	
+	<p class='tipoLetraSubTitulo'><span><strong>I. Datos Generales</strong></span></p>
+	
+    <table class='tipoLetra' width='610'>
+        <tbody>
+			<tr>
+                <td colspan='4' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    Solicitud:
+                </td>
+                <td width='470'>
+                    {solicitud}
+                </td>
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    CUSPP:
+                </td>
+                <td width='470'>
+                    {cuspp}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Vendedor:
+                </td>
+                <td width='470'>
+                    {vendedor}
+                </td>
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    Cartera asignada:
+                </td>
+                <td width='470'>
+                    {carteraAsignada}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+	<table class='tipoLetra' width='610'>
+        <tbody>
+			<tr>
+                <td colspan='4' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			<tr>
+               
+            </tr>
+            <tr>
+                <td width='140'>
+                    Nombre del afiliado:
+                </td>
+                <td width='470'>
+                    {nombreAfiliado}
+                </td>
+            </tr>
+            <tr>
+                <td width='140'>
+                    Dir. Particular:
+                </td>
+                <td width='470'>
+                    {direccionParticular}
+                </td>
+            </tr>
+			<tr>
+                <td width='140'>
+                    Celular:
+                </td>
+                <td width='470'>
+                    {celular}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	
+    <table class='tipoLetra' width='610'>
+        <tbody>
+            <tr>
+                <td colspan='4' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    AFP:
+                </td>
+				
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {afp}
+                </td>
+								
+                <td width='140' style='padding-left: 10px' >
+                    Capital de pensi&oacute;n:
+                </td>
+				
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {capitalPension}
+                </td>
+            </tr>
+			
+            <tr>
+                <td width='140'>
+                    Tipo de pensi&oacute;n:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {tipoPension}
+                </td>
+				<td width='140' style='padding-left: 10px'>
+                    Monto de transfer.:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {montoTransfer}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Categor&iacute;a del cliente:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {categoriaCliente}
+                </td>
+				<td width='140' style='padding-left: 10px'>
+                    Ult. Actualizaci&oacute;n:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {ultimaActualizacion}
+                </td>
+            </tr>
+           
+			<tr>
+                <td width='140'>
+                    Tipo de cotizaci&oacute;n:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {tipoCotizacion}
+                </td>
+				<td width='140' style='padding-left: 10px'>
+                    Tasa AFP:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {tasaAFP}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Tipo de cambio:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {tipoCambio}
+                </td>
+				<td width='140' style='padding-left: 10px'>
+                    Ajuste de pensi&oacute;n:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {ajustePension}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    Tasa Assetshare:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {tasaAssetshare}
+                </td>
+				<td width='140' style='padding-left: 10px'>
+                    Tasa de Venta:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {tasaVenta}
+                </td>
+            </tr>
+			
+			<tr>
+                <td width='140'>
+                    TRA:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {TRA}
+                </td>
+				
+				<td width='140' style='padding-left: 10px'>
+                    CRU:
+                </td>
+                <td width='165' style='border-left-style: solid; border-left-width: 3px; border-left-color: white;'>
+                    {CRU}
+                </td>
+            </tr>
+
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<br />
+
+	<p class='tipoLetraSubTitulo'><span><strong>II. Detalle de la Simulaci&oacute;n</strong></span></p>
+	
+	<table class='tipoLetra' width='610'>
+        <tbody>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <th style="width:30px">Nro Cot</th>
+				<th style="width:80px">Renta Vitalicia</th> 
+				<th style="width:80px">Modalidad</th>
+				<th style="width:50px">Años</th>
+				<th style="width:50px">% Rtas</th> 
+				<th style="width:30px">PG</th>
+				<th style="width:30px">DC</th>
+				<th style="width:30px">GR</th> 
+				<th style="width:60">AFP Pensi&oacute;n S/</th>
+				<th style="width:60px">Moneda</th>
+				<th style="width:60px">Pensi&oacute;n</th> 
+				<th style="width:50px">% Capital</th>
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <td width='30'>
+                    {nroCot}
+                </td>
+                <td width='80'>
+                    {rentaVitalicia}
+                </td>
+				<td width='80'>
+                    {modalidad}
+                </td>
+                <td width='50'>
+                    {anios}
+                </td>
+				<td width='50'>
+                    {prtas}
+                </td>
+                <td width='30'>
+                    {PG}
+                </td>
+				<td width='30'>
+                    {DC}
+                </td>
+                <td width='30'>
+                    {GR}
+                </td>
+				<td width='60'>
+                    {AFPPension}
+                </td>
+                <td width='60'>
+                    {moneda}
+                </td>
+				<td width='60'>
+                    {pension}
+                </td>
+                <td width='50'>
+                    {pCapital}
+                </td>
+            </tr>
+			
+			<tr>
+                <td colspan='12' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<br />
+
+	<p class='tipoLetraSubTitulo'><span><strong>III. Detalles de los Beneficiarios</strong></span></p>
+
+	<table class='tipoLetra' width='610'>
+        <tbody>
+			
+			<tr>
+                <td colspan='8' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            <tr>
+                <th style="width:30px">N°</th>
+				<th style="width:100px">Parentesco</th> 
+				<th style="width:80px">F. Nacimie.</th>
+				<th style="width:50px">Sex.</th>
+				<th style="width:50px">Inv.</th>
+				<th style="width:80px">T. Invalidez</th> 
+				<th style="width:220px">Nombre del Beneficiario</th>
+            </tr>
+			
+			<tr>
+                <td colspan='8' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+            {Beneficiarios}
+			
+			<tr>
+                <td colspan='8' style='border-bottom-style: solid; border-bottom-width: 1px; height: 0px;'></td>
+            </tr>
+			
+        </tbody>
+    </table>
+
+	<br />
+	<br />
+	<br />
+
+<pre class='tipoLetraCabeceraMedia'>
+PG: Número de años de Periodo Garantizado, DC: Cláusula de Derecho a Crecer, GR: Cláusula de Gratificación.
+% CAPITAL: Es el porcentaje de capital para el cálculo de la pensión en dólares, válido sólo para Renta Mixta y Renta Bimoneda
+	* : La pensión mostrada se encuentra por debajo de la pensión mínima fijada por la SBS, por la cual esta modalidad no se cotiza.
+	** : La cotización mostrada no alcanza el mínimo requerido por la compañía, por la cual esta modalidad no se simula.
+(1) Tasa AFP fuera del rango permitido.
+</pre>
+
+</body>
+</html>

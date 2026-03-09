@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Interseguro.CWRV.Dominio.Entidades.MotorCalculo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Interseguro.CWRV.Dominio.Entidades.MotorCalculo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfJuegoParametros">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JuegoParametros" nillable="true" type="tns:JuegoParametros" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJuegoParametros" nillable="true" type="tns:ArrayOfJuegoParametros" />
+  <xs:complexType name="JuegoParametros">
+    <xs:sequence>
+      <xs:element name="_x003C_CodigoMoneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CodigoOrigen_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CodigoTemporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Parametros_x003E_k__BackingField" nillable="true" type="tns:Parametros" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JuegoParametros" nillable="true" type="tns:JuegoParametros" />
+  <xs:complexType name="Parametros">
+    <xs:sequence>
+      <xs:element name="_x003C_cotizacion_x003E_k__BackingField" nillable="true" type="tns:Cotizacion" />
+      <xs:element name="_x003C_factores_anti_seleccion_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFactorAntiSeleccion" />
+      <xs:element name="_x003C_factores_mejoras_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFactorMejora" />
+      <xs:element name="_x003C_factores_pumi_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFactorPUMI" />
+      <xs:element name="_x003C_fec_per_sistema_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_icob_ajustados_x003E_k__BackingField" nillable="true" type="tns:ArrayOfTablaIcob" />
+      <xs:element name="_x003C_icob_nominales_x003E_k__BackingField" nillable="true" type="tns:ArrayOfTablaIcob" />
+      <xs:element name="_x003C_informacion_factores_mejoras_x003E_k__BackingField" nillable="true" type="tns:ArrayOfInformacionFactorMejora" />
+      <xs:element name="_x003C_inversiones_temporales_x003E_k__BackingField" nillable="true" type="tns:ArrayOfInversionTemporal" />
+      <xs:element name="_x003C_inversiones_vitalicias_x003E_k__BackingField" nillable="true" type="tns:ArrayOfInversionVitalicia" />
+      <xs:element name="_x003C_isLogCotizacion_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_isLogReserva_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_lista_VOLA_x003E_k__BackingField" nillable="true" type="tns:ArrayOfTablaVOLA" />
+      <xs:element name="_x003C_lista_VTD_x003E_k__BackingField" nillable="true" type="tns:ArrayOfTablaVTD" />
+      <xs:element name="_x003C_poliza_x003E_k__BackingField" nillable="true" type="tns:Poliza" />
+      <xs:element name="_x003C_rendimientos_inversiones_temporales_x003E_k__BackingField" nillable="true" type="tns:ArrayOfRendimientosInversionTemporal" />
+      <xs:element name="_x003C_spread_rescate_x003E_k__BackingField" nillable="true" type="tns:ArrayOfSpreadRescate" />
+      <xs:element name="_x003C_tablas_mortalidad_x003E_k__BackingField" nillable="true" type="tns:ArrayOfTablaMortalidad" />
+      <xs:element name="_x003C_tasa_duration_x003E_k__BackingField" nillable="true" type="tns:ArrayOfTasaDuration" />
+      <xs:element name="_x003C_tipo_calculo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_tipo_producto_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_usuario_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Parametros" nillable="true" type="tns:Parametros" />
+  <xs:complexType name="Cotizacion">
+    <xs:sequence>
+      <xs:element name="_x003C_beneficiarios_x003E_k__BackingField" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element name="_x003C_cob_adic_cap_fallec_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_cob_adic_dev_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_factores_documento_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFactorDocumento" />
+      <xs:element name="_x003C_fec_cotizacion_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_devengue_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_documento_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_fin_vigencia_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_inicio_vigencia_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_ind_cotiza_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_ind_gratificacion_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_ind_sepelio_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_lstInput_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_lstOutput_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element name="_x003C_lstRescate_x003E_k__BackingField" nillable="true" type="tns:ArrayOfRescate" />
+      <xs:element name="_x003C_num_correlativo_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_num_error_cot_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_num_meses_diferidos_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_garantizados_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_pagos_doble_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_num_meses_temporalidad_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_solicitud_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_parametro_ash_x003E_k__BackingField" nillable="true" type="tns:ParametroAsh" />
+      <xs:element name="_x003C_plan_x003E_k__BackingField" nillable="true" type="tns:Plan" />
+      <xs:element name="_x003C_reserva_x003E_k__BackingField" nillable="true" type="tns:Reserva" />
+      <xs:element name="_x003C_respuesta_x003E_k__BackingField" nillable="true" type="tns:Respuesta" />
+      <xs:element name="_x003C_val_1era_prima_is_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_acom_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_dcom_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_descuento_comision_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_fac_cia_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_fac_dev_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_monto_sepelio_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_mto_cia_sin_comision_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_mto_cia_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_mto_dev_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_para_duration_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_dev_fallec_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_pje_dev_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_pje_fallec_ndeveng_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_pje_moneda_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_segundo_periodo_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_mo_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_renta_sin_diferimiento_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_cesion_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_costo_equiv_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_int_temp_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_int_vit_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_ret_accion_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_venta_ash_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tipo_cambio_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tope_sepelio_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_total_cic_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_total_garantizado_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cotizacion" nillable="true" type="tns:Cotizacion" />
+  <xs:complexType name="ArrayOfBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Beneficiario" nillable="true" type="tns:Beneficiario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBeneficiario" nillable="true" type="tns:ArrayOfBeneficiario" />
+  <xs:complexType name="Beneficiario">
+    <xs:sequence>
+      <xs:element name="_x003C_Documento_x003E_k__BackingField" nillable="true" type="tns:Documento" />
+      <xs:element name="_x003C_EstadoBeneficiario_x003E_k__BackingField" nillable="true" type="tns:EstadoBeneficiario" />
+      <xs:element name="_x003C_EstadoCausalBeneficiario_x003E_k__BackingField" nillable="true" type="tns:EstadoCausalBeneficiario" />
+      <xs:element name="_x003C_cod_beneficiario_x003E_k__BackingField" nillable="true" type="xs:long" />
+      <xs:element name="_x003C_cod_parentesco_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_sexo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_fec_nacimiento_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ind_invalido_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_item_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_val_pje_adicional_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_pje_renta_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Beneficiario" nillable="true" type="tns:Beneficiario" />
+  <xs:complexType name="Documento">
+    <xs:sequence>
+      <xs:element name="_x003C_MonedaPago_x003E_k__BackingField" nillable="true" type="tns:Moneda" />
+      <xs:element name="_x003C_TipoPago_x003E_k__BackingField" nillable="true" type="tns:TipoPago" />
+      <xs:element name="_x003C_beneficiarios_x003E_k__BackingField" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element name="_x003C_cob_adic_cap_fallec_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_cob_adic_dev_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_poliza_x003E_k__BackingField" nillable="true" type="xs:long" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_factores_documento_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFactorDocumento" />
+      <xs:element name="_x003C_fec_cotizacion_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_devengue_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_documento_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_emision_poliza_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_fin_vigencia_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_inicio_vigencia_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_gls_corta_producto_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_dig_poliza_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_poliza_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ind_cotiza_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+      <xs:element name="_x003C_ind_gratificacion_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+      <xs:element name="_x003C_ind_sepelio_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+      <xs:element name="_x003C_num_correlativo_x003E_k__BackingField" nillable="true" type="xs:long" />
+      <xs:element name="_x003C_num_error_cot_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_diferidos_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_garantizados_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_pagos_doble_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_primer_tramo_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_temporalidad_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_solicitud_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_parametro_ash_x003E_k__BackingField" nillable="true" type="tns:ParametroAsh" />
+      <xs:element name="_x003C_plan_x003E_k__BackingField" nillable="true" type="tns:Plan" />
+      <xs:element name="_x003C_reserva_x003E_k__BackingField" nillable="true" type="tns:Reserva" />
+      <xs:element name="_x003C_respuesta_x003E_k__BackingField" nillable="true" type="tns:Respuesta" />
+      <xs:element name="_x003C_val_1era_prima_is_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_acom_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_dcom_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_descuento_comision_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_fac_cia_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_fac_dev_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_monto_sepelio_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_mto_cia_sin_comision_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_mto_cia_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_mto_dev_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_dev_fallec_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_dev_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_fallec_ndeveng_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_moneda_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_segundo_periodo_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_base_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_mo_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_original_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_cesion_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_costo_equiv_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_int_temp_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_int_vit_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_ret_accion_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_venta_ash_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tipo_cambio_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tope_sepelio_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_total_cic_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_total_garantizado_x003E_k__BackingField" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documento" nillable="true" type="tns:Documento" />
+  <xs:complexType name="Moneda">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_banco_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_adicional_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_corta_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Moneda" nillable="true" type="tns:Moneda" />
+  <xs:complexType name="TipoPago">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_tipo_pago_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_corta_tipo_pago_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_tipo_pago_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoPago" nillable="true" type="tns:TipoPago" />
+  <xs:complexType name="ArrayOfFactorDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorDocumento" nillable="true" type="tns:FactorDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorDocumento" nillable="true" type="tns:ArrayOfFactorDocumento" />
+  <xs:complexType name="FactorDocumento">
+    <xs:sequence>
+      <xs:element name="_x003C_val_factor_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorDocumento" nillable="true" type="tns:FactorDocumento" />
+  <xs:complexType name="ParametroAsh">
+    <xs:sequence>
+      <xs:element name="_x003C_flg_iajm_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_flg_ibtp_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_flg_icmo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_flg_ideb_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_flg_ivnt_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ini_tra2_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_num_nins_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_num_nper_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_htra_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_htva_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_ltra_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_ltva_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_tgpd_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_timp_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_tsbs_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tas_ttec_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_cmor_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_coba_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_comi_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_fcon_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_gfi1_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_gfi2_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_htit_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_ltit_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_pumi_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_rend_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_costo_cap_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_inf_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_inv_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_mrg_solv_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_vtax_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="val_dtra" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametroAsh" nillable="true" type="tns:ParametroAsh" />
+  <xs:complexType name="Plan">
+    <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plan" nillable="true" type="tns:Plan" />
+  <xs:complexType name="Reserva">
+    <xs:sequence>
+      <xs:element name="_x003C_cotizacion_x003E_k__BackingField" nillable="true" type="tns:Cotizacion" />
+      <xs:element name="_x003C_val_para_duration_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_devolucion_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_fallecimiento_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_pension_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_sepelio_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_cru_devolucion_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_cru_fallecimiento_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_cru_pension_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_cru_sepelio_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_devolucion_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_fallecimiento_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_pension_cpg_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_pension_spg_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_pension_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_sepelio_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_res_total_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reserva" nillable="true" type="tns:Reserva" />
+  <xs:complexType name="Respuesta">
+    <xs:sequence>
+      <xs:element name="_x003C_estado_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_fecha_hora_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_mensaje_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_titulo_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
+  <xs:complexType name="EstadoBeneficiario">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_estado_beneficiario_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_corta_estado_ben_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_estado_beneficiario_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoBeneficiario" nillable="true" type="tns:EstadoBeneficiario" />
+  <xs:complexType name="EstadoCausalBeneficiario">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_estado_causal_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_causal_estado_ben_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_corta_causal_est_ben_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoCausalBeneficiario" nillable="true" type="tns:EstadoCausalBeneficiario" />
+  <xs:complexType name="ArrayOfRescate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rescate" nillable="true" type="tns:Rescate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRescate" nillable="true" type="tns:ArrayOfRescate" />
+  <xs:complexType name="Rescate">
+    <xs:sequence>
+      <xs:element name="_x003C_mes_rescate_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_spread_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tasa_rescate_anual_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tasa_rescate_mensual_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tasa_venta_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_valor_rescate_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rescate" nillable="true" type="tns:Rescate" />
+  <xs:complexType name="ArrayOfFactorAntiSeleccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorAntiSeleccion" nillable="true" type="tns:FactorAntiSeleccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorAntiSeleccion" nillable="true" type="tns:ArrayOfFactorAntiSeleccion" />
+  <xs:complexType name="FactorAntiSeleccion">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_sexo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_pje_ajuste_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tope_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorAntiSeleccion" nillable="true" type="tns:FactorAntiSeleccion" />
+  <xs:complexType name="ArrayOfFactorMejora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorMejora" nillable="true" type="tns:FactorMejora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorMejora" nillable="true" type="tns:ArrayOfFactorMejora" />
+  <xs:complexType name="FactorMejora">
+    <xs:sequence>
+      <xs:element name="_x003C_num_anio_factor_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_num_edad_mes_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_lx_mbh_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mbm_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mih_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mim_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mvh_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mvm_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tipo_beneficiario_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorMejora" nillable="true" type="tns:FactorMejora" />
+  <xs:complexType name="ArrayOfFactorPUMI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FactorPUMI" nillable="true" type="tns:FactorPUMI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactorPUMI" nillable="true" type="tns:ArrayOfFactorPUMI" />
+  <xs:complexType name="FactorPUMI">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_sexo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_pje_ajuste_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_tope_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FactorPUMI" nillable="true" type="tns:FactorPUMI" />
+  <xs:complexType name="ArrayOfTablaIcob">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaIcob" nillable="true" type="tns:TablaIcob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaIcob" nillable="true" type="tns:ArrayOfTablaIcob" />
+  <xs:complexType name="TablaIcob">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_num_imon_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_num_indi_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_icop_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lcop_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaIcob" nillable="true" type="tns:TablaIcob" />
+  <xs:complexType name="ArrayOfInformacionFactorMejora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InformacionFactorMejora" nillable="true" type="tns:InformacionFactorMejora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInformacionFactorMejora" nillable="true" type="tns:ArrayOfInformacionFactorMejora" />
+  <xs:complexType name="InformacionFactorMejora">
+    <xs:sequence>
+      <xs:element name="_x003C_num_anio_factor_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_tipo_beneficiario_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformacionFactorMejora" nillable="true" type="tns:InformacionFactorMejora" />
+  <xs:complexType name="ArrayOfInversionTemporal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InversionTemporal" nillable="true" type="tns:InversionTemporal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInversionTemporal" nillable="true" type="tns:ArrayOfInversionTemporal" />
+  <xs:complexType name="InversionTemporal">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ind_devolucion_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_num_instrumento_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_num_periodo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_porc_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tasa_inv_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_tirc_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_valc_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InversionTemporal" nillable="true" type="tns:InversionTemporal" />
+  <xs:complexType name="ArrayOfInversionVitalicia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InversionVitalicia" nillable="true" type="tns:InversionVitalicia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInversionVitalicia" nillable="true" type="tns:ArrayOfInversionVitalicia" />
+  <xs:complexType name="InversionVitalicia">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_num_anio_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_inv_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InversionVitalicia" nillable="true" type="tns:InversionVitalicia" />
+  <xs:complexType name="ArrayOfTablaVOLA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaVOLA" nillable="true" type="tns:TablaVOLA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaVOLA" nillable="true" type="tns:ArrayOfTablaVOLA" />
+  <xs:complexType name="TablaVOLA">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_num_mes_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_vola_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaVOLA" nillable="true" type="tns:TablaVOLA" />
+  <xs:complexType name="ArrayOfTablaVTD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaVTD" nillable="true" type="tns:TablaVTD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaVTD" nillable="true" type="tns:ArrayOfTablaVTD" />
+  <xs:complexType name="TablaVTD">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_num_mes_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_vtd_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaVTD" nillable="true" type="tns:TablaVTD" />
+  <xs:complexType name="Poliza">
+    <xs:sequence>
+      <xs:element name="_x003C_MonedaPago_x003E_k__BackingField" nillable="true" type="tns:Moneda" />
+      <xs:element name="_x003C_TipoPago_x003E_k__BackingField" nillable="true" type="tns:TipoPago" />
+      <xs:element name="_x003C_beneficiarios_x003E_k__BackingField" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element name="_x003C_cod_poliza_x003E_k__BackingField" nillable="true" type="xs:long" />
+      <xs:element name="_x003C_cod_version_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_factores_documento_x003E_k__BackingField" nillable="true" type="tns:ArrayOfFactorDocumento" />
+      <xs:element name="_x003C_fec_devengue_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_emision_poliza_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_envio_poliza_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_facturacion_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_fin_pago_doble_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_fin_vigencia_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_ini_pago_doble_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_inicio_pago_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_inicio_vigencia_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_recaudacion_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_solicitud_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_gls_corta_producto_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_dig_poliza_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_poliza_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_gls_solicitud_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ind_fallecimiento_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+      <xs:element name="_x003C_ind_sepelio_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+      <xs:element name="_x003C_num_cotizacion_x003E_k__BackingField" nillable="true" type="xs:long" />
+      <xs:element name="_x003C_num_meses_ajuste_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_diferidos_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_garantizados_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_primer_tramo_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_num_meses_temporalidad_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_plan_x003E_k__BackingField" nillable="true" type="tns:Plan" />
+      <xs:element name="_x003C_val_dcom_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_factor_ultimo_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_monto_sepelio_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_ajuste_moneda_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_comision_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_conyuge_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_devolucion_fallec_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_devolucion_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_pje_renta_segundo_tramo_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_prima_unica_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_base_anterior_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_base_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_renta_original_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_costo_equiv_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_tra_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_venta_is_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tasa_venta_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tc_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_tipo_cambio_x003E_k__BackingField" nillable="true" type="xs:double" />
+      <xs:element name="_x003C_val_total_cic_x003E_k__BackingField" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Poliza" nillable="true" type="tns:Poliza" />
+  <xs:complexType name="ArrayOfRendimientosInversionTemporal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RendimientosInversionTemporal" nillable="true" type="tns:RendimientosInversionTemporal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRendimientosInversionTemporal" nillable="true" type="tns:ArrayOfRendimientosInversionTemporal" />
+  <xs:complexType name="RendimientosInversionTemporal">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_num_periodo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_parametro_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RendimientosInversionTemporal" nillable="true" type="tns:RendimientosInversionTemporal" />
+  <xs:complexType name="ArrayOfSpreadRescate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpreadRescate" nillable="true" type="tns:SpreadRescate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpreadRescate" nillable="true" type="tns:ArrayOfSpreadRescate" />
+  <xs:complexType name="SpreadRescate">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_moneda_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_cod_tipo_temporalidad_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_fec_fin_vigencia_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_fec_inicio_vigencia_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ind_origen_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_num_mes_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_spread_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpreadRescate" nillable="true" type="tns:SpreadRescate" />
+  <xs:complexType name="ArrayOfTablaMortalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaMortalidad" nillable="true" type="tns:TablaMortalidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTablaMortalidad" nillable="true" type="tns:ArrayOfTablaMortalidad" />
+  <xs:complexType name="TablaMortalidad">
+    <xs:sequence>
+      <xs:element name="_x003C_num_edad_mes_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_val_lx_mbh_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mbm_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mih_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mim_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mvh_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_val_lx_mvm_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablaMortalidad" nillable="true" type="tns:TablaMortalidad" />
+  <xs:complexType name="ArrayOfTasaDuration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TasaDuration" nillable="true" type="tns:TasaDuration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTasaDuration" nillable="true" type="tns:ArrayOfTasaDuration" />
+  <xs:complexType name="TasaDuration">
+    <xs:sequence>
+      <xs:element name="_x003C_cod_parametro_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_val_parametro_x003E_k__BackingField" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TasaDuration" nillable="true" type="tns:TasaDuration" />
+  <xs:complexType name="ArrayOfParametros">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parametros" nillable="true" type="tns:Parametros" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParametros" nillable="true" type="tns:ArrayOfParametros" />
+</xs:schema>

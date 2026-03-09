@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Interseguro.CWRV.ServiciosDistribuidos.ServicioPlaft" CodeBehind="ServicioPlaft.svc.cs" %>

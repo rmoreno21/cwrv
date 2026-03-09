@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="fd5179ea-3d1a-45a8-b217-b07069fc61ad" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54356/ServicioCotizador.svc/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="be10c4bc-6c18-4629-9c72-a378f91264ce" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="325585fe-52e3-4141-b9e5-d39194e04d32" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+    <MetadataFile FileName="service4.xsd" MetadataType="Schema" ID="3d2977c7-1806-411e-afd4-f87acae19216" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+    <MetadataFile FileName="Interseguro.CWRV.Dominio.Entidades2.xsd" MetadataType="Schema" ID="dff2c165-1b3c-409f-9467-3a18b56343cb" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+    <MetadataFile FileName="Arrays2.xsd" MetadataType="Schema" ID="0d7b45df-ed31-4e50-8759-b0d933b3250d" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+    <MetadataFile FileName="service5.xsd" MetadataType="Schema" ID="268d307b-2ebe-451c-8c7d-4074f8731f59" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+    <MetadataFile FileName="Interseguro.CWRV.Dominio.Entidades.MotorCalculo1.xsd" MetadataType="Schema" ID="232c6c97-f5f4-492e-bb05-47f1bf73d75c" SourceId="1" SourceUrl="http://localhost:54356/ServicioCotizador.svc/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

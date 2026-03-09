@@ -1,0 +1,661 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CWRV.master.cs" Inherits="Interseguro.CWRV.Presentacion.ASPNET.CWRV" %>
+
+<%@ Register Src="~/Controles/MenuMaterialize.ascx" TagPrefix="uc1" TagName="MenuMaterialize" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Interseguro | Cotizador Web de Rentas</title>
+
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!--Import Material Design Icons Extension Tont-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="<%=ResolveUrl("~/Estilos/materialize.min.css")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>" type="text/css" />
+
+    <!--Import datatables.css-->
+    <link rel="stylesheet" href="<%=ResolveUrl("~/Estilos/datatables.min.css")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>" type="text/css" />
+    
+    <!--Loaders-->
+    <link rel="stylesheet" href="<%=ResolveUrl("~/Estilos/loaders.min.css")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>" type="text/css" />
+    
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--favicon-->
+    <link type="image/x-icon" href="<%=ResolveUrl("~/Iconos/favicon.ico")%>" rel="shortcut icon">
+	<link type="image/x-icon" href="<%=ResolveUrl("~/Iconos/favicon.ico")%>" rel="icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="<%=ResolveUrl("~/Iconos/apple-icon-57x57.png")%>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<%=ResolveUrl("~/Iconos/apple-icon-60x60.png")%>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<%=ResolveUrl("~/Iconos/apple-icon-72x72.png")%>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<%=ResolveUrl("~/Iconos/apple-icon-76x76.png")%>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<%=ResolveUrl("~/Iconos/apple-icon-114x114.png")%>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<%=ResolveUrl("~/Iconos/apple-icon-120x120.png")%>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<%=ResolveUrl("~/Iconos/apple-icon-144x144.png")%>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<%=ResolveUrl("~/Iconos/apple-icon-152x152.png")%>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%=ResolveUrl("~/Iconos/apple-icon-180x180.png")%>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<%=ResolveUrl("~/Iconos/android-icon-192x192.png")%>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%=ResolveUrl("~/Iconos/favicon-32x32.png")%>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<%=ResolveUrl("~/Iconos/favicon-96x96.png")%>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%=ResolveUrl("~/Iconos/favicon-16x16.png")%>">
+    <link rel="manifest" href="<%=ResolveUrl("~/Iconos/manifest.json")%>">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<%=ResolveUrl("~/Iconos/ms-icon-144x144.png")%>">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+        var API_SOLICITUDES_CAMBIO_URL = '<asp:Literal ID="lbApiSolicitudesCambioUrl" runat="server" />';
+
+		var API_COTIZADOR_IFP_URL = '<asp:Literal ID="lbApiCotizadorIfpUrl" runat="server" />';
+
+		var API_COTIZADOR_RV_URL = '<asp:Literal ID="lbApiCotizadorRvUrl" runat="server" />';
+
+        var API_PARAMETRO_URL = '<asp:Literal ID="lbApiParametroUrl" runat="server" />';
+
+		var API_AUTENTICACION_URL = '<asp:Literal ID="lbApiAutenticacionUrl" runat="server" />';
+
+        var API_REPORTES_URL = '<asp:Literal ID="lbApiReportesUrl" runat="server" />';
+		
+		console.log("Nuevas APIs", {
+            API_SOLICITUDES_CAMBIO_URL,
+			API_COTIZADOR_IFP_URL,
+			API_COTIZADOR_RV_URL,
+			API_PARAMETRO_URL,
+            API_AUTENTICACION_URL,
+            API_REPORTES_URL
+		})
+    </script>
+
+    <style>
+        body {
+            background-color: #eceff1;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1565C0 !important;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 100%;
+        }
+
+        .logo > img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 32px;
+        }
+
+        .fondo-cargando {
+            display: none;
+            color: #1976d2;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            z-index: 9999;
+        }
+
+        .fila-seleccionada {
+            background-color: #e3f2fd;
+        }
+
+        .helper-error {
+            color: #f00 !important;
+        }
+
+        .loader {
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+            max-width: 100%;
+            height: 100%;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            box-sizing: border-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .loader-inner.ball-pulse div,
+        .loader-inner.ball-grid-pulse div,
+        .loader-inner.ball-scale div,
+        .loader-inner.ball-scale-multiple div,
+        .loader-inner.ball-spin-fade-loader div,
+        .loader-inner.line-scale div,
+        .loader-inner.line-scale-party div,
+        .loader-inner.line-scale-pulse-out div,
+        .loader-inner.line-scale-pulse-out-rapid div,
+        .loader-inner.line-spin-fade-loader div,
+        .loader-inner.square-spin div {
+            background-color: #1976d2;
+        }
+
+        .loader-inner.ball-spin-fade-loader,
+        .loader-inner.line-spin-fade-loader,
+        .loader-inner.ball-scale-multiple {
+            height: 35px;
+        }
+
+        .loader-inner.ball-clip-rotate div {
+            border-bottom-color: #1976d2;
+        }
+
+        .loader-inner.pacman div {
+            border-top-color: #1976d2;
+            border-left-color: #1976d2;
+            border-bottom-color: #1976d2;
+        }
+        .pacman > div:nth-child(3),
+        .pacman > div:nth-child(4),
+        .pacman > div:nth-child(5) {
+            background-color: #1976d2;
+        }
+
+        /*.loader-inner.ball-clip-rotate-pulse div*/
+
+
+        .dropdown-content li > a {
+            color: #1976d2;
+        }
+
+        .card-title {
+            font-weight: 400 !important;
+        }
+
+        .datepicker-date-display {
+            background-color: #1565c0 !important;
+        }
+
+        .datepicker-table td.is-today {
+            color: #0d47a1;
+        }
+
+        .datepicker-table td.is-selected {
+            background-color: #1565c0 !important;
+            color: #FFF !important;
+        }
+
+        .datepicker-day-button:focus {
+            background-color: rgba(100, 181, 246, 0.25) !important;
+        }
+
+        .datepicker-table td.is-today {
+            color: #0d47a1 !important;
+        }
+
+        .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+            color: #0d47a1 !important;
+        }
+
+        /* label color */
+        .input-field label {
+            color: #999;
+        }
+        /* label focus color */
+        .input-field input:focus + label {
+            color: #1565c0 !important;
+        }
+        /* label underline focus color */
+        .input-field input:focus {
+            border-bottom: 1px solid #0d47a1 !important;
+            box-shadow: 0 1px 0 0 #0d47a1 !important;
+        }
+        /* valid color */
+        .input-field input.valid {
+            border-bottom: 1px solid #0d47a1 !important;
+            box-shadow: 0 1px 0 0 #0d47a1 !important;
+        }
+        /* invalid color */
+        .input-field input.invalid {
+            border-bottom: 1px solid red !important;
+            box-shadow: 0 1px 0 0 #000;
+        }
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+            color: #1565c0;
+        }
+
+        /* pagination */
+        ul.pagination {
+            margin: 0;
+        }
+        .pagination li {
+            font-size: 1.1rem !important;
+        }
+        .pagination li.active {
+          background-color: #1976D2 !important;
+        }
+        .pagination li a {
+          font-size: 1.1rem !important;
+        }
+
+        .material-icons {
+            display: inline-flex;
+            vertical-align: top;
+        }
+
+        blockquote.ok {
+            border-left-color: #43a047;
+        }
+        blockquote.info {
+            border-left-color: #2196f3;
+        }
+        blockquote.error {
+            border-left-color: #e53935;
+        }
+
+        blockquote.ok .icono {
+            color: #43a047;
+        }
+        blockquote.info .icono {
+            color: #2196f3;
+        }
+        blockquote.error .icono {
+            color: #e53935;
+        }
+
+        .tabs .tab a{
+            color: #0d47a1;
+        }
+
+        .tabs .tab a:hover {
+            background-color:#e3f2fd;
+            color: #0d47a1;
+        } /*Text color on hover*/
+
+        .tabs .tab a.active {
+            background-color: #bbdefb;
+            color: #0d47a1;
+        } /*Background and text color when a tab is active*/
+
+        .tabs .indicator {
+            background-color: #0d47a1;
+        } /*Color of underline*/
+
+        .tabs .tab a:focus, .tabs .tab a:focus.active {
+            background-color: #bbdefb;
+            color: #0d47a1;
+        }
+
+        .modal {
+            max-width: 650px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+        }
+
+        i.left {
+            margin-right: 5px !important;
+        }
+
+        #ErrorIcono {
+            margin-left: -30px;
+        }
+
+        .recuadro-error {
+            border: 1px solid #78909c;
+            border-radius: 5px;
+            background-color: #FFF;
+            padding: 45px;
+        }
+
+        .vis-s {
+            display: none;
+        }
+
+        .vis-sm {
+            display: none;
+        }
+
+        .vis-m {
+            display: none;
+        }
+
+        .vis-ml {
+            display: none;
+        }
+
+        .vis-l {
+            display: none;
+        }
+
+        @media (min-width: 1px) and (max-width: 600px) {
+            .vis-s {
+                display: table-cell;
+            }
+
+            .vis-sm {
+                display: table-cell;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width:992px) {
+            .vis-sm {
+                display: table-cell;
+            }
+
+            .vis-m {
+                display: table-cell;
+            }
+
+            .vis-ml {
+                display: table-cell;
+            }
+        }
+
+        @media (min-width: 993px) and (max-width:1200px) {
+            .vis-ml {
+                display: table-cell;
+            }
+            .vis-l {
+                display: table-cell;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .vis-l {
+                display: table-cell;
+            }
+        }
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:HiddenField ID="Usuario" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="TokenUsuario" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="Timeout" runat="server" ClientIDMode="Static" />
+
+        <nav class="blue darken-4">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <asp:HyperLink ID="LogoIS" runat="server" NavigateUrl="~/Principal.aspx" CssClass="logo">
+                        <asp:Image ID="LogoInterseguro" runat="server"  ImageUrl="~/Imagenes/logo-interseguro.svg" />
+                    </asp:HyperLink>
+                    <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <uc1:MenuMaterialize runat="server" ID="MenuPrincipal" />
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="cargando" class="fondo-cargando">
+            <div class="valign-wrapper" style="height:100%">
+                <div class="center-align" style="display:block; width:100%">
+                    <div class="loader"><asp:Panel ID="IconoCargando" runat="server"></asp:Panel></div>
+                    <div id="cargando-mensaje" style="display:block; width:100%">Cargando, un momento por favor...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Confirmar -->
+        <div id="modal-confirmar" class="modal">
+            <div class="modal-content">
+                <h5 id="modal-confirmar-titulo"></h5>
+                <p id="modal-confirmar-mensaje" style="font-size:1rem"></p>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-confirmar-aceptar" href="#!" class="modal-close waves-effect waves-light btn blue darken-2">Aceptar</a>
+                <a id="modal-confirmar-cancelar" href="#!" class="modal-close waves-effect waves-light btn blue darken-2">Cancelar</a>
+            </div>
+        </div>
+
+        <!-- Modal alerta -->
+        <div id="modal-alerta" class="modal">
+            <div class="modal-content">
+                <h5 id="modal-alerta-titulo"></h5>
+                <p id="modal-alerta-mensaje" style="font-size:1rem"></p>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-alerta-aceptar" href="#!" class="modal-close waves-effect waves-light btn blue darken-2">Aceptar</a>
+            </div>
+        </div>
+    </form>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/materialize.min.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery-3.6.1.min.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/DataTables/dataTables.min.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/DataTables/dataTables.materialize.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/autoNumeric-min.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.formrestrict.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.alphanumeric.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jquery.maskedinput.min.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/loaders.css.js")%>?v=<% Response.Write(DateTime.Now.ToString("yyyyMMdd")); %>"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var options = {};
+            var elems = document.querySelectorAll(".sidenav");
+            var instances = M.Sidenav.init(elems, options);
+
+            elems = document.querySelectorAll("select");
+            instances = M.FormSelect.init(elems, options);
+
+            options = {
+                "coverTrigger": false,
+                "constrainWidth": false
+            };
+            elems = document.querySelectorAll(".dropdown-trigger");
+            instances = M.Dropdown.init(elems, options);
+
+            options = {
+                showDaysInNextAndPreviousMonths: true,
+                format: "dd/mm/yyyy",
+                i18n: {
+                    cancel: 'Cancelar',
+                    clear: 'Limpiar',
+                    done: 'Aceptar',
+                    months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                    monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                    weekdays: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                    weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+                    weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S']
+                }
+            };
+
+            elems = document.querySelectorAll(".datepicker");
+            instances = M.Datepicker.init(elems, options);
+
+            options = {
+                "preventScrolling": true
+            };
+            elems = document.querySelectorAll(".modal");
+            instances = M.Modal.init(elems, options);
+
+            options = {};
+            elems = document.querySelectorAll(".tabs");
+            instances = M.Tabs.init(elems, options);
+
+            elems = document.querySelectorAll(".collapsible");
+            instances = M.Collapsible.init(elems, options);
+        });
+
+        jQuery(function ($) {
+            configurarMascaras();
+        });
+
+        function configurarMascaras() {
+            $(".numerico").autoNumeric("init", { aSep: ",", aDec: "." });
+            $(".numerico3").autoNumeric("init", { aSep: ",", aDec: ".", mDec: 3 });
+            $(".enteroPositivo").numeric();
+            $(".telefono").numeric({ allow: "#*+"});
+            $(".alfanumerico").alphanumeric({ allow: "ñÑ" });
+            $(".nombre").alpha({ allow: "áéíóúÁÉÍÓÚñÑäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ'- " });
+            $(".fecha").mask("99/99/9999");
+            M.updateTextFields();
+        }
+
+        function actualizarCombobox(elemento = "select") {
+            var options = {};
+            elems = document.querySelectorAll(elemento);
+            instances = M.FormSelect.init(elems, options);
+        }
+
+        function JSONstringifyConFechas(obj) {
+            return JSON.stringify(obj).replace(/\/Date/g, "\\\/Date").replace(/\)\//g, "\)\\\/")
+        }
+
+        function ManejarError(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
+            console.log(textStatus);
+            console.log(errorThrown);
+            if (XMLHttpRequest.status === 401 || XMLHttpRequest.status === 12030) {
+                document.location.reload(true);
+            }
+            if (XMLHttpRequest.status === 400) {
+                abrirModalAlerta("Error", errorThrown, "error", "red");
+            }
+            if (XMLHttpRequest.status === 403) {
+                window.location.href = "<%=ResolveUrl("~/Error/403.aspx")%>";
+            }
+            if (XMLHttpRequest.status === 404) {
+                window.location.href = "<%=ResolveUrl("~/Error/404.aspx")%>";
+            }
+            if (XMLHttpRequest.status === 500) {
+                window.location.href = "<%=ResolveUrl("~/Error/500.aspx")%>";
+            }
+        }
+
+        function fecha(cadena) {
+            let fecha = new Date(+cadena.replace(/\/Date\((-?\d+)\)\//gi, "$1"));
+            let dia = fecha.getDate();
+            let mes = fecha.getMonth() + 1;
+            let anho = fecha.getFullYear();
+
+            if (mes < 10) {
+                if (dia < 10) {
+                    return `0${dia}/0${mes}/${anho}`;
+                } else {
+                    return `${dia}/0${mes}/${anho}`;
+                }
+            } else {
+                if (dia < 10) {
+                    return `0${dia}/${mes}/${anho}`;
+                } else {
+                    return `${dia}/${mes}/${anho}`;
+                }
+            }
+        }
+
+        function cadenaAFecha(cadena) {
+            var fecha = cadena.split("/");
+            return new Date(fecha[2], fecha[1] - 1, fecha[0]);
+        }
+
+        function monto(number, decPlaces = 2, seccion = 3, decSep = ".", thouSep = ",") {
+            var re = '\\d(?=(\\d{' + (seccion || 3) + '})+' + (decPlaces > 0 ? '\\D' : '$') + ')',
+            num = number.toFixed(Math.max(0, ~~decPlaces));
+            return (decSep ? num.replace('.', decSep) : num).replace(new RegExp(re, 'g'), '$&' + (thouSep || ','));
+        }
+
+        function cerrarSesionExpirada() {
+			window.location.href = '<%=ResolveUrl("~/Seguridad/SesionExpirada.aspx")%>';
+		}
+
+        function abrirModalCargando(mensaje="Cargando, un momento por favor...") {
+            $("#cargando-mensaje").html(mensaje);
+            $("#cargando").fadeIn("500");
+        }
+
+        function cerrarModalCargando() {
+            $("#cargando").fadeOut("500");
+        }
+
+        function cerrarModal(id) {
+            var elem = document.getElementById(id);
+            var instance = M.Modal.getInstance(elem);
+            instance.close();
+        }
+
+        function abrirModalConfirmacion(titulo, mensaje, icono=null, colorIcono=null) {
+            $("#modal-confirmar-titulo").html(titulo);
+            let i = "";
+            if (icono != null) {
+                i = '<i class="material-icons" style="margin-right:10px' + (colorIcono != null ? ";color:" + colorIcono : '') + '">' + icono + '</i>';
+            }
+            $("#modal-confirmar-mensaje").html(i + mensaje);
+
+            const elem = document.getElementById("modal-confirmar");
+            const instance = M.Modal.init(elem);
+            instance.open();
+        }
+
+        function abrirModalAlerta(titulo, mensaje, icono=null, colorIcono=null) {
+            $("#modal-alerta-titulo").html(titulo);
+            let i = "";
+            if (icono != null) {
+                i = '<i class="material-icons" style="margin-right:10px' + (colorIcono != null ? ";color:" + colorIcono : '') + '">' + icono + '</i>';
+            }
+            $("#modal-alerta-mensaje").html(i + mensaje);
+
+            const elem = document.getElementById("modal-alerta");
+            const instance = M.Modal.init(elem);
+            instance.open();
+        }
+
+        function scroll(id) {
+            var aTag = $("a[name='"+ id +"']");
+            $('html,body').animate({scrollTop: aTag.offset().top}, 'slow');
+        }
+
+        function limpiarErrores() {
+            $(".invalid").removeClass("invalid");
+            $(".helper-error").html("");
+            $(".helper-error").removeClass("helper-error");
+        }
+
+        function deshabilitarBotones() {
+            $("button").prop("disabled", true);
+            $(".btn").addClass("disabled");
+        }
+
+        function habilitarBotones() {
+            $("button").prop("disabled", false);
+            $(".btn").removeClass("disabled");
+        }
+
+        function base64ABytes(base64) {
+            var s = window.atob(base64);
+            var bytes = new Uint8Array(s.length);
+            for (var i = 0; i < s.length; i++) {
+                bytes[i] = s.charCodeAt(i);
+            }
+            return bytes;
+        }
+    </script>
+
+    <asp:ContentPlaceHolder ID="Scripts" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
