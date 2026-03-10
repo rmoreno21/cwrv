@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="17c6c4c1-45a7-49c5-8395-2c9e1c2fd647" name="rmorenol@IS00694 2026-03-10 13:33:21" runUser="DINTERSEGURO\rmorenol" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-03-10T13:33:21.4272192-05:00" queuing="2026-03-10T13:33:21.4272198-05:00" start="2026-03-10T13:33:20.3404131-05:00" finish="2026-03-10T13:33:21.5182359-05:00" />
+  <TestSettings name="default" id="f62b94e6-e526-4689-a8d9-44aafc8674f8">
+    <Deployment runDeploymentRoot="rmorenol_IS00694_2026-03-10_13_33_21" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4356cb93-5c4d-4091-8c40-256be511d3ad" testId="3ef8b5cf-8707-c2cc-29ee-d6824288eeb0" testName="ValidarToken_CuandoIpNoPermitida_DebeLanzarExcepcion" computerName="IS00694" duration="00:00:00.0017516" startTime="2026-03-10T13:33:21.2635702-05:00" endTime="2026-03-10T13:33:21.2655134-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4356cb93-5c4d-4091-8c40-256be511d3ad" />
+    <UnitTestResult executionId="409cd821-8b12-4ce1-b932-0ee26f3bf45a" testId="3ffd6ad4-bb19-859f-7e62-ff5d44d2aafc" testName="EliminarUsuario_CuandoSeInvoca_DebeInvocarEliminarEnRepositorioConElMismoUsuario" computerName="IS00694" duration="00:00:00.0013381" startTime="2026-03-10T13:33:21.2712880-05:00" endTime="2026-03-10T13:33:21.2729764-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="409cd821-8b12-4ce1-b932-0ee26f3bf45a" />
+    <UnitTestResult executionId="f94b181e-3a74-4d65-88ee-9bd53306654f" testId="355ca1ec-ee11-f274-7cf0-d47a6c587c4f" testName="SolicitarAcceso_CuandoIpNoPermitida_DebeRetornarCodigoDenegadoSinRegistrar" computerName="IS00694" duration="00:00:00.0069069" startTime="2026-03-10T13:33:21.2291116-05:00" endTime="2026-03-10T13:33:21.2529413-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f94b181e-3a74-4d65-88ee-9bd53306654f" />
+    <UnitTestResult executionId="e0678d57-21d2-4ef3-aa33-253f0289dba7" testId="d706b160-6295-1529-e474-a69cca8851dc" testName="SolicitarAcceso_CuandoIpPermitida_DebeRetornarAccesoExitosoYRegistrarSolicitud" computerName="IS00694" duration="00:00:00.0038049" startTime="2026-03-10T13:33:21.2669247-05:00" endTime="2026-03-10T13:33:21.2710982-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0678d57-21d2-4ef3-aa33-253f0289dba7" />
+    <UnitTestResult executionId="0c36378d-e6a8-431d-9c3e-7b6ec5740964" testId="77eb9982-f923-7723-4988-63311ce16ec6" testName="ObtenerUsuario_CuandoSeInvoca_DebeRetornarUsuarioPorIdDelRepositorio" computerName="IS00694" duration="00:00:00.0010745" startTime="2026-03-10T13:33:21.3352813-05:00" endTime="2026-03-10T13:33:21.3366198-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c36378d-e6a8-431d-9c3e-7b6ec5740964" />
+    <UnitTestResult executionId="8b177ba0-c825-4622-a781-8d727f07531b" testId="91986196-0832-7e79-6fb5-a686ca827db8" testName="ObtenerUsuarios_CuandoSeInvoca_DebeRetornarListadoDelRepositorio" computerName="IS00694" duration="00:00:00.0003985" startTime="2026-03-10T13:33:21.2738804-05:00" endTime="2026-03-10T13:33:21.2744212-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b177ba0-c825-4622-a781-8d727f07531b" />
+    <UnitTestResult executionId="e7d017d8-74d8-4ac8-8c33-93bb78097ebc" testId="dc140974-5b9e-e98c-fe32-b734be8d10a9" testName="SolicitarAcceso_CuandoRepositorioIpLanzaExcepcion_DebeRetornarCodigoErrorTecnico" computerName="IS00694" duration="00:00:00.0012174" startTime="2026-03-10T13:33:21.2601536-05:00" endTime="2026-03-10T13:33:21.2616476-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7d017d8-74d8-4ac8-8c33-93bb78097ebc" />
+    <UnitTestResult executionId="cc2946dd-9aef-4961-9219-b83d12441e7f" testId="4d7975ff-70cc-4851-34b5-742bcfbf8199" testName="ActualizarSolicitudAcceso_CuandoSeInvoca_DebeDelegarEnRepositorio" computerName="IS00694" duration="00:00:00.0007959" startTime="2026-03-10T13:33:21.2656271-05:00" endTime="2026-03-10T13:33:21.2668414-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cc2946dd-9aef-4961-9219-b83d12441e7f" />
+    <UnitTestResult executionId="d86811c4-6218-4665-9e17-730327a83009" testId="6f797c69-d499-2a2b-75ef-6d4db8b536a1" testName="CrearUsuario_CuandoSeInvoca_DebeInvocarRegistrarEnRepositorioConElMismoUsuario" computerName="IS00694" duration="00:00:00.0006335" startTime="2026-03-10T13:33:21.2730509-05:00" endTime="2026-03-10T13:33:21.2738278-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d86811c4-6218-4665-9e17-730327a83009" />
+    <UnitTestResult executionId="c0f76a85-2bf5-4a1c-8dc8-a8cca5bda2bf" testId="f1c9a06d-9a9e-6851-f660-0ec6f84490bc" testName="ValidarToken_CuandoIpPermitida_DebeRetornarSolicitudDelRepositorio" computerName="IS00694" duration="00:00:00.0011848" startTime="2026-03-10T13:33:21.2621529-05:00" endTime="2026-03-10T13:33:21.2634950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0f76a85-2bf5-4a1c-8dc8-a8cca5bda2bf" />
+    <UnitTestResult executionId="ab128c82-a4fc-4c29-b6c1-dcad6138bcab" testId="7ceb55cc-4c13-504c-b156-2907682297c7" testName="ListarAgentes_CuandoSeInvoca_DebeRetornarListadoDelRepositorio" computerName="IS00694" duration="00:00:00.0007894" startTime="2026-03-10T13:33:21.3367553-05:00" endTime="2026-03-10T13:33:21.3377810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab128c82-a4fc-4c29-b6c1-dcad6138bcab" />
+    <UnitTestResult executionId="7685bec2-bfdd-4304-afb3-5548337ee98d" testId="e146cdb7-09f5-dac9-e8fc-d0b887a13fda" testName="ObtenerNumAgente_CuandoSeInvoca_DebeRetornarValorDelRepositorio" computerName="IS00694" duration="00:00:00.0005410" startTime="2026-03-10T13:33:21.3378876-05:00" endTime="2026-03-10T13:33:21.3386153-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7685bec2-bfdd-4304-afb3-5548337ee98d" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SolicitarAcceso_CuandoIpNoPermitida_DebeRetornarCodigoDenegadoSinRegistrar" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="355ca1ec-ee11-f274-7cf0-d47a6c587c4f">
+      <Execution id="f94b181e-3a74-4d65-88ee-9bd53306654f" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SeguridadServicioTests" name="SolicitarAcceso_CuandoIpNoPermitida_DebeRetornarCodigoDenegadoSinRegistrar" />
+    </UnitTest>
+    <UnitTest name="ValidarToken_CuandoIpNoPermitida_DebeLanzarExcepcion" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="3ef8b5cf-8707-c2cc-29ee-d6824288eeb0">
+      <Execution id="4356cb93-5c4d-4091-8c40-256be511d3ad" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SeguridadServicioTests" name="ValidarToken_CuandoIpNoPermitida_DebeLanzarExcepcion" />
+    </UnitTest>
+    <UnitTest name="ActualizarSolicitudAcceso_CuandoSeInvoca_DebeDelegarEnRepositorio" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="4d7975ff-70cc-4851-34b5-742bcfbf8199">
+      <Execution id="cc2946dd-9aef-4961-9219-b83d12441e7f" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SeguridadServicioTests" name="ActualizarSolicitudAcceso_CuandoSeInvoca_DebeDelegarEnRepositorio" />
+    </UnitTest>
+    <UnitTest name="ObtenerNumAgente_CuandoSeInvoca_DebeRetornarValorDelRepositorio" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="e146cdb7-09f5-dac9-e8fc-d0b887a13fda">
+      <Execution id="7685bec2-bfdd-4304-afb3-5548337ee98d" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.UsuarioServicioTests" name="ObtenerNumAgente_CuandoSeInvoca_DebeRetornarValorDelRepositorio" />
+    </UnitTest>
+    <UnitTest name="SolicitarAcceso_CuandoIpPermitida_DebeRetornarAccesoExitosoYRegistrarSolicitud" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="d706b160-6295-1529-e474-a69cca8851dc">
+      <Execution id="e0678d57-21d2-4ef3-aa33-253f0289dba7" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SmokeTests" name="SolicitarAcceso_CuandoIpPermitida_DebeRetornarAccesoExitosoYRegistrarSolicitud" />
+    </UnitTest>
+    <UnitTest name="ListarAgentes_CuandoSeInvoca_DebeRetornarListadoDelRepositorio" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="7ceb55cc-4c13-504c-b156-2907682297c7">
+      <Execution id="ab128c82-a4fc-4c29-b6c1-dcad6138bcab" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.UsuarioServicioTests" name="ListarAgentes_CuandoSeInvoca_DebeRetornarListadoDelRepositorio" />
+    </UnitTest>
+    <UnitTest name="ValidarToken_CuandoIpPermitida_DebeRetornarSolicitudDelRepositorio" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="f1c9a06d-9a9e-6851-f660-0ec6f84490bc">
+      <Execution id="c0f76a85-2bf5-4a1c-8dc8-a8cca5bda2bf" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SeguridadServicioTests" name="ValidarToken_CuandoIpPermitida_DebeRetornarSolicitudDelRepositorio" />
+    </UnitTest>
+    <UnitTest name="ObtenerUsuario_CuandoSeInvoca_DebeRetornarUsuarioPorIdDelRepositorio" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="77eb9982-f923-7723-4988-63311ce16ec6">
+      <Execution id="0c36378d-e6a8-431d-9c3e-7b6ec5740964" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.UsuarioServicioTests" name="ObtenerUsuario_CuandoSeInvoca_DebeRetornarUsuarioPorIdDelRepositorio" />
+    </UnitTest>
+    <UnitTest name="CrearUsuario_CuandoSeInvoca_DebeInvocarRegistrarEnRepositorioConElMismoUsuario" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="6f797c69-d499-2a2b-75ef-6d4db8b536a1">
+      <Execution id="d86811c4-6218-4665-9e17-730327a83009" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.UsuarioServicioTests" name="CrearUsuario_CuandoSeInvoca_DebeInvocarRegistrarEnRepositorioConElMismoUsuario" />
+    </UnitTest>
+    <UnitTest name="ObtenerUsuarios_CuandoSeInvoca_DebeRetornarListadoDelRepositorio" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="91986196-0832-7e79-6fb5-a686ca827db8">
+      <Execution id="8b177ba0-c825-4622-a781-8d727f07531b" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.UsuarioServicioTests" name="ObtenerUsuarios_CuandoSeInvoca_DebeRetornarListadoDelRepositorio" />
+    </UnitTest>
+    <UnitTest name="EliminarUsuario_CuandoSeInvoca_DebeInvocarEliminarEnRepositorioConElMismoUsuario" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="3ffd6ad4-bb19-859f-7e62-ff5d44d2aafc">
+      <Execution id="409cd821-8b12-4ce1-b932-0ee26f3bf45a" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.UsuarioServicioTests" name="EliminarUsuario_CuandoSeInvoca_DebeInvocarEliminarEnRepositorioConElMismoUsuario" />
+    </UnitTest>
+    <UnitTest name="SolicitarAcceso_CuandoRepositorioIpLanzaExcepcion_DebeRetornarCodigoErrorTecnico" storage="d:\rentas\repo_giane\v2\cwrv\interseguro.cwrv.tests\bin\debug\net9.0\interseguro.cwrv.tests.dll" id="dc140974-5b9e-e98c-fe32-b734be8d10a9">
+      <Execution id="e7d017d8-74d8-4ac8-8c33-93bb78097ebc" />
+      <TestMethod codeBase="D:\Rentas\repo_giane\v2\cwrv\Interseguro.CWRV.Tests\bin\Debug\net9.0\Interseguro.CWRV.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Interseguro.CWRV.Tests.SeguridadServicioTests" name="SolicitarAcceso_CuandoRepositorioIpLanzaExcepcion_DebeRetornarCodigoErrorTecnico" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3ef8b5cf-8707-c2cc-29ee-d6824288eeb0" executionId="4356cb93-5c4d-4091-8c40-256be511d3ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ffd6ad4-bb19-859f-7e62-ff5d44d2aafc" executionId="409cd821-8b12-4ce1-b932-0ee26f3bf45a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="355ca1ec-ee11-f274-7cf0-d47a6c587c4f" executionId="f94b181e-3a74-4d65-88ee-9bd53306654f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d706b160-6295-1529-e474-a69cca8851dc" executionId="e0678d57-21d2-4ef3-aa33-253f0289dba7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="77eb9982-f923-7723-4988-63311ce16ec6" executionId="0c36378d-e6a8-431d-9c3e-7b6ec5740964" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91986196-0832-7e79-6fb5-a686ca827db8" executionId="8b177ba0-c825-4622-a781-8d727f07531b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc140974-5b9e-e98c-fe32-b734be8d10a9" executionId="e7d017d8-74d8-4ac8-8c33-93bb78097ebc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d7975ff-70cc-4851-34b5-742bcfbf8199" executionId="cc2946dd-9aef-4961-9219-b83d12441e7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f797c69-d499-2a2b-75ef-6d4db8b536a1" executionId="d86811c4-6218-4665-9e17-730327a83009" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f1c9a06d-9a9e-6851-f660-0ec6f84490bc" executionId="c0f76a85-2bf5-4a1c-8dc8-a8cca5bda2bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ceb55cc-4c13-504c-b156-2907682297c7" executionId="ab128c82-a4fc-4c29-b6c1-dcad6138bcab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e146cdb7-09f5-dac9-e8fc-d0b887a13fda" executionId="7685bec2-bfdd-4304-afb3-5548337ee98d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados sin formato de lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="12" executed="12" passed="12" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>
