@@ -34,10 +34,37 @@ namespace Interseguro.CWRV.Tests
             Assert.AreSame(usuario, repositorioUsuario.UltimoUsuarioEliminado);
         }
 
+        [TestMethod]
+        public void CrearUsuario_CuandoSeInvoca_DebeInvocarRegistrarEnRepositorioConElMismoUsuario()
+        {
+            // Arrange
+            var repositorioUsuario = new RepositorioUsuarioFake();
+            var repositorioAgente = new RepositorioAgenteFake();
+            var servicio = new UsuarioServicio(repositorioUsuario, repositorioAgente);
+
+            var usuario = new Usuario
+            {
+                Id = 2,
+                NombreUsuario = "nuevo.usuario",
+                CodigoEmpleado = "EMP002",
+                Nombre = "Nuevo Usuario",
+                Rol = "Agente"
+            };
+
+            // Act
+            servicio.CrearUsuario(usuario);
+
+            // Assert
+            Assert.IsTrue(repositorioUsuario.RegistrarFueInvocado);
+            Assert.AreSame(usuario, repositorioUsuario.UltimoUsuarioRegistrado);
+        }
+
         private class RepositorioUsuarioFake : IRepositorioUsuario
         {
             public bool EliminarFueInvocado { get; private set; }
             public Usuario UltimoUsuarioEliminado { get; private set; }
+            public bool RegistrarFueInvocado { get; private set; }
+            public Usuario UltimoUsuarioRegistrado { get; private set; }
 
             public void Eliminar(Usuario entity)
             {
@@ -45,7 +72,12 @@ namespace Interseguro.CWRV.Tests
                 UltimoUsuarioEliminado = entity;
             }
 
-            public void Registrar(Usuario entity) { }
+            public void Registrar(Usuario entity)
+            {
+                RegistrarFueInvocado = true;
+                UltimoUsuarioRegistrado = entity;
+            }
+
             public void Actualizar(Usuario entity) { }
             public Usuario ObtenerPorId(long Id) => default!;
             public Usuario ObtenerPorId(string Id) => default!;
