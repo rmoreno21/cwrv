@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <Format>cobertura</Format>
+          <Include>[Interseguro.CWRV.Aplicacion.ModuloPrincipal]*Servicio,[Interseguro.CWRV.Aplicacion.ModuloPrincipal]*Service</Include>
+          <ExcludeByFile>**/I*Servicio.cs,**/I*Service.cs</ExcludeByFile>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>
