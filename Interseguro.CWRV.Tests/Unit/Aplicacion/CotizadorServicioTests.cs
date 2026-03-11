@@ -68,6 +68,21 @@ public class CotizadorServicioTests
     }
 
     [TestMethod]
+    public void ObtenerDatosGrupoFamiliar_CuandoSeInvoca_DebeRetornarGrupoDelRepositorio()
+    {
+        var fixture = new Fixture();
+        var grupoEsperado = new GrupoFamiliar();
+        fixture.RepositorioGrupoFamiliar
+            .Setup(r => r.ObtenerDatos(5, "SOL1"))
+            .Returns(grupoEsperado);
+        var servicio = fixture.CreateSut();
+
+        var grupo = servicio.ObtenerDatosGrupoFamiliar(5, "SOL1");
+
+        Assert.AreSame(grupoEsperado, grupo);
+    }
+
+    [TestMethod]
     public void ListarSolicitudPorCuspp_CuandoSeInvoca_DebeRetornarListaDelRepositorio()
     {
         var fixture = new Fixture();
@@ -78,6 +93,112 @@ public class CotizadorServicioTests
         var solicitudes = servicio.ListarSolicitud("CUSPP1");
 
         Assert.AreSame(solicitudesEsperadas, solicitudes);
+    }
+
+    [TestMethod]
+    public void ListarSolicitudPorLote_CuandoSeInvoca_DebeRetornarListaDelRepositorio()
+    {
+        var fixture = new Fixture();
+        var solicitudesEsperadas = new List<Solicitud> { new Solicitud() };
+        fixture.RepositorioSolicitud.Setup(r => r.Listar(99)).Returns(solicitudesEsperadas);
+        var servicio = fixture.CreateSut();
+
+        var solicitudes = servicio.ListarSolicitud(99);
+
+        Assert.AreSame(solicitudesEsperadas, solicitudes);
+    }
+
+    [TestMethod]
+    public void ListarSolicitudesPorFechaCierreAfp_CuandoSeInvoca_DebeRetornarListaDelRepositorio()
+    {
+        var fixture = new Fixture();
+        var fechaInicio = new DateTime(2026, 1, 1);
+        var fechaFin = new DateTime(2026, 1, 31);
+        var solicitudesEsperadas = new List<Solicitud> { new Solicitud() };
+        fixture.RepositorioSolicitud
+            .Setup(r => r.ListarSolicitudesPorFechaCierreAFP(fechaInicio, fechaFin, 'S'))
+            .Returns(solicitudesEsperadas);
+        var servicio = fixture.CreateSut();
+
+        var solicitudes = servicio.ListarSolicitudesPorFechaCierreAFP(fechaInicio, fechaFin, 'S');
+
+        Assert.AreSame(solicitudesEsperadas, solicitudes);
+    }
+
+    [TestMethod]
+    public void ListarConfirmaciones_CuandoSeInvoca_DebeRetornarListaDelRepositorio()
+    {
+        var fixture = new Fixture();
+        var fechaInicio = new DateTime(2026, 2, 1);
+        var fechaFin = new DateTime(2026, 2, 28);
+        var solicitudesEsperadas = new List<Solicitud> { new Solicitud() };
+        fixture.RepositorioSolicitud
+            .Setup(r => r.ListarConfirmaciones(fechaInicio, fechaFin, 'N'))
+            .Returns(solicitudesEsperadas);
+        var servicio = fixture.CreateSut();
+
+        var solicitudes = servicio.ListarConfirmaciones(fechaInicio, fechaFin, 'N');
+
+        Assert.AreSame(solicitudesEsperadas, solicitudes);
+    }
+
+    [TestMethod]
+    public void ObtenerXmlConfirmacionesCargaMeler_CuandoSeInvoca_DebeEjecutarFlujosDeModalidadAntesDeFallarPorDocumentoInvalido()
+    {
+        var fixture = new Fixture();
+        fixture.RepositorioSolicitud
+            .Setup(r => r.ListarSolicitudesConfirmacionMeler("<xml/>"))
+            .Returns(
+            [
+                CrearSolicitudConfirmacion("SOL-RV", "CUSPP-RV", 1001, "RV", string.Empty, 100.1, 0, 0, 0, 500.5, new DateTime(2026, 3, 1)),
+                CrearSolicitudConfirmacion("SOL-RTVD", "CUSPP-RTVD", 1002, "RTVD", string.Empty, 0, 200.2, 300.3, 10.1, 600.6, new DateTime(2026, 3, 2)),
+                CrearSolicitudConfirmacion("SOL-RM", "CUSPP-RM", 1003, "RM", "*", 0, 999.9, 888.8, 20.2, 700.7, new DateTime(2026, 3, 3)),
+                CrearSolicitudConfirmacion("SOL-RC", "CUSPP-RC", 1004, "RC", "S", 0, 400.4, 500.5, 30.3, 800.8, new DateTime(2026, 3, 4)),
+                CrearSolicitudConfirmacion("SOL-RB", "CUSPP-RB", 1005, "RB", "S", 0, 600.6, 700.7, 40.4, 900.9, new DateTime(2026, 3, 5))
+            ]);
+        var servicio = fixture.CreateSut();
+
+        Assert.ThrowsException<InvalidOperationException>(
+            () => servicio.ObtenerXMLConfirmacionesCargaMeler("<xml/>"));
+    }
+
+    [TestMethod]
+    public void ObtenerDatosAporteAdicional_CuandoSeInvoca_DebeRetornarAporteDelRepositorio()
+    {
+        var fixture = new Fixture();
+        var aporteEsperado = new AporteAdicional();
+        fixture.RepositorioAporteAdicional
+            .Setup(r => r.ObtenerDatos("CUSPP1"))
+            .Returns(aporteEsperado);
+        var servicio = fixture.CreateSut();
+
+        var aporte = servicio.ObtenerDatosAporteAdicional("CUSPP1");
+
+        Assert.AreSame(aporteEsperado, aporte);
+    }
+
+    [TestMethod]
+    public void ActualizarAporteAdicional_CuandoSeInvoca_DebeDelegarEnRepositorio()
+    {
+        var fixture = new Fixture();
+        var aporte = new AporteAdicional();
+        var servicio = fixture.CreateSut();
+
+        servicio.ActualizarAporteAdicional(aporte, "tester");
+
+        fixture.RepositorioAporteAdicional.Verify(r => r.Actualizar(aporte, "tester"), Times.Once);
+    }
+
+    [TestMethod]
+    public void EliminarAporteAdicional_CuandoSeInvoca_DebeDelegarEnRepositorio()
+    {
+        var fixture = new Fixture();
+        var aporte = new AporteAdicional();
+        var servicio = fixture.CreateSut();
+
+        servicio.EliminarAporteAdicional(aporte, "tester");
+
+        fixture.RepositorioAporteAdicional.Verify(r => r.Eliminar(aporte, "tester"), Times.Once);
     }
 
     [TestMethod]
@@ -215,6 +336,7 @@ public class CotizadorServicioTests
         public Mock<IRepositorioAfiliado> RepositorioAfiliado { get; } = new();
         public Mock<IRepositorioGrupoFamiliar> RepositorioGrupoFamiliar { get; } = new();
         public Mock<IRepositorioSolicitud> RepositorioSolicitud { get; } = new();
+        public Mock<IRepositorioAporteAdicional> RepositorioAporteAdicional { get; } = new();
         public Mock<IRepositorioParametroGeneral> RepositorioParametroGeneral { get; } = new();
         public Mock<IRepositorioFlujoMovimiento> RepositorioFlujoMovimiento { get; } = new();
         public Mock<IRepositorioGestionVentas> RepositorioGestionVentas { get; } = new();
@@ -229,7 +351,7 @@ public class CotizadorServicioTests
                 RepositorioAfiliado.Object,
                 RepositorioGrupoFamiliar.Object,
                 RepositorioSolicitud.Object,
-                Mock.Of<IRepositorioAporteAdicional>(),
+                RepositorioAporteAdicional.Object,
                 Mock.Of<IRepositorioSolicitudRP>(),
                 Mock.Of<IRepositorioLote>(),
                 Mock.Of<IRepositorioSolicitudEscenario>(),
@@ -262,5 +384,44 @@ public class CotizadorServicioTests
                 Mock.Of<IRepositorioProfesion>(),
                 Mock.Of<IRepositorioMotorCalculo>());
         }
+    }
+
+    private static Solicitud CrearSolicitudConfirmacion(
+        string idSolicitud,
+        string cuspp,
+        int numeroPoliza,
+        string modalidad,
+        string cotiza,
+        double primeraPensionRv,
+        double primeraPensionRt,
+        double primeraPensionRvd,
+        double primaUnicaAfpEess,
+        double primaUnicaEess,
+        DateTime fechaDevengue)
+    {
+        return new Solicitud
+        {
+            Id = idSolicitud,
+            NumeroPoliza = numeroPoliza,
+            FechaDevengue = fechaDevengue,
+            Afiliado = new Afiliado
+            {
+                CUSPP = cuspp
+            },
+            Cotizaciones =
+            [
+                new Cotizacion
+                {
+                    Modalidad = new Modalidad { Id = modalidad },
+                    Cotiza = cotiza,
+                    PrimeraPensionRV = primeraPensionRv,
+                    PrimeraPensionRT = primeraPensionRt,
+                    PrimeraPensionRVD = primeraPensionRvd,
+                    PrimaUnicaAFPEESS = primaUnicaAfpEess,
+                    PrimaUnicaEESS = primaUnicaEess,
+                    MontoCia = primaUnicaEess
+                }
+            ]
+        };
     }
 }
